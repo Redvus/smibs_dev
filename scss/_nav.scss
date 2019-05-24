@@ -1,0 +1,168 @@
+/*=============================================
+=            Nav Mobile            =
+=============================================*/
+
+.nav {
+
+	&-button {
+		width: $headerHeightMobile;
+		height: $headerHeightMobile;
+		display: none;
+		visibility: hidden;
+		align-items: center;
+		justify-content: flex-start;
+		background-color: $fourth;
+		position: fixed;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		z-index: 9998;
+
+		&-line {
+			width: 50%;
+			height: $border_normal;
+			background-color: $primary;
+			position: absolute;
+			// transition: transform 0.3s;
+
+			&__top {
+				transform: translate(0, -290%);
+				transform-origin: 50% 50%;
+			}
+
+			&__middle {
+				transform-origin: 50% 50%;
+			}
+
+			&__bottom {
+				transform: translate(0, 290%);
+				transform-origin: 50% 50%;
+			}
+		}
+
+		// &:hover {
+
+		// 	.nav-button-line {
+
+		// 		&__top {
+		// 			transform: translate(30%, 200%) rotate(135deg) scaleX(0.6);
+		// 		}
+
+		// 		&__middle {
+		// 			transform: rotate(180deg);
+		// 		}
+
+		// 		&__bottom {
+		// 			transform: translate(30%, -200%) rotate(-135deg) scaleX(0.6);
+		// 		}
+		// 	}
+		// }
+	}
+
+	&-mobile {
+		width: calc(80% - (#{$paddingMobile} * 4));
+		height: calc(100vh - (#{$headerHeightMobile} * 2));
+		align-items: center;
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: $headerHeightMobile $paddingMobile * 2;
+		background-color: $fourth;
+		border-left: $border_heavy solid $secondary;
+		z-index: 9995;
+		transform: translateX(100%);
+
+		&__mask {
+			width: 100%;
+			height: 100vh;
+			display: none;
+			visibility: hidden;
+			top: 0;
+			right: 0;
+			position: fixed;
+			background-color: rgba($secondary, 0.5);
+			transform-origin: 100% 0;
+			z-index: 9994;
+		}
+
+		&__menu {
+
+			li {
+				margin: 1rem 0;
+
+				a {
+					font-family: $heading-font;
+					text-transform: uppercase;
+				}
+
+				&.active {
+
+					a {
+						color: $secondary;
+					}
+				}
+			}
+		}
+	}
+
+	@include grid-media($XXLarge) {
+
+		&-mobile {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($XLarge) {
+
+		&-mobile {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($Large) {
+
+		&-mobile {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($Medium) {
+
+		&-mobile {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($XSmall) {
+
+		&-mobile {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($Small) {
+
+		&-mobile {
+			display: flex;
+			visibility: visible;
+
+			&__mask {
+				display: block;
+				visibility: visible;
+			}
+		}
+
+		&-button {
+			display: flex;
+			visibility: visible;
+		}
+	}
+}
+
+/*=====  End of Nav Mobile  ======*/
+
