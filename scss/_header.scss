@@ -1,0 +1,258 @@
+/*==============================
+=            Header            =
+==============================*/
+
+.header {
+	@include grid-column(10, $main-grid);
+	height: $headerHeightDesktop;
+	margin-bottom: 2rem;
+	background-color: $headerBackgroundColor;
+	// border-bottom: 0.5rem solid $secondary;
+	z-index: 9990;
+
+	&-simple {
+		height: $headerHeightDesktop;
+
+		&--fixed {
+			position: fixed;
+		}
+	}
+
+	&-top {
+		width: 100%;
+		height: $headerHeightMobile;
+		flex-direction: row;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		// padding-right: $headerHeightMobile;
+		visibility: hidden;
+		display: none;
+		background-color: $fourth;
+		z-index: 9990;
+
+		&__logo {
+			width: 40%;
+			height: $headerHeightMobile;
+
+			a {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			svg {
+				width: auto;
+				height: 60%;
+
+				g {
+
+					&#br_logo__blue {
+						fill: $primary;
+					}
+
+					&#br_logo__orange {
+						fill: $secondary;
+					}
+				}
+			}
+		}
+
+		&__link {
+			width: calc(60% / 3);
+			height: $headerHeightMobile;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&:before {
+				// width: $headerHeightMobile / 2;
+				// height: $headerHeightMobile / 2;
+				position: absolute;
+				font-family: 'fontawesome';
+				font-size: $font-size-large + 0.2;
+				color: $primary;
+			}
+
+			&-phone {
+
+				&:before {
+					content:"\f095";
+				}
+			}
+
+			&-skype {
+
+				&:before {
+					content:"\f17e";
+				}
+			}
+		}
+	}
+
+	&-device,
+	&-device--pad {
+		width: 100%;
+		height: 100vh;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color: $secondary;
+		position: fixed;
+		text-align: center;
+		z-index: 9999;
+		display: none;
+		visibility: hidden;
+
+		&__image {
+			width: 6rem;
+			display: block;
+
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+
+		span {
+			font-size: $font-size-small;
+		}
+	}
+
+	@include grid-media($XXLarge) {
+
+		&-text {
+
+			&--mobile {
+				display: none;
+				visibility: hidden;
+			}
+		}
+
+		&--mobile {
+			display: none;
+			visibility: hidden;
+		}
+
+	}
+
+	@include grid-media($XLarge) {
+
+		&-text {
+
+			&--mobile {
+				display: none;
+				visibility: hidden;
+			}
+		}
+
+		&--mobile {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($Large) {
+
+		&-text {
+
+			&--mobile {
+				display: none;
+				visibility: hidden;
+			}
+		}
+
+		&--mobile {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($Medium) {
+
+
+		&--mobile {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($XSmall) {
+		height: $headerHeightMobile + 1;
+
+		&__part {
+			width: $headerPartWidthMobile;
+		}
+
+		&__logo {
+
+			a {
+				width: calc(100% - 1.6rem);
+				height: 100%;
+				padding: 0 0.8rem;
+
+				svg {
+					height: 70%;
+				}
+			}
+		}
+
+		&--mobile {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	@include grid-media($Small) {
+		height: $headerHeightMobile;
+
+		&--desktop {
+			display: none;
+			visibility: hidden;
+		}
+
+		&--mobile {
+			display: flex;
+			visibility: visible;
+		}
+	}
+
+	@include grid-media($XPortrait) {
+
+		&-device {
+			display: none;
+			visibility: hidden;
+
+			&--pad {
+				display: flex;
+				visibility: visible;
+			}
+		}
+	}
+
+	@include grid-media($Landscape) {
+
+		&-device {
+			display: flex;
+			visibility: visible;
+
+			&--pad {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+}
+
+.headroom {
+	transition: all 0.3s;
+
+	&--unpinned {
+		transform: translateY(-100%);
+	}
+}
+
+/*=====  End of Header  ======*/

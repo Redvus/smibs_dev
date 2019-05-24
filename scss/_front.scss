@@ -1,0 +1,105 @@
+
+/*====================================
+=            Main content            =
+====================================*/
+
+.main-content {
+    @include grid-column(10, $main-grid);
+    min-height: calc(100vh - #{$headerHeightDesktop} - #{$marginVert});
+
+    &__hero {
+        @include grid-container;
+        height: 40vh;
+        display: block;
+        margin-bottom: $marginVert;
+    }
+
+    &__intro {
+        @include grid-column(8, $second-grid);
+        height: 100%;
+        display: block;
+        background-color: $primary;
+    }
+
+    &__anniversary {
+        @include grid-column(4, $second-grid);
+        height: 100%;
+        display: block;
+        background-color: $primary;
+    }
+
+    &__news {
+        @include grid-container;
+        // margin-bottom: $marginVert;
+
+        &-block {
+            @include grid-column(6, $second-grid);
+            min-height: 10rem;
+        }
+
+        &-single {
+            @include rowMachineBorder(2, $marginVert, $border_thin);
+            min-height: 10rem;
+            border: $border_thin solid $secondary;
+            // background-color: $secondary;
+        }
+    }
+
+    &__read {
+        @include grid-container;
+        min-height: 5rem;
+        margin-bottom: $marginVert;
+
+        ul {
+
+            li {
+                @include grid-column(2, $second-grid);
+                min-height: 13rem;
+                display: inline-block;
+                background-color: $primary;
+            }
+        }
+    }
+
+    &__calendar {
+        @include grid-column(12, $second-grid);
+        display: block;
+        margin-bottom: $marginVert;
+
+        &-month {
+            @include grid-column(12, $main-grid);
+            min-height: 30vh;
+            display: block;
+            background-color: $primary;
+        }
+    }
+
+    &__partners {
+        @include grid-container;
+
+        ul {
+
+            li {
+                @include grid-column(2, $second-grid);
+                min-height: 5rem;
+                display: inline-block;
+                background-color: $primary;
+                margin-bottom: $marginVert;
+            }
+        }
+    }
+
+    &__subheader {
+        width: 100%;
+        display: block;
+        border-bottom: $border_thin solid $secondary;
+        margin-bottom: $marginVert;
+
+        &--margin {
+            @include grid-column(12, $second-grid);
+        }
+    }
+}
+
+/*=====  End of Page content  ======*/
+
