@@ -464,22 +464,18 @@
 
 
     function initPage() {
-        scrollSmooth();
-        initPhotoSwipeFromDOM('.section-certificate__gallery');
-        sectionAnimationMain_0();
-        sectionAnimationMain_1();
-        sectionAnimationMain_2();
-        sectionAnimationMain_3();
+        // scrollSmooth();
+        initPhotoSwipeFromDOM('.main-content__read-all');
     }
 
     function initPageMobile() {
-        initPhotoSwipeFromDOM('.section-certificate__gallery');
-        sectionAnimationMainMobile_0();
-        sectionAnimationInfoAboutMobile();
-        sectionAnimationInfoNewsMobile();
-        sectionAnimationCertificateMobile();
-        sectionAnimationGratitudeMobile();
-        sectionAnimationPartnersMobile();
+        // initPhotoSwipeFromDOM('.section-certificate__gallery');
+        // sectionAnimationMainMobile_0();
+        // sectionAnimationInfoAboutMobile();
+        // sectionAnimationInfoNewsMobile();
+        // sectionAnimationCertificateMobile();
+        // sectionAnimationGratitudeMobile();
+        // sectionAnimationPartnersMobile();
     }
 
     if (document.body.clientWidth > 768 || screen.width > 768) {

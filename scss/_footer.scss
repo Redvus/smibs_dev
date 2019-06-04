@@ -45,6 +45,8 @@ $footer-grid: (columns: 1, gutter: 5rem);
     }
 
     &__logo {
+
+
         a {
             width: calc(100% - 4rem);
             height: 100%;
@@ -68,6 +70,12 @@ $footer-grid: (columns: 1, gutter: 5rem);
                     fill: $secondary;
                 }
             }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
     }
 
@@ -113,96 +121,69 @@ $footer-grid: (columns: 1, gutter: 5rem);
     }
 
     &__down-block {
-        width: 100%;
-        height: 50px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        @include grid-container;
         // padding: 0;
         // bottom: 0;
         // border-top: 1px solid #fff;
         background-color: $footerDownBlock;
+        font-size: $font-size-small - 0.2;
 
-        .copyright {
-            width: calc((#{$headerPartWidth} * 2) - 4rem);
-            height: 100%;
-            display: flex;
-            align-items: center;
-            font-size: $font-size-small - 0.2;
-            padding: 0 2rem;
-
-            p {
-                margin: 0;
-            }
+        p {
+            margin: 0;
         }
+    }
 
-        .author {
-            width: calc((#{$headerPartWidth} * 2) - 4rem);
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-            text-align: right;
-            padding: 0 2rem;
+    &__copyright {
+        @include grid-column(4, $second-grid);
+        padding: 1rem 0;
+    }
 
-            p {
-                font: {
-                    //family: $font-family-base;
-                    size: $font-size-small - 0.2;
-                }
+    &__info {
+        @include grid-column(4, $second-grid);
+        padding: 1rem 0;
+    }
 
-                ;
-                line-height: 1;
-                color: #fff;
-                display: inline-block;
-                margin: 0;
-            }
+    &__author {
+        @include grid-column(4, $second-grid);
+        padding: 1rem 0;
 
-            a {
-                margin-left: 10px;
-                margin-top: 7px;
-                display: inline-block;
+        // p {
+        //     font: {
+        //         //family: $font-family-base;
+        //         size: $font-size-small - 0.2;
+        //     }
 
-                svg {
-                    width: auto;
-                    height: 1.5rem;
-                    fill: #fff;
-                    transition: all 0.2s;
+        //     ;
+        //     line-height: 1;
+        //     color: #fff;
+        //     display: inline-block;
+        //     margin: 0;
+        // }
 
-                    .redvus-logo__red {
-                        fill: $secondary;
-                    }
+        // a {
+        //     margin-left: 10px;
+        //     margin-top: 7px;
+        //     display: inline-block;
 
-                    .redvus-logo__deepred {
-                        fill: $fourth;
-                    }
+        //     svg {
+        //         width: auto;
+        //         height: 1.5rem;
+        //         fill: #fff;
+        //         transition: all 0.2s;
 
-                    &:hover {
-                        fill: $fourth;
-                    }
-                }
-            }
-        }
+        //         .redvus-logo__red {
+        //             fill: $secondary;
+        //         }
 
-        @include grid-media($Small) {
-            // width: 100%;
-            // flex-direction: column;
-            // margin: 1rem 0 0;
-            // text-align: center;
+        //         .redvus-logo__deepred {
+        //             fill: $fourth;
+        //         }
 
-            .copyright {
-                width: 100%;
-                justify-content: center;
-                text-align: center;
-            }
-
-            .author {
-                display: none;
-                visibility: hidden;
-            }
-        }
+        //         &:hover {
+        //             fill: $fourth;
+        //         }
+        //     }
+        // }
     }
 
     &__line {

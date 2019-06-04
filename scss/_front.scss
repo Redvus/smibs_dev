@@ -9,7 +9,7 @@
 
     &__hero {
         @include grid-container;
-        height: 40vh;
+        height: 50vh;
         display: block;
         margin-bottom: $marginVert;
     }
@@ -33,15 +33,22 @@
         // margin-bottom: $marginVert;
 
         &-block {
-            @include grid-column(6, $second-grid);
+            @include grid-column(12, $second-grid);
             min-height: 10rem;
         }
 
         &-single {
-            @include rowMachineBorder(2, $marginVert, $border_thin);
+            @include rowMachine(4, $marginVert);
             min-height: 10rem;
-            border: $border_thin solid $secondary;
-            // background-color: $secondary;
+            // border: $border_thin solid $secondary;
+            background-color: lighten($primary, 10%);
+            position: relative;
+            // box-shadow: 0.1rem 0.1rem 0.2rem rgba($third, 0.3);
+            // transition: all 0.3s;
+
+            // &:hover {
+            //     box-shadow: 0.2rem 0.2rem 0.2rem rgba($third, 0.2);
+            // }
         }
     }
 
@@ -50,13 +57,44 @@
         min-height: 5rem;
         margin-bottom: $marginVert;
 
-        ul {
+        figure {
+            @include grid-column(2, $second-grid);
+            // min-height: 13rem;
+            display: inline-block;
+            // background-color: $primary;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            // margin-inline-start: 0;
+            margin-inline-end: 0;
+            overflow: hidden;
+            transition: all $base-duration;
 
-            li {
-                @include grid-column(2, $second-grid);
-                min-height: 13rem;
-                display: inline-block;
-                background-color: $primary;
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                transition: transform $base-duration;
+            }
+
+            &:hover {
+
+                img {
+                    transform: scale(1.05)
+                }
+            }
+        }
+
+        figcaption {
+            display: none;
+        }
+
+        &-all {
+
+            &:hover {
+
+                figure:not(:hover) {
+                    filter: grayscale(1);
+                }
             }
         }
     }
@@ -75,16 +113,24 @@
     }
 
     &__partners {
-        @include grid-container;
+        @include grid-column(12, $second-grid);
 
         ul {
 
             li {
-                @include grid-column(2, $second-grid);
-                min-height: 5rem;
+                // @include grid-column(2, $second-grid);
+                @include rowMachine(7, 1rem);
+                // min-height: 5rem;
                 display: inline-block;
-                background-color: $primary;
+                // background-color: $primary;
                 margin-bottom: $marginVert;
+                margin-right: 1rem;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
             }
         }
     }
@@ -93,7 +139,7 @@
         width: 100%;
         display: block;
         border-bottom: $border_thin solid $secondary;
-        margin-bottom: $marginVert;
+        margin-bottom: $marginVert / 2;
 
         &--margin {
             @include grid-column(12, $second-grid);

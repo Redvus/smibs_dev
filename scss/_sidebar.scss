@@ -24,8 +24,10 @@
 
 	&-logo {
 		@include grid-column(12, $second-grid);
-		height: $headerHeightDesktop + 3;
+		min-height: $headerHeightDesktop + 3;
 		position: relative;
+		padding-top: $marginVert;
+		text-align: center;
 
 		a {
 			width: 100%;
@@ -54,11 +56,76 @@
 			}
 		}
 
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
 		&--page {
 
 			svg {
 				width: auto;
 				height: 60%;
+			}
+		}
+
+		p {
+			font-size: $font-size-small;
+			color: $secondary;
+		}
+	}
+
+	&__buttons {
+		width: calc(100% - (#{$marginVert} * 2));
+		min-height: 10vh;
+		display: block;
+		position: relative;
+		float: left;
+		left: $marginVert / 2;
+		background-color: $sidebarButtonsBackground;
+		padding: $marginVert / 2;
+		text-align: center;
+		margin-bottom: $marginVert / 2;
+		// border-top-left-radius: $border_normal * 2;
+		// border-bottom-left-radius: $border_normal * 2;
+		// border-top-right-radius: $border_normal * 2;
+		// border-bottom-right-radius: $border_normal * 2;
+
+		h5 {
+			margin-bottom: $marginVert / 4;
+		}
+
+		a {
+			width: calc(100% - (#{$border_normal} * 2) - ((#{$marginVert} / 3) * 2));
+			min-height: $marginVert / 2;
+			display: block;
+			float: left;
+			position: relative;
+			background-color: $primary;
+			text-align: center;
+			font-size: $font-size-small;
+			color: $secondary;
+			margin-bottom: $marginVert / 2;
+			padding: ($marginVert / 5) ($marginVert / 3);
+			border: $border_normal solid $secondary;
+			// border-top-left-radius: $border_normal * 1.7;
+			// border-bottom-left-radius: $border_normal * 1.7;
+			// border-top-right-radius: $border_normal * 1.7;
+			// border-bottom-right-radius: $border_normal * 1.7;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			p {
+				text-transform: uppercase;
+				// position: absolute;
+				// top: 50%;
+				// left: 50%;
+				margin: 0;
+				line-height: 1.2;
+				// transform: translate(-50%, -50%);
 			}
 		}
 	}
