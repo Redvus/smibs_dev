@@ -10,13 +10,17 @@
 @import "footer";
 @import "header";
 @import "sidebar";
+@import "nav";
 
 // @import "header_mobile";
 // @import "nav_mobile";
-// @import "masterslider";
+@import "masterslider";
 @import "photoswipe";
-@import "front";
+// @import "front";
 @import "page";
 @import "news";
-// @import "contact";
-// @import "growl";
+@import "search";
+
+@import "form";
+@import "magnific";
+@import "blind";

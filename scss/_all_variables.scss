@@ -2,11 +2,25 @@
 =            Variable            =
 ================================*/
 
-$primary : #FFC8A2; // Оранжевый
-$secondary: #830800; // Бордовый
+$primary  : #feba8b;  // Оранжевый
+$secondary: #830800;  // Бордовый
 $third    : #000;     // Темный var1: #1E252B
 $fourth   : #fff;
 $five     : #7a97ab;
+
+
+/*----------  Blind Color  ----------*/
+$blindBackgroundBW: $third;
+$blindColorBW: $fourth;
+
+$blindBackgroundWB: $fourth;
+$blindColorWB: $third;
+
+$blindBackgroundCW: #0099CC;
+$blindColorCW: $fourth;
+
+$blindBackgroundYB: #FFCC33;
+$blindColorYB: $third;
 
 $error : $third;
 $success : $fourth;
@@ -22,26 +36,32 @@ $base-timing: 0.3s;
 /*----------  Header  ----------*/
 $headerHeightDesktop  : 5rem;
 $headerBackgroundColor: $fourth;
-$headerPartWidth      : calc(100% / 6);
 $headerNavWidth       : 40px;
-$headerBlindWidth     : $headerHeightDesktop + ($headerHeightDesktop / 1.5);
+$headerBlindWidth     : $headerHeightDesktop + 3rem;
 
 /*----------  Header Mobile  ----------*/
 $headerHeightMobile : 3rem;
 $headerPartWidthMobile : calc(100% / 3);
+$headerBackgroundMobile: $primary;
 
 /*----------  Nav  ----------*/
-$navPaddingMobile : 2rem;
+$navPaddingMobile  : 2rem;
 $navLinkSizeMobile : 6vw;
-$navBackground : $fourth;
-$navColorAfter : $secondary;
-$navLinkColor : $primary;
-$navLinkColorHover : $secondary;
+$navBackground     : darken($primary, 10%);
+$navBackgroundHover: $secondary;
+$navColorAfter     : $secondary;
+$navColorHover     : $primary;
+$navLinkColor      : $secondary;
+$navLinkColorActive: lighten($secondary, 15%);
+
+$marginVert: 2rem;
+$navLinkPadding: ($marginVert / 3);
 
 $navBackgroundMobile : $primary;
 $navLinkColorMobile : $fourth;
 
 /*----------  Footer  ----------*/
+$footerPartWidth  : calc(100% / 6);
 $footerLineColor : lighten($secondary, 10%);
 $footerBackground : $secondary;
 $footerDownBlock : lighten($secondary, 10%);
@@ -49,30 +69,53 @@ $footerDownBlock : lighten($secondary, 10%);
 /*----------  Layout  ----------*/
 $layoutBackground : lighten($primary, 13%);
 $backgroundLineColor : lighten($third, 85%);
-
-$marginVert: 2rem;
+$wrapperContentInsideWidth: calc(100% - ((#{$headerHeightDesktop} + 3rem) * 2));
 
 $partnersPart: 7;
 $inputHeight: 2rem;
+
+$paddingMobile: 1rem;
+
+$gridderBackground: $primary;
+$gridderSVGColor: $secondary;
+$gridderSVGColorHover: $fourth;
+$gridderSVGWidth: 1.5rem;
 
 /*----------  Page  ----------*/
 $pageImageHeightDesktop : 30vh;
 $pageImageHeightMobile : 20vh;
 
+$forumMargin: 12%;
+$forumPersonWidth: 8rem;
+$forumBackground: $primary;
+
+$forumPersonWidthMobile: 3rem;
+
+$frontAnniversaryBorder: $border_bold;
+
+$anniversaryPhotoWidth: 40%;
+$anniversaryTopHeight: 35%;
+
+/*----------  Form  ----------*/
+$formInputColor: $secondary;
+$formButtonBackground: $primary;
+
 /*----------  Sidebar  ----------*/
 $sidebarButtonsBackground: darken($primary, 10%);
 
 @mixin rowMachineBorder($numPerRow, $margin, $borderWidth) {
-    width: calc((100% - ((#{$numPerRow} - 1) * #{$margin}) - ((#{$numPerRow} *2) * #{$borderWidth})) / #{$numPerRow});
-    // width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
-    // width: calc((100% - ((#{$numPerRow} / #{$numPerRow}) * #{$margin})) / #{$numPerRow}); //решение для fenom
+    // width: calc((100% - ((#{$numPerRow} - 1) * #{$margin}) - ((#{$numPerRow} - 1) * (#{$borderWidth} * 2))) / #{$numPerRow});
+    // width: calc((100% / #{$numPerRow}) - (#{$borderWidth} * 2) - ((#{$margin} * (#{$numPerRow} - 1)) / #{$numPerRow}));
+    width: calc(((100% - (#{$margin} * (#{$numPerRow} - 1))) / #{$numPerRow}) - (#{$borderWidth} * 2));
+    // width: calc((100% - (#{$borderWidth} * 2) - ((#{$numPerRow} - 1) * #{$margin})) / #{$numPerRow});
     display: inline-block;
-    float: left;
+    border: $borderWidth solid $secondary;
+    // float: left;
 
     &:nth-child(n) {
         margin-bottom: $margin;
         margin-right: $margin;
-        // margin-left: -$margin;
+        // margin-left: -(($numPerRow - 1) * 0.1rem);
     }
 
     // &:first-child {
@@ -81,7 +124,7 @@ $sidebarButtonsBackground: darken($primary, 10%);
 
     &:nth-of-type(#{$numPerRow}n) {
         margin-right: 0;
-        // margin-bottom: 0;
+        // margin-left: 0;
     }
 
     // @include grid-media($Medium) {
@@ -99,15 +142,14 @@ $sidebarButtonsBackground: darken($primary, 10%);
 
 @mixin rowMachine($numPerRow, $margin) {
     width: calc((100% - ((#{$numPerRow} - 1) * #{$margin})) / #{$numPerRow});
-    // width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
     // width: calc((100% - ((#{$numPerRow} / #{$numPerRow}) * #{$margin})) / #{$numPerRow}); //решение для fenom
     display: inline-block;
-    float: left;
+    // float: left;
 
     &:nth-child(n) {
         margin-bottom: $margin;
         margin-right: $margin;
-        // margin-left: -$margin;
+        // margin-left: -(($numPerRow - 1) * 0.1rem);
     }
 
     // &:first-child {
@@ -118,6 +160,10 @@ $sidebarButtonsBackground: darken($primary, 10%);
         margin-right: 0;
         // margin-bottom: 0;
     }
+
+    // &:nth-of-type(calc(#{$numPerRow} + 1)n) {
+    //     margin-left: 0;
+    // }
 
     // @include grid-media($Medium) {
     // 	&:nth-child(n) {
@@ -167,21 +213,13 @@ $pad_v : 768px;
 $mobile : 570px;
 
 $XXLarge: (media: "(min-width: #{$imac21})");
-
 $XLarge: (media: "(min-width: #{$cinema}) and (max-width: #{$imac21})");
-
 $Large: (media: "(min-width: #{$pad_g}) and (max-width: #{$cinema})");
-
 $Medium: (media: "(max-width: #{$pad_g})");
-
 $XSmall: (media: "(max-width: #{$pad_v})");
-
 $Small: (media: "(max-width: #{$mobile})");
-
 $HSmall: (media: "(max-height: 420px)");
-
 $Landscape: (media: "(max-width: #{$pad_v}) and (orientation: landscape)");
-
 $XPortrait: (media: "(min-width: #{$pad_v}) and (max-width: calc(#{$pad_g} - 1px))");
 
 /*=====  End of Media  ======*/
@@ -233,11 +271,11 @@ $body-font-weight   : normal !default;
 $body-line-height   : 1.4 !default;
 $heading-line-height: 1 !default;
 
-$heading-font-modular : 1vw !default;
+$heading-font-modular : 1rem !default;
 
 $bourbon: (
     "modular-scale-base": $heading-font-modular,
-    "modular-scale-ratio": $minor-third //$major-second
+    "modular-scale-ratio": $major-second //$major-second
 );
 
 $font-size-base:    $body-font-size !default;
@@ -261,16 +299,28 @@ $font-size-h6:      modular-scale(-1) !default; // ~1.2rem 19px
     color: $body-font-color;
     //text-indent: 1rem;
 
+    i {
+        font-size: $font-size-small;
+    }
+
     @include grid-media($XXLarge) {
-        font-size: $font-size-large + 0.5;
+        font-size: $font-size-large;
+
+        i {
+            font-size: $font-size-base;
+        }
     }
 
     @include grid-media($XLarge) {
-        font-size: $font-size-large;
+        font-size: $font-size-base;
+
+        i {
+            font-size: $font-size-small;
+        }
     }
 
     @include grid-media($Medium) {
-        font-size: $font-size-large;
+        font-size: $font-size-base;
     }
 
     @include grid-media($XSmall) {
@@ -361,12 +411,12 @@ h1 {
     font-size: $font-size-h1;
     font-weight: 400;
     color: $secondary;
-    //margin-bottom: 1em;
-    //text-align: center;
-    //transition: all .3s;
+    display: inline-block;
+    border-bottom: $border_bold solid $secondary;
+    margin-bottom: -$border_thin;
 
-    @include grid-media($Small) {
-        font-size: $font-size-h1 * 2;
+    @include grid-media($XSmall) {
+        font-size: 8vw;
     }
 }
 
@@ -379,8 +429,8 @@ h2 {
     border-bottom: $border_bold solid $secondary;
     margin-bottom: -$border_thin;
 
-    @include grid-media($Small) {
-        font-size: $font-size-h1 * 1.9;
+    @include grid-media($XSmall) {
+        font-size: 7vw;
     }
 }
 
@@ -388,9 +438,14 @@ h3 {
     @extend %hx;
     font-size: $font-size-h3;
     color: $secondary;
+    // width: 100%;
+    display: inline-block;
+    border-bottom: $border_normal solid $secondary;
+    margin-bottom: $marginVert / 3;
+    margin-top: $marginVert / 2;
 
     @include grid-media($Small) {
-        font-size: $font-size-h1 * 1.8;
+        font-size: 6vw;
     }
 }
 
@@ -398,6 +453,10 @@ h4 {
     @extend %hx;
     font-size: $font-size-h4;
     color: $secondary;
+
+    @include grid-media($Small) {
+        font-size: $font-size-base;
+    }
 }
 
 h5 {
@@ -435,9 +494,9 @@ ul {
 }
 
 a {
-    color: $primary;
+    color: $secondary;
     text-decoration: none;
-    transition: color $base-duration;
+    transition: all $base-duration;
     outline: none;
 
     // &:active,
@@ -462,6 +521,7 @@ svg {
     background-color: transparent;
     color: $secondary;
     transition: all 0.3s;
+    -webkit-appearance: none;
 
     &:focus {
         background-color: $fourth;
