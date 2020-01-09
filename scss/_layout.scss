@@ -128,7 +128,7 @@
 	}
 
 	@include grid-media($Small) {
-		//padding: 0 1rem;
+		z-index: 10;
 	}
 }
 
