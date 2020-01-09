@@ -1,25 +1,28 @@
 
-/*=============================================
+/*===============================
 =            Sidebar            =
-=============================================*/
+===============================*/
 
 .sidebar {
-    @include grid-column(2, $main-grid);
+    // @include grid-column(2, $main-grid);
+	width: calc(((100% / 12) * 2) + (#{$headerBlindWidth} / 2));
     min-height: 100vh;
 	display: block;
+	float: left;
     background-color: $primary;
 	position: relative;
-	z-index: 9990;
+	z-index: 9992;
 
 	&-static {
-		@include grid-column(2, $main-grid);
+		// @include grid-column(2, $main-grid);
+		width: calc(((100% / 12) * 2) + (#{$headerBlindWidth} / 2));
 		height: 100vh;
 		display: block;
 		background-color: $primary;
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 1;
+		z-index: 9991;
 	}
 
 	&-logo {
@@ -39,20 +42,13 @@
 			width: 100%;
 			height: auto;
 			display: block;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			position: relative;
+			// top: 50%;
+			// left: 50%;
+			// transform: translate(-50%, -50%);
 
-			g {
-
-				&#br_logo__blue {
-					fill: $primary;
-				}
-
-				&#br_logo__orange {
-					fill: $secondary;
-				}
+			path {
+				fill: $secondary;
 			}
 		}
 
@@ -87,18 +83,14 @@
 		padding: $marginVert / 2;
 		text-align: center;
 		margin-bottom: $marginVert / 2;
-		// border-top-left-radius: $border_normal * 2;
-		// border-bottom-left-radius: $border_normal * 2;
-		// border-top-right-radius: $border_normal * 2;
-		// border-bottom-right-radius: $border_normal * 2;
 
 		h5 {
 			margin-bottom: $marginVert / 4;
 		}
 
 		a {
-			width: calc(100% - (#{$border_normal} * 2) - ((#{$marginVert} / 3) * 2));
-			min-height: $marginVert / 2;
+			width: calc(100% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2));
+			height: $marginVert * 2;
 			display: block;
 			float: left;
 			position: relative;
@@ -108,25 +100,218 @@
 			color: $secondary;
 			margin-bottom: $marginVert / 2;
 			padding: ($marginVert / 5) ($marginVert / 3);
-			border: $border_normal solid $secondary;
-			// border-top-left-radius: $border_normal * 1.7;
-			// border-bottom-left-radius: $border_normal * 1.7;
-			// border-top-right-radius: $border_normal * 1.7;
-			// border-bottom-right-radius: $border_normal * 1.7;
+			border: $border_thin solid $secondary;
+			border-top-left-radius: $border_normal * 2;
+			border-bottom-left-radius: $border_normal * 2;
+			border-top-right-radius: $border_normal * 2;
+			border-bottom-right-radius: $border_normal * 2;
+			transition: all $base-duration;
 
 			&:last-child {
 				margin-bottom: 0;
 			}
 
-			p {
-				text-transform: uppercase;
-				// position: absolute;
-				// top: 50%;
-				// left: 50%;
+			span {
+				width: calc(100% - (#{$marginVert} * 2) - 1rem);
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				text-align: left;
+				// text-transform: uppercase;
+				padding: 0 0 0 1rem;
 				margin: 0;
 				line-height: 1.2;
-				// transform: translate(-50%, -50%);
 			}
+
+			picture {
+				width: $marginVert  * 2;
+				height: $marginVert  * 2;
+				display: block;
+				float: left;
+				position: relative;
+
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				// 	object-fit: cover;
+				// 	object-position: center;
+				}
+			}
+
+			&.sidebar__buttons--ellibrary {
+				height: $marginVert * 2;
+
+				& > span {
+					width: calc(100% - (#{$marginVert} * 2) - 1rem);
+					height: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					text-align: left;
+					// text-transform: uppercase;
+					padding: 0 0 0 1rem;
+					margin: 0;
+					line-height: 1.2;
+					// transform: translate(-50%, -50%);
+				}
+
+				& > picture {
+					width: $marginVert * 2;
+					height: $marginVert * 2;
+					display: block;
+					float: left;
+					position: relative;
+
+					img {
+						width: 100%;
+						height: auto;
+						display: block;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					// 	object-fit: cover;
+					// 	object-position: center;
+					}
+				}
+			}
+
+			&:hover {
+				background-color: $layoutBackground;
+				// color: $primary;
+				box-shadow: $border_normal $border_normal $border_normal $secondary;
+			}
+		}
+	}
+
+	&__banners {
+		width: calc(100% - #{$marginVert});
+		min-height: 10vh;
+		display: block;
+		position: relative;
+		float: left;
+		// left: $marginVert / 2;
+		// background-color: $sidebarButtonsBackground;
+		padding: 0 ($marginVert / 2);
+		text-align: center;
+		margin-bottom: $marginVert / 2;
+
+		a {
+			width: 100%;
+			min-height: $marginVert * 2;
+			display: block;
+			float: left;
+			position: relative;
+
+			picture {
+				width: 100%;
+				height: 100%;
+				display: block;
+
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+					object-fit: cover;
+					object-position: center;
+				}
+			}
+		}
+	}
+
+	@include grid-media($XXLarge) {
+
+		&__buttons {
+
+			a {
+				font-size: $font-size-large;
+				height: $marginVert * 3;
+
+				span {
+					width: calc(100% - (#{$marginVert} * 3) - 1rem);
+					padding: 0 0 0 1rem;
+				}
+
+				picture {
+					width: $marginVert * 3;
+					height: $marginVert * 3;
+				}
+
+				&.sidebar__buttons--ellibrary {
+					height: $marginVert * 3;
+
+					> span {
+						width: calc(100% - (#{$marginVert} * 3) - 1rem);
+						padding: 0 0 0 1rem;
+					}
+
+					> picture {
+						width: $marginVert * 3;
+						height: $marginVert * 3;
+					}
+				}
+			}
+		}
+	}
+
+	@include grid-media($XLarge) {
+
+		&__buttons {
+
+			a {
+				font-size: $font-size-base;
+				height: $marginVert * 2.5;
+
+				span {
+					width: calc(100% - (#{$marginVert} * 2.5) - 1rem);
+					padding: 0 0 0 1rem;
+				}
+
+				picture {
+					width: $marginVert * 2.5;
+					height: $marginVert * 2.5;
+				}
+
+				&.sidebar__buttons--ellibrary {
+					height: $marginVert * 2.5;
+
+					> span {
+						width: calc(100% - (#{$marginVert} * 2.5) - 1rem);
+						padding: 0 0 0 1rem;
+					}
+
+					> picture {
+						width: $marginVert * 2.5;
+						height: $marginVert * 2.5;
+					}
+				}
+			}
+		}
+	}
+
+	// @include grid-media($Large) {
+
+	// 	&__buttons {
+
+	// 		a {
+	// 			font-size: $font-size-small;
+	// 		}
+	// 	}
+	// }
+
+	@include grid-media($Small) {
+		display: none;
+		visibility: hidden;
+
+		&-static {
+			display: none;
+			visibility: hidden;
 		}
 	}
 }

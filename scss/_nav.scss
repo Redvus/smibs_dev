@@ -1,8 +1,343 @@
-/*=============================================
+/*==================================
 =            Nav Mobile            =
-=============================================*/
+==================================*/
 
 .nav {
+
+	&-main {
+		// height: 100%;
+		// position: relative;
+
+		li {
+			height: calc((#{$headerHeightDesktop} / 2) - (#{$marginVert} / 4));
+			// display: inline-block;
+			float: left;
+			padding: ($marginVert / 4) $navLinkPadding 0;
+			// transition: all $base-duration;
+
+			a {
+				height: 100%;
+				font: {
+					family: $heading-font;
+				};
+				color: $navLinkColor;
+			}
+
+			&:hover {
+				background-color: $navBackground;
+			}
+		}
+
+		&__children {
+
+			> a {
+
+				svg#navCross {
+					width: 0.5rem;
+					height: 0.5rem;
+					display: block;
+					float: left;
+					position: relative;
+					margin-right: $marginVert / 5;
+					transform: translateY(100%);
+
+					#navCrossVert {
+						fill: none;
+						stroke: $secondary;
+						stroke-width: 0.2rem;
+						transform-origin: 50% 50%;
+						transition: transform .2s;
+					}
+
+					#navCrossHorz {
+						fill: none;
+						stroke: $secondary;
+						stroke-width: 0.2rem;
+						transform-origin: 50% 50%;
+						transition: transform .2s;
+					}
+				}
+			}
+
+			ul.submenu {
+				min-width: 10rem;
+				position: absolute;
+				top: $headerHeightDesktop / 2;
+				margin-left: -$navLinkPadding;
+				background-color: $navBackground;
+				box-shadow: 0 0.1rem 0.1rem rgba($third, 0.2);
+				transition: all $base-duration;
+				display: none;
+				opacity: 0;
+
+				li {
+					width: 100%;
+					height: $headerHeightDesktop / 2;
+					float: none;
+					padding: 0;
+					position: relative;
+					cursor: pointer;
+					transition: all $base-duration;
+
+					a {
+						// width: calc(100% - (#{$navLinkPadding} * 2));
+						height: calc(100% - (#{$marginVert} / 2));
+						display: block;
+						position: relative;
+						padding: ($marginVert / 4) $navLinkPadding;
+					}
+
+					&.active {
+						background-color: $navBackgroundHover;
+
+						a {
+							color: $navColorHover;
+						}
+					}
+
+					&:hover {
+						background-color: $navBackgroundHover;
+
+						a {
+							color: $navColorHover;
+						}
+					}
+				}
+			}
+
+			&:hover {
+
+				ul.submenu {
+					display: block;
+					opacity: 1;
+				}
+
+				> a {
+
+					svg#navCross {
+
+						#navCrossVert {
+							transform: rotate(90deg);
+						}
+
+						#navCrossHorz {
+							transform: rotate(360deg);
+						}
+					}
+				}
+			}
+		}
+
+		&--mobile {
+
+			.sub-menu {
+				padding: 0 0 0.5rem;
+				display: none;
+				//background-color: lighten($primary, 3%);
+
+				li {
+
+
+					a {
+						font-size: $font-size-large + 0.2;
+						padding: 0.15rem 0;
+					}
+				}
+
+				@include grid-media($Small) {
+					padding: 0.5rem 0;
+
+					li {
+
+						a {
+							padding: 0.5rem 0;
+						}
+					}
+				}
+			}
+
+			li {
+
+
+				a {
+					width: 100%;
+					display: block;
+					line-height: 1rem;
+					padding: 0.5rem 0 0.5rem;
+					color: $primary;
+					font: {
+						family: $heading-font;
+						size: $font-size-large;
+					};
+					transition: 0.3s ease-in-out;
+
+					// .no-touch &:hover,
+					// &:hover {
+					//     //color: #FFF;
+					//     //background-color: lighten($primary, 5%);
+					//     //padding-left: 0.5rem;
+					// }
+
+					&.submenu-open {
+						// background-color: $colorCategoryTitle;
+						// border-top: 0.15rem solid $filterBorderColor;
+
+						.sub-menu {
+
+
+							li {
+
+								a {
+									font-size: $font-size-large - 0.2;
+								}
+
+								// a.active {
+								//     //color: $fourth;
+								// }
+							}
+						}
+					}
+				}
+
+				// &.current, &.active {
+
+
+				//     a {
+				//     	//color: $fourth;
+				//     }
+				// }
+			}
+
+			li {
+				height: calc((#{$headerHeightDesktop} / 2) - (#{$marginVert} / 4));
+				// display: inline-block;
+				// float: left;
+				padding: ($marginVert / 4) 0 0;
+				// transition: all $base-duration;
+
+				a {
+					height: 100%;
+					font: {
+						family: $heading-font;
+						size: $font-size-base;
+					};
+					color: $navLinkColor;
+				}
+
+				&:hover {
+					background-color: $navBackground;
+				}
+			}
+
+			&__children {
+
+				> a {
+
+					svg#navCross {
+						width: 0.5rem;
+						height: 0.5rem;
+						display: block;
+						float: left;
+						position: relative;
+						margin-right: $marginVert / 5;
+						transform: translateY(100%);
+
+						#navCrossVert {
+							fill: none;
+							stroke: $secondary;
+							stroke-width: 0.2rem;
+							transform-origin: 50% 50%;
+							transition: transform .2s;
+						}
+
+						#navCrossHorz {
+							fill: none;
+							stroke: $secondary;
+							stroke-width: 0.2rem;
+							transform-origin: 50% 50%;
+							transition: transform .2s;
+						}
+					}
+				}
+
+				ul.submenu {
+					min-width: 10rem;
+					position: absolute;
+					top: $headerHeightDesktop / 2;
+					margin-left: -$navLinkPadding;
+					background-color: $navBackground;
+					box-shadow: 0 0.1rem 0.1rem rgba($third, 0.2);
+					transition: all $base-duration;
+					display: none;
+					opacity: 0;
+
+					li {
+						width: 100%;
+						height: $headerHeightDesktop / 2;
+						float: none;
+						padding: 0;
+						position: relative;
+						cursor: pointer;
+						transition: all $base-duration;
+
+						a {
+							// width: calc(100% - (#{$navLinkPadding} * 2));
+							height: calc(100% - (#{$marginVert} / 2));
+							display: block;
+							position: relative;
+							padding: ($marginVert / 4) 0;
+						}
+
+						&.active {
+							background-color: $navBackgroundHover;
+
+							a {
+								color: $navColorHover;
+							}
+						}
+
+						&:hover {
+							background-color: $navBackgroundHover;
+
+							a {
+								color: $navColorHover;
+							}
+						}
+					}
+				}
+
+				&:hover {
+
+					ul.submenu {
+						display: block;
+						opacity: 1;
+					}
+
+					> a {
+
+						svg#navCross {
+
+							#navCrossVert {
+								transform: rotate(90deg);
+							}
+
+							#navCrossHorz {
+								transform: rotate(360deg);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		// @include grid-media($XXLarge) {
+
+		// 	li {
+		// 		height: calc(((#{$headerHeightDesktop} + 1rem) / 2) - (#{$marginVert} / 4));
+		// 		padding-top: ($marginVert / 3.5);
+		// 	}
+		// }
+	}
 
 	&-button {
 		width: $headerHeightMobile;
@@ -10,8 +345,7 @@
 		display: none;
 		visibility: hidden;
 		align-items: center;
-		justify-content: flex-start;
-		background-color: $fourth;
+		justify-content: center;
 		position: fixed;
 		top: 0;
 		right: 0;
@@ -21,7 +355,7 @@
 		&-line {
 			width: 50%;
 			height: $border_normal;
-			background-color: $primary;
+			background-color: $secondary;
 			position: absolute;
 			// transition: transform 0.3s;
 
@@ -104,6 +438,7 @@
 			}
 		}
 	}
+
 
 	@include grid-media($XXLarge) {
 
