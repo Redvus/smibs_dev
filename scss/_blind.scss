@@ -1,0 +1,1114 @@
+
+/*=============================
+=            Blind            =
+=============================*/
+
+.blind {
+
+	&-menu {
+		width: calc(((100% / 12) * 10) - (#{$headerBlindWidth} * 1.5));
+		height: $headerHeightDesktop;
+		position: fixed;
+		top: 0;
+		right: $headerBlindWidth;
+		background-color: $fourth;
+		z-index: -1; //9991
+		display: none;
+		visibility: hidden;
+		transform: translateY(-100%);
+
+		&__part {
+			width: calc((100% / 3) - #{$border_thin});
+			height: 100%;
+			display: block;
+			float: left;
+			border-right: $border_thin solid lighten($third, 60%);
+
+			&:last-child {
+				border: none;
+			}
+		}
+
+		&__title {
+			width: 100%;
+			height: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			float: left;
+			font: {
+				size: $font-size-base;
+				weight: 500;
+			};
+			color: $third;
+			text-align: center;
+		}
+
+		&__nav {
+			width: 100%;
+			height: 50%;
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			float: left;
+			line-height: 1;
+
+			ul {
+
+				li {
+					cursor: pointer;
+				}
+			}
+
+			&-size {
+				font-size: $font-size-base + 0.6;
+				margin-right: 0.5rem;
+				color: $third;
+				display: inline-block;
+
+				&#blindSizeSmall {
+					font-size: $font-size-base + 0.3;
+				}
+
+				&#blindSizeLarge {
+					font-size: $font-size-base + 1;
+					margin-right: 0;
+				}
+			}
+
+			&-color {
+				width: 1.8rem;
+				height: 1.8rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				float: left;
+				font-size: $font-size-base;
+
+				&#blindColorBW {
+					background-color: $blindBackgroundBW;
+					color: $blindColorBW;
+				}
+
+				&#blindColorWB {
+					background-color: $blindBackgroundWB;
+					color: $blindColorWB;
+				}
+
+				&#blindColorCW {
+					background-color: $blindBackgroundCW;
+					color: $blindColorCW;
+				}
+
+				&#blindColorYB {
+					background-color: $blindBackgroundYB;
+					color: $blindColorYB;
+				}
+			}
+
+			&-image {
+				width: 2.5rem;
+				height: 1.8rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				float: left;
+				font-size: $font-size-base;
+				// margin-right: 1rem;
+				padding: 0 1rem;
+
+				// &:last-child {
+				// 	margin-right: 0;
+				// }
+			}
+
+			&-kerning,
+			&-interval {
+				width: 2.5rem;
+				height: 1.8rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				float: left;
+				font-size: $font-size-large + 1;
+				// margin-right: 1rem;
+				// padding: 0 1rem;
+
+				// &:last-child {
+				// 	margin-right: 0;
+				// }
+			}
+		}
+	}
+
+	&-mask {
+		width: calc(100% - #{$headerBlindWidth});
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: rgba($secondary, 0.5);
+		z-index: 9993; //9993
+		visibility: hidden;
+		opacity: 0;
+		// transform: translateX(-100%);
+		cursor: url('images/close.cur') 40 40, auto;
+	}
+
+	/*----------  Blind Images Color B/W  ----------*/
+	&-bw {
+
+		&>.wrapper {
+			background-color: $blindBackgroundBW;
+			color: $blindColorBW;
+
+			&>.header {
+				background-color: $blindColorBW;
+
+				&>.header__nav {
+					background-color: lighten($blindBackgroundBW, 20%);
+
+					&>.header__bottom {
+						background-color: lighten($blindBackgroundBW, 20%);
+					}
+
+					&>.header__top {
+						background-color: lighten($blindBackgroundBW, 25%);
+
+						&>.header__social {
+
+							ul {
+
+								li {
+
+
+									i {
+										color: $blindColorBW;
+									}
+								}
+							}
+						}
+
+						&>input {
+							color: $blindBackgroundBW;
+
+							&::-webkit-input-placeholder {
+								/* WebKit browsers */
+								color: $blindBackgroundBW;
+							}
+
+							&::-moz-placeholder {
+								/* Mozilla Firefox 4 to 18 */
+								color: $blindBackgroundBW;
+								opacity: 1;
+							}
+
+							&::-moz-placeholder {
+								/* Mozilla Firefox 19+ */
+								color: $blindBackgroundBW;
+								opacity: 1;
+							}
+
+							&::-ms-input-placeholder {
+								/* Internet Explorer 10+ */
+								color: $blindBackgroundBW;
+							}
+						}
+					}
+				}
+
+				&>.header__blind {
+					background-color: $blindBackgroundBW;
+				}
+			}
+
+			&>.sidebar {
+				background-color: lighten($blindBackgroundBW, 20%);
+
+				&-static {
+					background-color: lighten($blindBackgroundBW, 20%);
+				}
+
+				&>.sidebar__buttons {
+					background-color: $blindBackgroundBW;
+
+					&>a {
+						background-color: lighten($blindBackgroundBW, 25%);
+						border-color: $blindColorBW;
+					}
+				}
+
+				&>.sidebar-logo {
+
+					svg {
+
+						path {
+							fill: $blindColorBW;
+						}
+					}
+				}
+			}
+
+			&>.main-content {
+
+				img {
+					filter: grayscale(1) contrast(1.2) brightness(1.1);
+				}
+
+				&>.main-content__hero {
+
+					&>.main-content__intro {
+						background-color: $blindColorBW;
+					}
+
+					&>.main-content__anniversary {
+						background-color: lighten($blindBackgroundBW, 20%);
+					}
+				}
+
+				&>.main-content__read,
+				&>.main-content__news,
+				&>.main-content__calendar,
+				&>.main-content__partners {
+
+					&>.main-content__news-block {
+
+						&>.main-content__subheader {
+							border-color: $blindColorBW;
+						}
+
+						ul {
+
+							&>.main-content__news-single {
+
+								&>.news-single__title {
+									background-color: lighten($blindBackgroundBW, 20%);
+								}
+
+								&>.news-single__text {
+									background-color: lighten($blindBackgroundBW, 30%);
+								}
+
+								&>.news-single__footer {
+
+									&>.news-single__date {
+										background-color: lighten($blindBackgroundBW, 25%);
+										color: $blindColorBW;
+									}
+
+									&>.news-single__link {
+										background-color: lighten($blindBackgroundBW, 20%);
+									}
+								}
+							}
+						}
+					}
+
+					&>.main-content__subheader {
+						border-color: $blindColorBW;
+					}
+				}
+
+				&>.main-content__calendar {
+
+					&>.main-content__calendar-month {
+
+						ul {
+
+							&>.main-content__calendar-date {
+								border-color: $blindColorBW;
+
+								&>.calendar-date__data {
+									border-color: $blindColorBW;
+
+									&>.calendar-date__data-num {
+										border-color: $blindColorBW;
+
+										span {
+											color: $blindColorBW;
+										}
+									}
+
+									&>.calendar-date__data-month {
+										border-color: $blindColorBW;
+
+										span {
+											color: $blindColorBW;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5 {
+				color: $blindColorBW;
+				border-color: $blindColorBW;
+			}
+		}
+
+		p {
+			color: $fourth;
+		}
+
+		&>.footer {
+			background-color: $blindBackgroundBW;
+
+			&>.footer__down-block {
+				background-color: lighten($blindBackgroundBW, 20%);
+			}
+
+			&>.footer__line {
+
+				&>span {
+					border-color: lighten($blindBackgroundBW, 20%);
+				}
+			}
+
+			>.footer__logo {
+
+				svg {
+
+					path {
+						fill: $blindColorBW;
+					}
+				}
+			}
+		}
+	}
+
+	/*----------  Blind Images Color W/B  ----------*/
+	&-wb {
+
+		&>.wrapper {
+			background-color: $blindBackgroundWB;
+			color: $blindColorWB;
+
+			&>.header {
+				background-color: lighten($blindColorWB, 50%);
+
+				&>.header__nav {
+					background-color: lighten($blindColorWB, 60%);
+
+					&>.header__bottom {
+						background-color: lighten($blindColorWB, 80%);
+					}
+
+					&>.header__top {
+						background-color: lighten($blindColorWB, 70%);
+
+						&>.header__social {
+
+							ul {
+
+								li {
+
+
+									i {
+										color: $blindColorWB;
+									}
+								}
+							}
+						}
+
+						&>input {
+							color: $blindColorWB;
+
+							&::-webkit-input-placeholder {
+								/* WebKit browsers */
+								color: $blindColorWB;
+							}
+
+							&::-moz-placeholder {
+								/* Mozilla Firefox 4 to 18 */
+								color: $blindColorWB;
+								opacity: 1;
+							}
+
+							&::-moz-placeholder {
+								/* Mozilla Firefox 19+ */
+								color: $blindColorWB;
+								opacity: 1;
+							}
+
+							&::-ms-input-placeholder {
+								/* Internet Explorer 10+ */
+								color: $blindColorWB;
+							}
+						}
+					}
+				}
+
+				&>.header__blind {
+					background-color: $blindColorWB;
+
+					p {
+						color: $blindBackgroundWB;
+					}
+				}
+			}
+
+			&>.sidebar {
+				background-color: lighten($blindColorWB, 80%);
+
+				&-static {
+					background-color: lighten($blindColorWB, 80%);
+				}
+
+				&>.sidebar__buttons {
+					background-color: lighten($blindColorWB, 90%);
+
+					&>a {
+						background-color: lighten($blindColorWB, 60%);
+						border-color: $blindColorWB;
+
+						p {
+							color: $blindBackgroundWB;
+						}
+
+						&:hover {
+							background-color: $blindColorWB;
+						}
+					}
+				}
+
+				&>.sidebar-logo {
+
+					svg {
+
+						path {
+							fill: $blindColorWB;
+						}
+					}
+				}
+			}
+
+			&>.main-content {
+
+				img {
+					filter: grayscale(1) contrast(1.2) brightness(1.1);
+				}
+
+				&>.main-content__read,
+				&>.main-content__news,
+				&>.main-content__calendar,
+				&>.main-content__partners {
+
+					&>.main-content__news-block {
+
+						&>.main-content__subheader {
+							border-color: $blindColorWB;
+						}
+
+						ul {
+
+							&>.main-content__news-single {
+
+								&>.news-single__title {
+									background-color: lighten($blindColorWB, 80%);
+								}
+
+								&>.news-single__text {
+									background-color: lighten($blindColorWB, 90%);
+								}
+
+								&>.news-single__footer {
+
+									&>.news-single__date {
+										background-color: lighten($blindColorWB, 80%);
+										color: $blindColorWB;
+									}
+
+									&>.news-single__link {
+										background-color: lighten($blindColorWB, 60%);
+
+										&:before {
+											color: $blindBackgroundWB;
+										}
+									}
+								}
+							}
+						}
+					}
+
+					&>.main-content__subheader {
+						border-color: $blindColorWB;
+					}
+				}
+
+				&>.main-content__calendar {
+
+					&>.main-content__calendar-month {
+
+						ul {
+
+							&>.main-content__calendar-date {
+								border-color: $blindColorWB;
+
+								&>.calendar-date__data {
+									border-color: $blindColorWB;
+
+									&>.calendar-date__data-num {
+										border-color: $blindColorWB;
+
+										span {
+											color: $blindColorWB;
+										}
+									}
+
+									&>.calendar-date__data-month {
+										border-color: $blindColorWB;
+
+										span {
+											color: $blindColorWB;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				&>.main-content__hero {
+
+					&>.main-content__anniversary {
+						background-color: $blindBackgroundWB;
+					}
+				}
+			}
+
+			h1, h2, h3, h4, h5 {
+				color: $blindColorWB;
+				border-color: $blindColorWB;
+			}
+		}
+
+		p {
+			color: $blindColorWB;
+		}
+
+		&>.footer {
+			background-color: lighten($blindColorWB, 70%);
+
+			&>.footer__down-block {
+				background-color: lighten($blindColorWB, 80%);
+			}
+
+			&>.footer__line {
+
+				&>span {
+					border-color: lighten($blindColorWB, 70%);
+				}
+			}
+
+			a {
+				color: $blindColorWB;
+
+				&:hover {
+					color: $blindBackgroundWB;
+				}
+			}
+
+			>.footer__logo {
+
+				svg {
+
+					path {
+						fill: $blindColorWB;
+					}
+				}
+			}
+		}
+	}
+
+	/*----------  Blind Images Color C/W  ----------*/
+	&-cw {
+
+		&>.wrapper {
+			background-color: $blindBackgroundCW;
+			color: $blindColorCW;
+
+			&>.header {
+				background-color: $blindColorCW;
+
+				&>.header__nav {
+					background-color: lighten($blindBackgroundCW, 20%);
+
+					&>.header__bottom {
+						background-color: lighten($blindBackgroundCW, 20%);
+					}
+
+					&>.header__top {
+						background-color: lighten($blindBackgroundCW, 25%);
+
+						&>.header__social {
+
+							ul {
+
+								li {
+
+
+									i {
+										color: $blindColorCW;
+									}
+								}
+							}
+						}
+
+						&>input {
+							color: $blindBackgroundCW;
+
+							&::-webkit-input-placeholder {
+								/* WebKit browsers */
+								color: $blindBackgroundCW;
+							}
+
+							&::-moz-placeholder {
+								/* Mozilla Firefox 4 to 18 */
+								color: $blindBackgroundCW;
+								opacity: 1;
+							}
+
+							&::-moz-placeholder {
+								/* Mozilla Firefox 19+ */
+								color: $blindBackgroundCW;
+								opacity: 1;
+							}
+
+							&::-ms-input-placeholder {
+								/* Internet Explorer 10+ */
+								color: $blindBackgroundCW;
+							}
+						}
+					}
+				}
+
+				&>.header__blind {
+					background-color: $blindBackgroundCW;
+				}
+			}
+
+			&>.sidebar {
+				background-color: lighten($blindBackgroundCW, 20%);
+
+				&-static {
+					background-color: lighten($blindBackgroundCW, 20%);
+				}
+
+				&>.sidebar__buttons {
+					background-color: $blindBackgroundCW;
+
+					&>a {
+						background-color: lighten($blindBackgroundCW, 25%);
+						border-color: $blindColorCW;
+					}
+				}
+
+				&>.sidebar-logo {
+
+					svg {
+
+						path {
+							fill: $blindColorCW;
+						}
+					}
+				}
+			}
+
+			&>.main-content {
+
+				img {
+					filter: grayscale(1) contrast(1.2) brightness(1.1);
+				}
+
+				&>.main-content__hero {
+
+					&>.main-content__intro {
+						background-color: $blindColorCW;
+					}
+
+					&>.main-content__anniversary {
+						background-color: lighten($blindBackgroundCW, 20%);
+					}
+				}
+
+				&>.main-content__read,
+				&>.main-content__news,
+				&>.main-content__calendar,
+				&>.main-content__partners {
+
+					&>.main-content__news-block {
+
+						&>.main-content__subheader {
+							border-color: $blindColorCW;
+						}
+
+						ul {
+
+							&>.main-content__news-single {
+
+								&>.news-single__title {
+									background-color: lighten($blindBackgroundCW, 20%);
+								}
+
+								&>.news-single__text {
+									background-color: lighten($blindBackgroundCW, 30%);
+								}
+
+								&>.news-single__footer {
+
+									&>.news-single__date {
+										background-color: lighten($blindBackgroundCW, 25%);
+										color: $blindColorCW;
+									}
+
+									&>.news-single__link {
+										background-color: lighten($blindBackgroundCW, 20%);
+									}
+								}
+							}
+						}
+					}
+
+					&>.main-content__subheader {
+						border-color: $blindColorCW;
+					}
+				}
+
+				&>.main-content__calendar {
+
+					&>.main-content__calendar-month {
+
+						ul {
+
+							&>.main-content__calendar-date {
+								border-color: $blindColorCW;
+
+								&>.calendar-date__data {
+									border-color: $blindColorCW;
+
+									&>.calendar-date__data-num {
+										border-color: $blindColorCW;
+
+										span {
+											color: $blindColorCW;
+										}
+									}
+
+									&>.calendar-date__data-month {
+										border-color: $blindColorCW;
+
+										span {
+											color: $blindColorCW;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5 {
+				color: $blindColorCW;
+				border-color: $blindColorCW;
+			}
+		}
+
+		p {
+			color: $fourth;
+		}
+
+		&>.footer {
+			background-color: $blindBackgroundCW;
+
+			&>.footer__down-block {
+				background-color: lighten($blindBackgroundCW, 20%);
+			}
+
+			&>.footer__line {
+
+				&>span {
+					border-color: lighten($blindBackgroundCW, 20%);
+				}
+			}
+
+			&>.footer__logo {
+
+				svg {
+
+					path {
+						fill: $blindColorCW;
+					}
+				}
+			}
+		}
+	}
+
+	/*----------  Blind Images Color Y/B  ----------*/
+	&-yb {
+
+		&>.wrapper {
+			background-color: $blindBackgroundYB;
+			color: $blindColorYB;
+
+			&>.header {
+				background-color: darken($blindBackgroundYB, 10%);
+
+				&>.header__nav {
+					background-color: darken($blindBackgroundYB, 10%);
+
+					&>.header__bottom {
+						background-color: darken($blindBackgroundYB, 10%);
+					}
+
+					&>.header__top {
+						background-color: darken($blindBackgroundYB, 15%);
+
+						&>.header__social {
+
+							ul {
+
+								li {
+
+
+									i {
+										color: $blindColorYB;
+									}
+								}
+							}
+						}
+
+						&>input {
+							color: $blindColorYB;
+
+							&::-webkit-input-placeholder {
+								/* WebKit browsers */
+								color: $blindColorYB;
+							}
+
+							&::-moz-placeholder {
+								/* Mozilla Firefox 4 to 18 */
+								color: $blindColorYB;
+								opacity: 1;
+							}
+
+							&::-moz-placeholder {
+								/* Mozilla Firefox 19+ */
+								color: $blindColorYB;
+								opacity: 1;
+							}
+
+							&::-ms-input-placeholder {
+								/* Internet Explorer 10+ */
+								color: $blindColorYB;
+							}
+						}
+					}
+				}
+
+				&>.header__blind {
+					background-color: $blindColorYB;
+
+					p, i {
+						color: $blindBackgroundYB;
+					}
+				}
+			}
+
+			&>.sidebar {
+				background-color: darken($blindBackgroundYB, 10%);
+
+				&-static {
+					background-color: darken($blindBackgroundYB, 10%);
+				}
+
+				&>.sidebar__buttons {
+					background-color: darken($blindBackgroundYB, 15%);
+
+					&>a {
+						background-color: darken($blindBackgroundYB, 20%);
+						border-color: $blindColorYB;
+
+						p {
+							color: $blindColorYB;
+						}
+
+						&:hover {
+							background-color: $blindBackgroundYB;
+						}
+					}
+				}
+
+				&>.sidebar-logo {
+
+					svg {
+
+						path {
+							fill: $blindColorYB;
+						}
+					}
+				}
+			}
+
+			&>.main-content {
+
+				img {
+					filter: grayscale(1) contrast(1.2) brightness(1.1);
+				}
+
+				&>.main-content__read,
+				&>.main-content__news,
+				&>.main-content__calendar,
+				&>.main-content__partners {
+
+					&>.main-content__news-block {
+
+						&>.main-content__subheader {
+							border-color: $blindColorYB;
+						}
+
+						ul {
+
+							&>.main-content__news-single {
+
+								&>.news-single__title {
+									background-color: lighten($blindColorYB, 80%);
+								}
+
+								&>.news-single__text {
+									background-color: lighten($blindColorYB, 90%);
+								}
+
+								&>.news-single__footer {
+
+									&>.news-single__date {
+										background-color: lighten($blindColorYB, 80%);
+										color: $blindColorYB;
+									}
+
+									&>.news-single__link {
+										background-color: lighten($blindColorYB, 60%);
+
+										&:before {
+											color: $blindBackgroundYB;
+										}
+									}
+								}
+							}
+						}
+					}
+
+					&>.main-content__subheader {
+						border-color: $blindColorYB;
+					}
+				}
+
+				&>.main-content__calendar {
+
+					&>.main-content__calendar-month {
+
+						ul {
+
+							&>.main-content__calendar-date {
+								border-color: $blindColorYB;
+
+								&>.calendar-date__data {
+									border-color: $blindColorYB;
+
+									&>.calendar-date__data-num {
+										border-color: $blindColorYB;
+
+										span {
+											color: $blindColorYB;
+										}
+									}
+
+									&>.calendar-date__data-month {
+										border-color: $blindColorYB;
+
+										span {
+											color: $blindColorYB;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				&>.main-content__hero {
+
+					&>.main-content__anniversary {
+						background-color: $blindBackgroundYB;
+					}
+				}
+			}
+
+			h1, h2, h3, h4, h5 {
+				color: $blindColorYB;
+				border-color: $blindColorYB;
+			}
+		}
+
+		p {
+			color: $blindColorYB;
+		}
+
+		&>.footer {
+			background-color: darken($blindBackgroundYB, 15%);
+
+			&>.footer__down-block {
+				background-color: darken($blindBackgroundYB, 20%);
+			}
+
+			&>.footer__line {
+
+				&>span {
+					border-color: lighten($blindColorYB, 70%);
+				}
+			}
+
+			a {
+				color: $blindColorYB;
+
+				&:hover {
+					color: $blindBackgroundYB;
+				}
+			}
+
+			&>.footer__logo {
+
+				svg {
+
+					path {
+						fill: $blindColorYB;
+					}
+				}
+			}
+		}
+	}
+}
+
+.is-hidden {
+	visibility: hidden;
+}
+
+.is-active {
+	font-weight: 500;
+	background-color: $third;
+	color: $fourth;
+}
+
+/*=====  End of Blind  ======*/
+
