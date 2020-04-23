@@ -139,7 +139,7 @@
 
 
 					a {
-						font-size: $font-size-large + 0.2;
+						font-size: calc(1rem + 1vmax);
 						padding: 0.15rem 0;
 					}
 				}
@@ -219,7 +219,7 @@
 					height: 100%;
 					font: {
 						family: $heading-font;
-						size: $font-size-base;
+						size: calc(1rem + 0.6vmin);
 					};
 					color: $navLinkColor;
 				}
@@ -445,6 +445,16 @@
 		&-mobile {
 			display: none;
 			visibility: hidden;
+		}
+
+		&-main {
+
+			li {
+
+				a {
+					font-size: $font-size-base;
+				}
+			}
 		}
 	}
 

@@ -49,8 +49,22 @@
 	var blindImageTurnOff = $('#blindImageTurnOff'),
 		blindImageTurnOn = $('#blindImageTurnOn'),
 		_body = $('body'),
-		_sidebar = $('.sidebar')
+		_sidebar = $('.sidebar'),
+		blindSizeSmall = $('#blindSizeSmall'),
+		blindSizeBase = $('#blindSizeBase'),
+		blindSizeLarge = $('#blindSizeLarge')
 	;
+
+	/*----------  Blind Font Size Small  ----------*/
+	blindSizeSmall.click(function () {
+		$('.main-content__inside').find('p').css({'fontSize': '0.8rem'});
+	});
+	blindSizeBase.click(function () {
+		$('.main-content__inside').find('p').css({'fontSize': '1rem'});
+	});
+	blindSizeLarge.click(function () {
+		$('.main-content__inside').find('p').css({'fontSize': '1.2rem'});
+	});
 
 	/*----------  Blind Images Off / On  ----------*/
 	blindImageTurnOff.click(function () {

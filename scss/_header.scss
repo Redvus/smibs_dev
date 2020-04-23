@@ -88,6 +88,16 @@
 			padding: 0 $marginVert;
 			font-size: $font-size-base;
 
+			&--mobile {
+				width: calc(100% - #{$headerHeightMobile});
+				height: 100%;
+				border-radius: 0;
+				// border: $border_normal solid $primary;
+				border: none;
+				padding: 0 ($marginVert / 2);
+				font-size: $font-size-base;
+			}
+
 			&:focus,
 			&:active {
 				outline: none;
@@ -105,13 +115,33 @@
 			right: 0;
 			border: none;
 			outline: none;
-			background-color: $primary;
+			background-color: $secondary;
 			cursor: pointer;
 			// transform: translateX(-100%);
 
 			i {
 				font-size: $font-size-base;
 				color: $fourth;
+			}
+
+			&--mobile {
+				width: $headerHeightMobile;
+				height: $headerHeightMobile;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: 0;
+				right: 0;
+				border: none;
+				outline: none;
+				background-color: $secondary;
+				cursor: pointer;
+
+				i {
+					font-size: $font-size-large;
+					color: $fourth;
+				}
 			}
 
 			&:hover {
@@ -138,7 +168,14 @@
 		&--mobile {
 			width: 100%;
 			height: $headerHeightMobile;
-			padding: 0 $paddingMobile;
+			display: block;
+			position: relative;
+			float: left;
+			background-color: $fourth;
+			@extend %input;
+			border: none;
+			margin-bottom: 0;
+			// padding: 0 $paddingMobile;
 		}
 	}
 
@@ -179,6 +216,14 @@
 					left: 50%;
 					top: 50%;
 					transform: translate(-50%, -50%);
+					transition: all $base-duration;
+				}
+
+				&:hover {
+
+					i.fa {
+						color: $sidebarButtonsBackground;
+					}
 				}
 			}
 		}

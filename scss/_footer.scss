@@ -16,14 +16,15 @@ $footer-grid: (columns: 1, gutter: 5rem);
 
     &__top-block {
         width: 100%;
-        height: 150px;
+        height: 10rem;
         display: flex;
         flex-direction: row;
         font-size: $font-size-small;
+        padding: ($marginVert / 2) 0;
     }
 
     &__part {
-        width: $headerPartWidth;
+        width: $footerPartWidth;
         height: 100%;
         display: flex;
         align-items: center;
@@ -35,11 +36,11 @@ $footer-grid: (columns: 1, gutter: 5rem);
         }
 
         a {
-            color: $fourth;
+            color: $primary;
             font-weight: normal;
 
             &:hover {
-                color: $secondary;
+                color: $fourth;
             }
         }
     }
@@ -60,15 +61,8 @@ $footer-grid: (columns: 1, gutter: 5rem);
             width: 80%;
             height: 80%;
 
-            g {
-
-                &#br_logo__blue {
-                    fill: $fourth;
-                }
-
-                &#br_logo__orange {
-                    fill: $secondary;
-                }
+            path {
+                fill: $fourth;
             }
         }
 
@@ -83,7 +77,12 @@ $footer-grid: (columns: 1, gutter: 5rem);
         flex-direction: column;
     }
 
+    &__contact {
+        width: calc(100% / 7);
+    }
+
     &__adress {
+        width: calc(100% / 5);
 
         p {
             margin: 0;
@@ -94,9 +93,9 @@ $footer-grid: (columns: 1, gutter: 5rem);
         }
     }
 
-    &__mail {
-        letter-spacing: 0.07rem;
-    }
+    // &__info {
+
+    // }
 
     &__social {
 
@@ -121,7 +120,10 @@ $footer-grid: (columns: 1, gutter: 5rem);
     }
 
     &__down-block {
-        @include grid-container;
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        flex-direction: row;
         // padding: 0;
         // bottom: 0;
         // border-top: 1px solid #fff;
@@ -134,56 +136,49 @@ $footer-grid: (columns: 1, gutter: 5rem);
     }
 
     &__copyright {
-        @include grid-column(4, $second-grid);
-        padding: 1rem 0;
+        width: calc((100% / 3) - (#{$marginVert} * 2));
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 $marginVert;
     }
 
-    &__info {
-        @include grid-column(4, $second-grid);
-        padding: 1rem 0;
+    &__counters {
+        width: calc(100% / 3);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-metrika {
+            width: 88px;
+            height: 31px;
+            display: inline-block;
+            background-color: $primary;
+            margin-right: $marginVert / 2;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
 
     &__author {
-        @include grid-column(4, $second-grid);
-        padding: 1rem 0;
+        width: calc((100% / 3) - (#{$marginVert} * 2));
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 $marginVert;
+        text-align: right;
 
-        // p {
-        //     font: {
-        //         //family: $font-family-base;
-        //         size: $font-size-small - 0.2;
-        //     }
+        a {
+            color: $primary;
 
-        //     ;
-        //     line-height: 1;
-        //     color: #fff;
-        //     display: inline-block;
-        //     margin: 0;
-        // }
-
-        // a {
-        //     margin-left: 10px;
-        //     margin-top: 7px;
-        //     display: inline-block;
-
-        //     svg {
-        //         width: auto;
-        //         height: 1.5rem;
-        //         fill: #fff;
-        //         transition: all 0.2s;
-
-        //         .redvus-logo__red {
-        //             fill: $secondary;
-        //         }
-
-        //         .redvus-logo__deepred {
-        //             fill: $fourth;
-        //         }
-
-        //         &:hover {
-        //             fill: $fourth;
-        //         }
-        //     }
-        // }
+            &:hover {
+                color: $fourth;
+            }
+        }
     }
 
     &__line {
@@ -196,7 +191,7 @@ $footer-grid: (columns: 1, gutter: 5rem);
         z-index: -1;
 
         >span {
-            width: $headerPartWidth;
+            width: $footerPartWidth;
             height: 100%;
             position: relative;
             float: left;
@@ -274,11 +269,13 @@ $footer-grid: (columns: 1, gutter: 5rem);
     }
 
     @include grid-media($Small) {
-
+        height: inherit;
+        z-index: 1;
 
         &__part {
-            width: 100%;
+            width: calc(100% - (#{$paddingMobile} * 2));
             border-bottom: 1px solid $footerLineColor;
+            padding: $paddingMobile;
 
             &:last-child {
                 border: none;
@@ -286,7 +283,9 @@ $footer-grid: (columns: 1, gutter: 5rem);
         }
 
         &__top-block {
+            height: inherit;
             flex-direction: column;
+            padding: 0;
         }
 
         &__logo,
@@ -316,6 +315,31 @@ $footer-grid: (columns: 1, gutter: 5rem);
                 display: block;
                 visibility: visible;
             }
+        }
+
+        &__info {
+            text-align: center;
+
+            a {
+                font-size: $font-size-small;
+            }
+        }
+
+        &__down-block {
+            height: inherit;
+            display: block;
+        }
+
+        &__copyright,
+        &__author {
+            width: calc(100% - (#{$paddingMobile} * 2));
+            padding: $paddingMobile;
+            text-align: center;
+        }
+
+        &__counters {
+            display: none;
+            visibility: hidden;
         }
 
         &--mobile {

@@ -76,25 +76,26 @@ $inputHeight: 2rem;
 
 $paddingMobile: 1rem;
 
-$gridderBackground: $primary;
-$gridderSVGColor: $secondary;
+$gridderBackground: $secondary;
+$gridderSVGColor: $primary;
 $gridderSVGColorHover: $fourth;
 $gridderSVGWidth: 1.5rem;
+
+/*----------  Front  ----------*/
+$frontAnniversaryBorder: 0;
+$frontReadImageWidth: 40%;
+$anniversaryPhotoWidth: 40%;
+$anniversaryTopHeight: 35%;
 
 /*----------  Page  ----------*/
 $pageImageHeightDesktop : 30vh;
 $pageImageHeightMobile : 20vh;
 
+/*----------  Forum  ----------*/
 $forumMargin: 12%;
 $forumPersonWidth: 8rem;
 $forumBackground: $primary;
-
 $forumPersonWidthMobile: 3rem;
-
-$frontAnniversaryBorder: $border_bold;
-
-$anniversaryPhotoWidth: 40%;
-$anniversaryTopHeight: 35%;
 
 /*----------  Form  ----------*/
 $formInputColor: $secondary;
@@ -205,18 +206,19 @@ $third-grid: (
     gutter: 1rem
 );
 
-$imac27 : 2560px;
+$imac27 : 2559px;
 $imac21 : 1920px;
 $cinema : 1680px;
+$laptop : 1440px;
 $pad_g : 1024px;
 $pad_v : 768px;
 $mobile : 570px;
 
-$XXLarge: (media: "(min-width: #{$imac21})");
-$XLarge: (media: "(min-width: #{$cinema}) and (max-width: #{$imac21})");
-$Large: (media: "(min-width: #{$pad_g}) and (max-width: #{$cinema})");
-$Medium: (media: "(max-width: #{$pad_g})");
-$XSmall: (media: "(max-width: #{$pad_v})");
+$XXLarge: (media: "(min-width: #{$imac27})");
+$XLarge: (media: "(min-width: #{$cinema}) and (max-width: #{$imac27})");
+$Large: (media: "(min-width: #{$laptop}) and (max-width: #{$cinema})");
+$Medium: (media: "(min-width: #{$pad_g}) and (max-width: #{$laptop})");
+$XSmall: (media: "(max-width: #{$pad_g})");
 $Small: (media: "(max-width: #{$mobile})");
 $HSmall: (media: "(max-height: 420px)");
 $Landscape: (media: "(max-width: #{$pad_v}) and (orientation: landscape)");
@@ -282,10 +284,10 @@ $font-size-base:    $body-font-size !default;
 $font-size-large:   $font-size-base + 0.2 !default; // ~18px
 $font-size-small:   $font-size-base - 0.2 !default; // ~14px
 
-$font-size-h1:      modular-scale(4) !default; // ~3rem 48px modular-scale(6)
-$font-size-h2:      modular-scale(3) !default; // ~2.5rem 40px modular-scale(5)
-$font-size-h3:      modular-scale(2) !default; // ~2rem 33px
-$font-size-h4:      modular-scale(1) !default; // ~1.728rem 28px
+$font-size-h1:      calc(1rem + 1.1vmax) !default; // ~3rem 48px modular-scale(6)
+$font-size-h2:      calc(1rem + 0.9vmax) !default; // ~2.5rem 40px modular-scale(5)
+$font-size-h3:      calc(1rem + 0.7vmax) !default; // ~2rem 33px
+$font-size-h4:      calc(1rem + 0.15vmax) !default; // ~1.728rem 28px
 $font-size-h5:      modular-scale(0) !default; // ~1.44rem 23px
 $font-size-h6:      modular-scale(-1) !default; // ~1.2rem 19px
 
@@ -301,6 +303,10 @@ $font-size-h6:      modular-scale(-1) !default; // ~1.2rem 19px
 
     i {
         font-size: $font-size-small;
+    }
+
+    strong {
+        color: $secondary;
     }
 
     @include grid-media($XXLarge) {
@@ -323,9 +329,9 @@ $font-size-h6:      modular-scale(-1) !default; // ~1.2rem 19px
         font-size: $font-size-base;
     }
 
-    @include grid-media($XSmall) {
-        font-size: $font-size-large;
-    }
+    // @include grid-media($XSmall) {
+    //     font-size: $font-size-large;
+    // }
 
     @include grid-media($Small) {
         font-size: $font-size-large;
@@ -415,9 +421,9 @@ h1 {
     border-bottom: $border_bold solid $secondary;
     margin-bottom: -$border_thin;
 
-    @include grid-media($XSmall) {
-        font-size: 8vw;
-    }
+    // @include grid-media($XSmall) {
+    //     font-size: 8vw;
+    // }
 }
 
 h2 {
@@ -429,9 +435,9 @@ h2 {
     border-bottom: $border_bold solid $secondary;
     margin-bottom: -$border_thin;
 
-    @include grid-media($XSmall) {
-        font-size: 7vw;
-    }
+    // @include grid-media($XSmall) {
+    //     font-size: 7vw;
+    // }
 }
 
 h3 {
@@ -440,13 +446,13 @@ h3 {
     color: $secondary;
     // width: 100%;
     display: inline-block;
-    border-bottom: $border_normal solid $secondary;
+    // border-bottom: $border_normal solid $secondary;
     margin-bottom: $marginVert / 3;
     margin-top: $marginVert / 2;
 
-    @include grid-media($Small) {
-        font-size: 6vw;
-    }
+    // @include grid-media($Small) {
+    //     font-size: 6vw;
+    // }
 }
 
 h4 {
@@ -454,8 +460,16 @@ h4 {
     font-size: $font-size-h4;
     color: $secondary;
 
-    @include grid-media($Small) {
-        font-size: $font-size-base;
+    @include grid-media($XXLarge) {
+        font-size: calc(#{$font-size-base} + 0.4vmax);
+    }
+
+    @include grid-media($XLarge) {
+        font-size: $font-size-h4;
+    }
+
+    @include grid-media($XLarge) {
+        font-size: $font-size-h4;
     }
 }
 
@@ -485,12 +499,12 @@ ul {
     padding: 0;
     list-style: none;
 
-    li {
+    // li {
 
-        @include grid-media($Medium) {
-            font-size: $font-size-large;
-        }
-    }
+    //     @include grid-media($Medium) {
+    //         font-size: $font-size-large;
+    //     }
+    // }
 }
 
 a {

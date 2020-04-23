@@ -18,6 +18,7 @@
 			display: block;
 			object-fit: cover;
 			object-position: center;
+			transition: transform $base-duration;
 		}
     }
 
@@ -37,9 +38,10 @@
 
 	&__text {
 		width: calc(100% - 2rem);
-		min-height: 7vw;
+		min-height: calc(7vw - 2rem);
 		display: block;
-		padding: 0 1rem;
+		float: left;
+		padding: 1rem;
 		font-size: $font-size-small;
 	}
 
@@ -63,6 +65,7 @@
 		float: left;
 		text-align: center;
 		position: relative;
+		// cursor: url('images/linkExpand.png') 18 18, pointer;
 
 		&:before {
 			content:"\f054";
@@ -72,22 +75,22 @@
 			position: absolute;
 			left: 50%;
 			top: 50%;
-			transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%) rotate(90deg);
 			transition: transform $base-duration;
 		}
 
-		&:hover {
+		// &:hover {
 
-			&:before {
-				transform: translate(0, -50%);
-			}
-		}
+		// 	&:before {
+		// 		transform: translate(0, -50%);
+		// 	}
+		// }
 	}
 
 	@include grid-media($XXLarge) {
 
 		&__text {
-			height: 6vw;
+			height: calc(6vw - 2rem);
 			font-size: $font-size-large;
 		}
 	}
@@ -95,7 +98,7 @@
 	@include grid-media($XLarge) {
 
 		&__text {
-			height: 6vw;
+			height: calc(6vw - 2rem);
 			font-size: $font-size-base;
 		}
 	}
@@ -103,7 +106,7 @@
 	@include grid-media($Large) {
 
 		&__text {
-			height: 6vw;
+			height: calc(6vw - 2rem);
 			font-size: $font-size-small;
 		}
 	}
@@ -111,7 +114,7 @@
 	@include grid-media($Medium) {
 
 		&__text {
-			height: 7vw;
+			height: calc(9vw - 2rem);
 			font-size: $font-size-small;
 		}
 	}
@@ -140,21 +143,23 @@
 
 
 	&__date {
-		width: $marginVert * 3;
+		// width: $marginVert * 3;
 		height: $marginVert;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: absolute;
 		top: 0;
-		right: calc(((100% / 4) * 1) / 2);
+		left: 0;
+		// right: calc(((100% / 4) * 1) / 2);
 		background-color: $gridderBackground;
-		color: $secondary;
+		color: $gridderSVGColor;
 		// top: $marginVert;
 		// right: 0;
 		// background-color: $secondary;
 		// color: $primary;
 		font-size: $font-size-small;
+		padding: 0 ($marginVert / 2);
 	}
 
 	&__title {
@@ -168,7 +173,7 @@
 		// }
 
 		h3 {
-			border: 0;
+			// border: 0;
 			margin-bottom: 0;
 		}
 	}
@@ -199,6 +204,11 @@
 
 		p {
 			margin-top: 0;
+		}
+
+		ul {
+			list-style: disc;
+			padding-left: 1rem;
 		}
 	}
 
@@ -333,6 +343,7 @@
 		position: relative;
 		transition: 0.5s $ease-out-expo;
 		cursor: pointer;
+		// cursor: url('images/linkExpand.png') 18 18, pointer;
 
 		.inside-description {
 			$numPerRowText: 4;
@@ -377,6 +388,17 @@
 				transition: transform 0.4s $ease-out-expo;
 				transition-delay: 0.3s;
 				transform: translateY(100%);
+			}
+		}
+
+		&:hover {
+
+
+			picture {
+
+				img {
+					transform: scale(1.05);
+				}
 			}
 		}
 	}
@@ -489,11 +511,11 @@
 		}
 
 		.gridder-nav.background--dark {
-			border-color: $secondary;
+			border-color: $primary;
 		}
 
 		.gridder-nav.background--complex {
-			border-color: lighten($secondary, 50%);
+			border-color: lighten($primary, 50%);
 		}
 
 		.gridder-close {
@@ -554,9 +576,10 @@
 		// animation-fill-mode: both;
 		// display: flex;
 		// flex-direction: row;
-		padding: $marginVert 0 0;
-		border-top: $border_normal solid $primary;
-		border-bottom: $border_normal solid $primary;
+		padding: $marginVert 0 ($marginVert / 2);
+		border-top: $border_normal solid $secondary;
+		border-bottom: $border_normal solid $secondary;
+		overflow: auto;
 	}
 
 	// @include grid-media($XLarge) {
