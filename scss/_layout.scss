@@ -116,6 +116,114 @@
 		}
 	}
 
+	&__background {
+		width: calc(((100% / 12) * 10) - (#{$headerBlindWidth} / 2));
+		height: calc(100vh - #{$headerHeightDesktop});
+		display: block;
+		position: fixed;
+		top: $headerHeightDesktop;
+		right: 0;
+		overflow: hidden;
+		z-index: -1;
+
+		#may9_1 {
+			width: 50%;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			opacity: 0.3;
+			z-index: 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+
+		#may9_2 {
+			width: 50%;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0.3;
+			z-index: 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+
+		#may9_3 {
+			width: 60%;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 33vh;
+			left: 0;
+			opacity: 0.3;
+			z-index: 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+
+		#may9_4 {
+			width: auto;
+			height: 67vh;
+			display: block;
+			position: absolute;
+			top: 33vh;
+			left: 60%;
+			opacity: 0.3;
+			z-index: 0;
+			// transform: translateX(51%);
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+
+		#may9_5 {
+			width: 110%;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 22vh;
+			left: 0;
+			opacity: 0.5;
+			z-index: 1;
+			transform: translateX(-5%);
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+
 	@include grid-media($Medium) {
 		//padding: 6rem 1rem 0;
 	}

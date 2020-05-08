@@ -6,10 +6,9 @@
 .main-content {
 	// @include grid-column(10, $main-grid);
 	width: calc(((100% / 12) * 10) - (#{$headerBlindWidth} / 2));
-	min-height: 100vh;
+	min-height: calc(100vh - #{$headerHeightDesktop} - (#{$marginVert} * 2));
 	display: block;
 	float: left;
-	min-height: calc(100vh - #{$headerHeightDesktop} - (#{$marginVert} * 2));
 	padding-top: $headerHeightDesktop + ($marginVert * 2);
 
 	&__container {
