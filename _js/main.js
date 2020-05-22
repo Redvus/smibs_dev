@@ -4,59 +4,59 @@
     =            Cookie 18+            =
     ==================================*/
 
-        var permissionBlock = $('#permissionBlock'),
-            permissionText = $('.permission-cookie__text'),
-            permissionButton = $('#permissionButton')
-        ;
+    var permissionBlock = $('#permissionBlock'),
+        permissionText = $('.permission-cookie__text'),
+        permissionButton = $('#permissionButton')
+    ;
 
-        function cookieFront() {
+    function cookieFront() {
 
-            if (!$.cookie('was')) {
-                permissionBlock.removeClass('permission-hidden');
+        if (!$.cookie('was')) {
+            permissionBlock.removeClass('permission-hidden');
+        }
+
+        $.cookie('was', true, {
+            expires: 7, //Cookie удаляется после закрытия браузера
+            path: '/'
+        });
+    }
+
+    function permissionFront() {
+
+        permissionButton.on('click', function () {
+
+            function permissioEnter() {
+
+                var tl = new TimelineMax();
+
+                tl
+                    .to(permissionButton, 0.6, {
+                        autoAlpha: 0,
+                        ease: Power2.easeInOut
+                    }, "-=0.4")
+                    .to(permissionText, 0.6, {
+                        autoAlpha: 0,
+                        ease: Power2.easeInOut
+                    }, "-=0.4")
+                    .to(permissionBlock, 0.8, {
+                        y: '50%',
+                        autoAlpha: 0,
+                        ease: Power2.easeInOut
+                    }, "-=0.2")
+                    .set(permissionBlock, {
+                        className: "+=permission-hidden"
+                    })
+                ;
+
             }
 
-            $.cookie('was', true, {
-                expires: 7, //Cookie удаляется после закрытия браузера
-                path: '/'
-            });
-        }
+            permissioEnter();
 
-        function permissionFront() {
+        });
 
-            permissionButton.on('click', function () {
-
-                function permissioEnter() {
-
-                    var tl = new TimelineMax();
-
-                    tl
-                        .to(permissionButton, 0.6, {
-                            autoAlpha: 0,
-                            ease: Power2.easeInOut
-                        }, "-=0.4")
-                        .to(permissionText, 0.6, {
-                            autoAlpha: 0,
-                            ease: Power2.easeInOut
-                        }, "-=0.4")
-                        .to(permissionBlock, 0.8, {
-                            y: '50%',
-                            autoAlpha: 0,
-                            ease: Power2.easeInOut
-                        }, "-=0.2")
-                        .set(permissionBlock, {
-                            className: "+=permission-hidden"
-                        })
-                    ;
-
-                }
-
-                permissioEnter();
-
-            });
-
-        }
-        permissionFront();
-        cookieFront();
+    }
+    permissionFront();
+    cookieFront();
 
     /*=====  End of Cookie 18+  ======*/
 

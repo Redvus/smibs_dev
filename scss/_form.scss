@@ -21,7 +21,7 @@
 			// margin-top: 0.15rem;
 			// border-top-left-radius: $inputHeight / 2;
 			// border-bottom-left-radius: $inputHeight / 2;
-			z-index: -1;
+			z-index: 1;
 
 			&:before {
 				font-family: 'fontawesome';
@@ -69,6 +69,18 @@
 			float: left;
 			margin-top: -0.2rem;
 			color: rgba($secondary, 0.7);
+		}
+
+		&-file {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__file {
+		width: 100%;
+
+		span {
+			font-size: $font-size-small;
 		}
 	}
 
@@ -142,10 +154,15 @@
 	}
 
 	select {
-		width: calc(100% + 0.3rem - (#{$border_thin} * 2));
-		height: calc(#{$inputHeight} - 0.3rem);
-		padding: 0;
+		width: 100%;
+		height: $inputHeight + ($border_thin *2);
+		padding: 0 1rem 0 ($inputHeight + 1.5rem);
 		@extend %input;
+		// color: rgba($formInputColor, 0.7);
+
+		// option {
+		// 	color: $formInputColor;
+		// }
 	}
 
 	textarea {

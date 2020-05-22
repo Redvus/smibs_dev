@@ -1,0 +1,189 @@
+/*=============================================
+=                   Login                   =
+=============================================*/
+
+.login {
+
+	&-block {
+		width: 50%;
+		height: $marginVert * 2;
+		display: block;
+		float: left;
+		position: absolute;
+		right: 0;
+		transform: translateY(-50%);
+
+		&__top {
+			width: 100%;
+			height: $marginVert;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			position: relative;
+			top: 0;
+		}
+
+		&__bottom {
+			width: 100%;
+			height: $marginVert;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			position: relative;
+
+			li.login-block__part {
+				// width: calc(100% / 5);
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				text-align: right;
+				margin-right: $marginVert / 2;
+
+				a {
+					font-size: $font-size-small;
+				}
+
+				i {
+					color: $sidebarButtonsBackground;
+					margin-right: $marginVert / 4;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&:hover {
+
+					i {
+						color: $secondary;
+					}
+				}
+			}
+
+			li.login-block__part {
+
+				&--3 {
+					width: calc(100% / 3);
+				}
+
+				&--2 {
+					width: calc(100% / 2);
+				}
+			}
+		}
+
+		&__name {
+			width: calc(100% - (#{$marginVert} / 2) - (#{$marginVert} * 3));
+			height: $marginVert;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			padding-right: $marginVert / 2;
+
+			& > span {
+				font-size: $font-size-large;
+				font-family: $heading-font;
+				color: $secondary;
+			}
+		}
+
+		&__form {
+			width: 100%;
+			height: $marginVert;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+
+			&-input {
+				width: calc(80% - ((#{$marginVert} * 3) * 2) - ((#{$marginVert} / 4) * 3) - (#{$border_thin} * 2));
+				height: calc(#{$marginVert} - #{$border_thin});
+				display: inline-block;
+				border: $border_thin solid $secondary;
+				border-bottom: none;
+				padding: 0 $marginVert / 4;
+				margin-right: $marginVert / 4;
+				background-color: transparent;
+				color: $formInputColor;
+				transition: all 0.3s;
+
+				&:focus,
+				&:visited {
+					color: $formInputColor;
+					background-color: $fourth;
+					border-color: $formInputColor;
+				}
+
+				&:focus::-webkit-input-placeholder {
+					opacity: 0;
+					transition: all 0.3s;
+				}
+
+				&:focus::-moz-placeholder {
+					opacity: 0;
+					transition: all 0.3s;
+				}
+
+				&:focus::-ms-input-placeholder {
+					opacity: 0;
+					transition: all 0.3s;
+				}
+
+				&::-webkit-input-placeholder {
+					/* WebKit browsers */
+					color: rgba($formInputColor, 0.7);
+				}
+
+				&::-moz-placeholder {
+					/* Mozilla Firefox 4 to 18 */
+					color: rgba($formInputColor, 0.7);
+					opacity: 1;
+				}
+
+				&::-moz-placeholder {
+					/* Mozilla Firefox 19+ */
+					color: rgba($formInputColor, 0.7);
+					opacity: 1;
+				}
+
+				&::-ms-input-placeholder {
+					/* Internet Explorer 10+ */
+					color: rgba($formInputColor, 0.7);
+				}
+			}
+		}
+
+		&__button {
+			width: $marginVert * 3;
+			height: $marginVert;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $secondary;
+
+			a {
+				color: $primary;
+			}
+
+			&:hover {
+
+				a {
+					color: $fourth;
+				}
+			}
+
+			&--enter {
+				outline: none;
+				border: none;
+				color: $primary;
+				font-size: $font-size-base;
+				cursor: pointer;
+
+				&:hover {
+					color: $fourth;
+				}
+			}
+		}
+	}
+}
+
+/*============  End of Login  =============*/

@@ -182,10 +182,55 @@
 				}
 			}
 
+			&.sidebar__buttons--link {
+				width: 100%;
+				height: inherit;
+				display: block;
+				float: left;
+				position: relative;
+				text-align: center;
+				font-size: $font-size-small;
+				color: $secondary;
+				margin-bottom: 0;
+				padding: 0;
+				background-color: transparent;
+				border: none;
+				transition: all $base-duration;
+
+				h5 {
+					margin: 0;
+					padding: 0;
+				}
+
+				&:after {
+					content:"\f061";
+					font-family: 'fontawesome';
+					font-size: $font-size-h2;
+					color: $secondary;
+					position: absolute;
+					margin-left: $marginVert / 3;
+					top: 0;
+					right: 0;
+					transform: translate(-25%, -35%);
+					transition: all $base-duration;
+					opacity: 0;
+				}
+			}
+
 			&:hover {
 				background-color: $layoutBackground;
 				// color: $primary;
 				box-shadow: $border_normal $border_normal $border_normal $secondary;
+
+				&.sidebar__buttons--link {
+					background-color: transparent;
+					box-shadow: none;
+
+					&:after {
+						transform: translate(0, -35%);
+						opacity: 1;
+					}
+				}
 			}
 		}
 	}
