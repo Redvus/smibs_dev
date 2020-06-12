@@ -676,7 +676,7 @@
 
 		&-bottom {
 			width: calc(100% - (#{$marginVert} * 2));
-			height: calc(100% - #{$anniversaryTopHeight} - ((#{$anniversaryTopHeight} / 4) * 3) - (#{$marginVert} * 2));
+			height: calc(100% - #{$anniversaryTopHeight} - ((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -686,6 +686,8 @@
 
 			p {
 				margin: 0;
+				font-size: $font-size-base - 0.1;
+				line-height: 1.3;
 			}
 		}
 
@@ -716,9 +718,18 @@
 			}
 
 			&-middle {
+				height: calc(((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
 
 				h3 {
 					font-size: $font-size-h1 + 1;
+				}
+			}
+
+			&-bottom {
+				height: calc(100% - (#{$anniversaryTopHeight} + 5%) - ((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
+
+				p {
+					font-size: $font-size-large;
 				}
 			}
 		}
@@ -750,9 +761,18 @@
 			}
 
 			&-middle {
+				height: calc(((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
 
 				h3 {
 					font-size: $font-size-h1 + 1;
+				}
+			}
+
+			&-bottom {
+				height: calc(100% - (#{$anniversaryTopHeight} + 5%) - ((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
+
+				p {
+					font-size: $font-size-base;
 				}
 			}
 		}
@@ -784,9 +804,19 @@
 			}
 
 			&-middle {
+				height: calc(((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
 
 				h3 {
 					font-size: $font-size-h1;
+				}
+			}
+
+			&-bottom {
+				height: calc(100% - #{$anniversaryTopHeight} - ((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
+
+				p {
+					font-size: $font-size-base - 0.1;
+					line-height: 1.3;
 				}
 			}
 		}

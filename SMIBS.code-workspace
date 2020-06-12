@@ -9,5 +9,8 @@
 		{
 			"path": "/Volumes/Shelter/!Sites/R_SMIBS/assets/"
 		}
-	]
+	],
+	"settings": {
+		"cSpell.enabled": true
+	}
 }

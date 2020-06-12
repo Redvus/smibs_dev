@@ -146,7 +146,8 @@
 
 	input[type='text'],
 	input[type='email'],
-	input[type='number'] {
+	input[type='number'],
+	input[type='password'] {
 		width: calc(100% - 1rem - (#{$inputHeight} + 1.5rem) - (#{$border_thin} * 2));
 		height: $inputHeight;
 		padding: 0 1rem 0 ($inputHeight + 1.5rem);
@@ -309,6 +310,28 @@
 				opacity: .5;
 			}
 		}
+	}
+
+	&--message {
+		.error {
+			// width: 100%;
+			// text-align: center;
+			border-color: #d9534f !important;
+		}
+
+		span.error {
+			display: block;
+			// color: $third !important;
+			margin-top: -1rem;
+			margin-bottom: 1rem;
+			padding: 0.5rem 1rem;
+			color: $fourth;
+			// font-size: 0;
+			font-size: $font-size-small;
+			background-color: #d9534f;
+		}
+
+
 	}
 
 	@keyframes wiggle {

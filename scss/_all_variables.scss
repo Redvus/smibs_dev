@@ -520,6 +520,10 @@ a {
     // }
 }
 
+i {
+    transition: all $base-duration;
+}
+
 svg {
     transition: all 0.3s;
 }

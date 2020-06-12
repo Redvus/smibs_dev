@@ -41,6 +41,7 @@
 
 				a {
 					font-size: $font-size-small;
+					color: $sidebarButtonsBackground;
 				}
 
 				i {
@@ -52,22 +53,19 @@
 					margin-right: 0;
 				}
 
-				&:hover {
-
-					i {
-						color: $secondary;
-					}
-				}
-			}
-
-			li.login-block__part {
-
 				&--3 {
 					width: calc(100% / 3);
 				}
 
 				&--2 {
 					width: calc(100% / 2);
+				}
+
+				&:hover {
+
+					a, i {
+						color: $secondary;
+					}
 				}
 			}
 		}
@@ -95,7 +93,7 @@
 			justify-content: flex-end;
 
 			&-input {
-				width: calc(80% - ((#{$marginVert} * 3) * 2) - ((#{$marginVert} / 4) * 3) - (#{$border_thin} * 2));
+				width: calc(25rem - ((#{$marginVert} * 3) * 2) - ((#{$marginVert} / 4) * 3) - (#{$border_thin} * 2));
 				height: calc(#{$marginVert} - #{$border_thin});
 				display: inline-block;
 				border: $border_thin solid $secondary;
@@ -180,6 +178,75 @@
 
 				&:hover {
 					color: $fourth;
+				}
+			}
+		}
+
+		@include grid-media($Small) {
+			width: 100%;
+			height: inherit;
+			min-height: $marginVert * 2;
+			position: relative;
+			transform: translateY(0);
+
+			&__top {
+				height: inherit;
+				min-height: $marginVert;
+				// flex-direction: column;
+			}
+
+			&__form {
+				height: inherit;
+				min-height: $marginVert;
+				flex-direction: column;
+
+				&-input {
+					width: calc(100% - ((#{$marginVert} / 4) * 2) - (#{$border_thin} * 2));
+					border-bottom: $border_thin solid $secondary;
+					margin-right: 0;
+					margin-bottom: $marginVert / 4;
+				}
+			}
+
+			&__button {
+				margin-bottom: $marginVert / 4;
+			}
+		}
+	}
+
+	&-account {
+		width: calc(100% - (#{$marginVert} * 2));
+		min-height: 3rem;
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		padding: $marginVert;
+		background-color: lighten($layoutBackground, 5%);
+
+		&__part {
+			width: calc(50% - #{$marginVert});
+			height: 100%;
+			display: block;
+			float: left;
+			position: relative;
+			padding-right: $marginVert;
+
+			li {
+				list-style: none;
+				font-family: $heading-font-light;
+				font-size: $font-size-h4;
+				color: $secondary;
+			}
+
+			span {
+				color: $sidebarButtonsBackground;
+			}
+
+			p {
+				color: $secondary;
+
+				a {
+					color: $sidebarButtonsBackground;
 				}
 			}
 		}
