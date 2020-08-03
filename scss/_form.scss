@@ -74,6 +74,15 @@
 		&-file {
 			margin-bottom: 1rem;
 		}
+
+		&-file {
+			display: block;
+			position: relative;
+			margin: 0.5rem 0 1rem;
+			padding: 0.5rem 0;
+			border-top: $border_thin solid $formInputColor;
+			border-bottom: $border_thin solid $formInputColor;
+		}
 	}
 
 	&__file {
@@ -152,6 +161,13 @@
 		height: $inputHeight;
 		padding: 0 1rem 0 ($inputHeight + 1.5rem);
 		@extend %input;
+	}
+
+	input[type='file'] {
+		width: 100%;
+		// height: $inputHeight;
+		// padding: 0 1rem 0 ($inputHeight + 1.5rem);
+		// @extend %input;
 	}
 
 	select {
