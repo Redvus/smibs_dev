@@ -21,7 +21,7 @@
 	&__breadcrumbs {
 		// @include grid-column(12, $second-grid);
 		width: calc(100% - #{$headerBlindWidth});
-		height: 2rem;
+		min-height: 2rem;
 		display: block;
 		margin: 0 auto;
 		position: relative;
@@ -138,7 +138,12 @@
 			iframe {
 				width: 100%;
 				// min-height: 30vh;
+				height: calc(60vw/1.78);
 				display: block;
+			}
+
+			&--single {
+				margin-bottom: $marginVert;
 			}
 		}
 
@@ -217,6 +222,19 @@
 			#elCatalogue {
 				width: 100%;
 				min-height: 100vh;
+			}
+		}
+
+		&-text {
+
+			img {
+				float: left;
+				margin-left: 1rem;
+				margin-bottom: 1rem;
+
+				&:first-child {
+					margin-left: 0;
+				}
 			}
 		}
 	}
@@ -625,13 +643,15 @@
 				width: 100%;
 				height: 60%;
 				display: flex;
-				align-items: flex-end;
+				align-items: center;
 				justify-content: center;
 				font: {
 					family: $heading-font;
 					size: $font-size-h1;
 				};
+				line-height: 1;
 				color: $secondary;
+				text-align: center;
 			}
 
 			p {
@@ -664,7 +684,7 @@
 			h3 {
 				text-align: center;
 				font: {
-					size: $font-size-h1;
+					size: $font-size-h3;
 				};
 				margin-bottom: 0;
 				padding-bottom: 0.5rem;
@@ -672,7 +692,10 @@
 			}
 
 			p {
+				font-size: $font-size-small;
 				margin: 0;
+				text-align: center;
+				line-height: 1;
 
 				i, em {
 					font-size: $font-size-small;
@@ -727,7 +750,7 @@
 				height: calc(((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
 
 				h3 {
-					font-size: $font-size-h1 + 1;
+					font-size: $font-size-h3 + 1;
 				}
 			}
 
@@ -770,7 +793,7 @@
 				height: calc(((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
 
 				h3 {
-					font-size: $font-size-h1 + 1;
+					font-size: $font-size-h3;
 				}
 			}
 
@@ -813,7 +836,7 @@
 				height: calc(((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
 
 				h3 {
-					font-size: $font-size-h1;
+					font-size: $font-size-h3;
 				}
 			}
 
@@ -832,7 +855,7 @@
 			&-middle {
 
 				h3 {
-					font-size: $font-size-h2;
+					font-size: $font-size-h3;
 					// padding-bottom: 0;
 				}
 
@@ -1886,6 +1909,24 @@
 				min-height: 3rem;
 				margin-right: 0;
 				margin-bottom: $paddingMobile;
+
+				iframe {
+					height: calc(100vw/1.78);
+				}
+			}
+
+			&-video--single {
+				width: 100%;
+				height: inherit;
+				min-height: 3rem;
+				margin-right: 0;
+				margin-bottom: $paddingMobile;
+
+				iframe {
+					width: 100%;
+					// min-height: 30vh;
+					display: block;
+				}
 			}
 
 			&-hero {
@@ -1906,16 +1947,24 @@
 				width: 100%;
 				margin-left: 0;
 			}
+
+			&-text {
+
+				img {
+					margin-left: 0;
+				}
+			}
 		}
 
 		&__breadcrumbs {
 			width: 100%;
 			min-height: 3rem;
-			height: initial;
+			// height: initial;
 			position: relative;
 			// margin-bottom: $paddingMobile;
 			right: inherit;
 			transform: translateY(0);
+			margin-bottom: 2rem;
 
 			ul {
 				line-height: 1;

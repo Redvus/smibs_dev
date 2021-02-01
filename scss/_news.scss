@@ -210,6 +210,114 @@
 			list-style: disc;
 			padding-left: 1rem;
 		}
+
+		&-video {
+			width: 60%;
+			height: inherit;
+			display: none;
+			float: left;
+			margin-right: $marginVert;
+			margin-bottom: $marginVert;
+			overflow: hidden;
+
+			iframe {
+				width: 100%;
+				// min-height: 30vh;
+				// height: calc(60vw/1.78);
+				display: block;
+			}
+		}
+
+		&-description {
+			width: 100%;
+			min-height: 20vh;
+			display: block;
+			float: left;
+		}
+
+		&-photo {
+
+			picture {
+				// width: 70%;
+				width: calc(50% - 1rem);
+				height: auto;
+				display: block;
+				float: left;
+				position: relative;
+				margin-bottom: 1rem;
+				margin-right: 1rem;
+
+				&:nth-child(2n) {
+					width: 50%;
+					margin-right: 0;
+				}
+
+				&:nth-child(2n+1) {
+					clear: left;
+				}
+
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+					object-position: center;
+					object-fit: cover;
+				}
+			}
+		}
+
+		&--video {
+
+			.news-content__text-video {
+				visibility: visible;
+				display: block;
+			}
+
+			.news-content__text-description {
+				width: 100%;
+				min-height: 20vh;
+				display: block;
+				float: left;
+			}
+
+			.news-content__text-photo {
+				visibility: hidden;
+				display: none;
+			}
+		}
+
+		&--photo {
+
+			.news-content__text-video {
+				visibility: hidden;
+				display: none;
+			}
+
+			.news-content__text-description {
+				width: 100%;
+				min-height: 20vh;
+				display: block;
+				float: left;
+			}
+
+			.news-content__text-photo {
+				visibility: visible;
+				display: block;
+			}
+		}
+
+		&--description {
+
+			.news-content__text-video {
+				visibility: hidden;
+				display: none;
+			}
+
+			.news-content__text-photo {
+				visibility: hidden;
+				display: none;
+			}
+		}
 	}
 
 	@include grid-media($Medium) {
@@ -219,12 +327,30 @@
 		}
 	}
 
-	// @include grid-media($Small) {
+	@include grid-media($Small) {
 
-	// 	&__image {
+		&__text {
 
-	// 	}
-	// }
+			&-video {
+				width: 100%;
+
+				iframe {
+					height: auto;
+				}
+			}
+
+			&-photo {
+
+				picture {
+					width: 100%;
+
+					&:nth-child(2n) {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }
 
 .calendar-content {
