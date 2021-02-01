@@ -222,6 +222,26 @@
 				object-position: center;
 			}
 		}
+
+		#ny2021 {
+			width: 110%;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0.5;
+			z-index: 1;
+			// transform: translateX(-5%);
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
 	}
 
 	@include grid-media($Medium) {
@@ -237,6 +257,11 @@
 
 	@include grid-media($Small) {
 		z-index: 10;
+
+		&__background {
+			width: 100%;
+			top: $headerHeightMobile * 2;
+		}
 	}
 }
 
