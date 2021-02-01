@@ -28,16 +28,15 @@
 			height: $marginVert;
 			display: flex;
 			flex-direction: row;
-			justify-content: flex-start;
+			justify-content: flex-end;
 			position: relative;
 
 			li.login-block__part {
 				// width: calc(100% / 5);
-				// display: flex;
-				// align-items: center;
-				// justify-content: flex-end;
-				display: inline-block;
-				text-align: left;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				text-align: right;
 				margin-right: $marginVert / 2;
 
 				a {
