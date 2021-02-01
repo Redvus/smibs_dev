@@ -26,14 +26,10 @@
 		&__bottom {
 			width: 100%;
 			height: $marginVert;
-			// display: flex;
-			// flex-direction: row;
-			// justify-content: flex-start;
-			display: block;
-			float: left;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
 			position: relative;
-			margin-top: 2rem !important;
-			padding: 0 !important;
 
 			li.login-block__part {
 				// width: calc(100% / 5);
@@ -162,7 +158,6 @@
 			align-items: center;
 			justify-content: center;
 			background-color: $secondary;
-			margin-top: 1rem;
 
 			a {
 				color: $primary;
