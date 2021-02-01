@@ -26,17 +26,22 @@
 		&__bottom {
 			width: 100%;
 			height: $marginVert;
-			display: flex;
-			flex-direction: row;
-			justify-content: flex-end;
+			// display: flex;
+			// flex-direction: row;
+			// justify-content: flex-start;
+			display: block;
+			float: left;
 			position: relative;
+			margin-top: 2rem !important;
+			padding: 0 !important;
 
 			li.login-block__part {
 				// width: calc(100% / 5);
-				display: flex;
-				align-items: center;
-				justify-content: flex-end;
-				text-align: right;
+				// display: flex;
+				// align-items: center;
+				// justify-content: flex-end;
+				display: inline-block;
+				text-align: left;
 				margin-right: $marginVert / 2;
 
 				a {
@@ -157,6 +162,7 @@
 			align-items: center;
 			justify-content: center;
 			background-color: $secondary;
+			margin-top: 1rem;
 
 			a {
 				color: $primary;
