@@ -221,7 +221,7 @@
 
 				&:hover {
 
-					i {
+					i.fa {
 						color: $sidebarButtonsBackground;
 					}
 				}
@@ -232,6 +232,45 @@
 			width: calc(100% - #{$headerHeightMobile} - (#{$headerHeightMobile} * 1.5));
 			height: $headerHeightMobile;
 			padding-left: 0;
+			text-align: center;
+		}
+	}
+
+	&__cart {
+		width: 50%;
+		height: 100%;
+		display: block;
+		position: relative;
+		float: right;
+
+		a {
+			width: 100%;
+			height: 100%;
+			display: block;
+
+			span {
+				height: calc(100% - (#{$marginVert} / 3));
+				display: block;
+				float: left;
+				font: {
+					family: $heading-font;
+					size: $font-size-small;
+				};
+				color: $secondary;
+				padding-top: $marginVert / 3;
+				// position: absolute;
+				// top: 50%;
+				// left: 50%;
+				// transform: translate(0, -50%);
+			}
+		}
+
+		&-title {
+			width: 70%;
+		}
+
+		&-count {
+			width: 30%;
 			text-align: center;
 		}
 	}

@@ -1,10 +1,12 @@
 ;(function() {
 
+    // $('.wrapper').jScrollPane();
+
     /*==================================
     =            Cookie 18+            =
     ==================================*/
 
-    var permissionBlock = $('#permissionBlock'),
+    const permissionBlock = $('#permissionBlock'),
         permissionText = $('.permission-cookie__text'),
         permissionButton = $('#permissionButton')
     ;
@@ -61,7 +63,7 @@
     /*=====  End of Cookie 18+  ======*/
 
     function scrollSmooth() {
-        var Scrollbar = window.Scrollbar;
+        const Scrollbar = window.Scrollbar;
         Scrollbar.init(document.getElementById('main-scrollbar'), {
             speed: 1
         });
@@ -235,10 +237,10 @@
     =                   Sliders                   =
     =============================================*/
 
-    var $slides = $("#sliderIntro .slide");
-    var $nav = $("#tm-nav a");
-    var currentSlide = 0;
-    var slideTo = 'left';
+    const $slides = $("#sliderIntro .slide");
+    const $nav = $("#tm-nav a");
+    const currentSlide = 0;
+    const slideTo = 'left';
 
     function introSlider() {
         TweenLite.set($slides.filter(":gt(0)"), { left: "100%", zIndex: 1, autoAlpha: 1 });
@@ -306,6 +308,47 @@
         });
     }
 
+    function introTNS() {
+        const slider = tns({
+            container: '#sliderIntro',
+            slideBy: 'page',
+            autoplay: true,
+            autoplayTimeout: 8000,
+            touch: true,
+            mouseDrag: true,
+            controlsText: ['',''],
+            autoplayButton: false
+        });
+    }
+
+    function galleryAnniversaryTNS() {
+        const sliderAnny = tns({
+            container: '#galleryAnniversary',
+            slideBy: 'page',
+            autoplay: false,
+            lazyload: true,
+            touch: true,
+            mouseDrag: true,
+            controlsText: ['',''],
+            arrowKeys: true,
+            nav: false,
+            animateIn: 'tns-fadeIn'
+        });
+    }
+
+    function introTNSMobile() {
+        const slider = tns({
+            container: '#sliderIntro',
+            slideBy: 'page',
+            autoplay: true,
+            autoplayTimeout: 8000,
+            touch: true,
+            controlsText: ['',''],
+            autoplayButton: false,
+            nav: false
+        });
+    }
+
     /*============  End of Sliders  =============*/
 
     function initPage() {
@@ -316,8 +359,10 @@
         calendarGridder();
         readGridder();
         // introSlider();
-        introBXSlider();
+        // introBXSlider();
         galleryAnniversary();
+        introTNS();
+        // galleryAnniversaryTNS();
     }
 
     function initPageMobile() {
@@ -325,6 +370,7 @@
         anounceGridderMobile();
         readGridderMobile();
         calendarGridderMobile();
+        introTNSMobile();
     }
 
     if (document.body.clientWidth > 768 || screen.width > 768) {

@@ -1,0 +1,152 @@
+/*==================================================
+=                   Read Content                   =
+==================================================*/
+
+.read-content {
+	padding: 0 ($marginVert / 2);
+
+	&__image {
+		width: $frontReadImageWidth;
+		min-height: 100%;
+		display: block;
+		float: left;
+		position: relative;
+		overflow: hidden;
+		margin-top: ($marginVert / 2);
+		// margin-bottom: $marginVert;
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+			object-position: center;
+			transition: all $base-duration;
+		}
+
+		&--link {
+
+
+			&:hover {
+
+				img {
+					transform: scale(1.05);
+				}
+			}
+		}
+	}
+
+	&__content {
+		width: calc(100% - #{$frontReadImageWidth} - #{$marginVert});
+		height: 100%;
+		display: inline-block;
+		// float: left;
+		position: relative;
+		margin-left: $marginVert;
+		margin-top: ($marginVert / 2);
+		margin-bottom: ($marginVert / 2);
+		animation: fadeDown 0.5s ease-in-out;
+	}
+
+	&__title {
+
+		h3 {
+			margin-top: 0;
+		}
+	}
+
+	&__text {
+		width: 100%;
+		height: 100%;
+		display: block;
+		float: left;
+
+		p {
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__introtext {
+		width: calc(100% - #{$marginVert});
+		display: block;
+		background-color: $primary;
+		padding: ($marginVert / 3) ($marginVert / 2);
+		font-size: $font-size-small;
+		margin-bottom: $marginVert / 2;
+	}
+
+	&__link {
+		display: block;
+		position: relative;
+		float: left;
+		padding: ($marginVert / 3) ($marginVert / 2);
+		background-color: $primary;
+		text-align: center;
+		border: $border_thin solid $secondary;
+		border-top-left-radius: $border_normal * 2;
+		border-bottom-left-radius: $border_normal * 2;
+		border-top-right-radius: $border_normal * 2;
+		border-bottom-right-radius: $border_normal * 2;
+		transition: all $base-duration;
+
+		&:hover {
+			background-color: $layoutBackground;
+			// color: $primary;
+			box-shadow: $border_normal $border_normal $border_normal $secondary;
+		}
+	}
+
+	@include grid-media($XXLarge) {
+
+		&__image {
+			width: $frontReadImageWidth - 15;
+		}
+
+		&__content {
+			width: calc(100% - (#{$frontReadImageWidth} - 15%) - #{$marginVert});
+		}
+
+		&__introtext {
+			font-size: $font-size-base;
+		}
+	}
+
+	@include grid-media($XLarge) {
+
+		&__image {
+			width: $frontReadImageWidth - 10;
+		}
+
+		&__content {
+			width: calc(100% - (#{$frontReadImageWidth} - 10%) - #{$marginVert});
+		}
+	}
+
+	@include grid-media($Large) {
+
+		&__image {
+			width: $frontReadImageWidth;
+		}
+
+		&__content {
+			width: calc(100% - #{$frontReadImageWidth} - #{$marginVert});
+		}
+	}
+
+	@include grid-media($Small) {
+
+		&__image {
+			width: 100%;
+		}
+
+		&__content {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+}
+
+/*============  End of Read Content  =============*/

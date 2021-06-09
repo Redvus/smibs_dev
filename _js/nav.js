@@ -59,24 +59,24 @@
 	;
 
 	/*----------  Blind Font Size Small  ----------*/
-	blindSizeSmall.click(function () {
+	blindSizeSmall.on('click', function () {
 		$('.main-content__inside').find('p').css({'fontSize': '0.8rem'});
 	});
-	blindSizeBase.click(function () {
+	blindSizeBase.on('click', function () {
 		$('.main-content__inside').find('p').css({'fontSize': '1rem'});
 	});
-	blindSizeLarge.click(function () {
+	blindSizeLarge.on('click', function () {
 		$('.main-content__inside').find('p').css({'fontSize': '1.2rem'});
 	});
 
 	/*----------  Blind Images Off / On  ----------*/
-	blindImageTurnOff.click(function () {
+	blindImageTurnOff.on('click', function () {
 		$('.main-content').find('img').addClass('is-hidden');
 		$(this).addClass('is-active');
 		blindImageTurnOn.removeClass('is-active');
 	});
 
-	blindImageTurnOn.click(function () {
+	blindImageTurnOn.on('click', function () {
 		$('.main-content').find('img').removeClass('is-hidden');
 		$(this).addClass('is-active');
 		blindImageTurnOff.removeClass('is-active');
@@ -87,8 +87,8 @@
 		blindSidebarLogo = $('.sidebar-logo img')
 	;
 
-	// blindColorBW.toggle(function () {
-	// 	// _body.toggleClass('blind-bw');
+	blindColorBW.on('click', function () {
+		_body.toggleClass('blind-bw');
 	// 	// // _sidebar.toggleClass('sidebar-bw');
 	// 	// // blindSidebarLogo.toggle(function () {
 	// 	// // 	$(this).attr('src','/assets/images/smibs_logo.png');
@@ -96,13 +96,13 @@
 	// 	// // 	$(this).attr('src','/assets/images/smibs_logo_w.png');
 	// 	// // });
 
-	// 	// if (blindStyleBW.attr("disabled", "true")) {
-	// 	// 	_body.removeClass('blind-wb');
-	// 	// } else if (_body.hasClass('blind-cw')) {
-	// 	// 	_body.removeClass('blind-cw');
-	// 	// } else if (_body.hasClass('blind-yb')) {
-	// 	// 	_body.removeClass('blind-yb');
-	// 	// }
+		if (blindStyleBW.attr("disabled", "true")) {
+			_body.removeClass('blind-wb');
+		} else if (_body.hasClass('blind-cw')) {
+			_body.removeClass('blind-cw');
+		} else if (_body.hasClass('blind-yb')) {
+			_body.removeClass('blind-yb');
+		}
 
 	// 	blindStyleBW.removeAttr("disabled");
 	// 	blindStyleMain.attr("disabled", "disabled");
@@ -113,12 +113,12 @@
 	// }, function () {
 	// 	blindStyleBW.attr("disabled", "disabled");
 	// 	blindStyleMain.removeAttr("disabled");
-	// });
+	});
 
 	/*----------  Blind Images Color W/B  ----------*/
 	const blindColorWB = $('#blindColorWB');
 
-	blindColorWB.click(function () {
+	blindColorWB.on('click', function () {
 		_body.toggleClass('blind-wb');
 
 		if (_body.hasClass('blind-bw')) {
@@ -133,7 +133,7 @@
 	/*----------  Blind Images Color C/W  ----------*/
 	const blindColorCW = $('#blindColorCW');
 
-	blindColorCW.click(function () {
+	blindColorCW.on('click', function () {
 		_body.toggleClass('blind-cw');
 
 		if (_body.hasClass('blind-bw')) {
@@ -148,7 +148,7 @@
 	/*----------  Blind Images Color G/Y  ----------*/
 	const blindColorYB = $('#blindColorYB');
 
-	blindColorYB.click(function () {
+	blindColorYB.on('click', function () {
 		_body.toggleClass('blind-yb');
 
 		if (_body.hasClass('blind-bw')) {

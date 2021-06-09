@@ -2,8 +2,8 @@
 =            Variable            =
 ================================*/
 
-$primary  : #feba8b;  // Оранжевый
-$secondary: #830800;  // Бордовый
+$primary  : #000;  // Оранжевый
+$secondary: #fff;  // Бордовый
 $third    : #000;     // Темный var1: #1E252B
 $fourth   : #fff;
 $five     : #7a97ab;
@@ -258,8 +258,7 @@ $XPortrait: (media: "(min-width: #{$pad_v}) and (max-width: calc(#{$pad_g} - 1px
 // }
 
 @import url('https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic');
-// @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://use.fontawesome.com/releases/v5.10.0/css/all.css');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&subset=cyrillic');
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -519,14 +518,6 @@ a {
     // &:hover {
     //     //color: $action-color;
     // }
-}
-
-button {
-    transition: all $base-duration;
-}
-
-i {
-    transition: all $base-duration;
 }
 
 svg {

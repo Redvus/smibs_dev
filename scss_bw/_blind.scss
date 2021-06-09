@@ -270,18 +270,6 @@
 					}
 				}
 
-				&>.sidebar__banners {
-
-					a {
-
-						picture {
-							img {
-								filter: grayscale(1);
-							}
-						}
-					}
-				}
-
 				&>.sidebar-logo {
 
 					svg {
@@ -338,7 +326,7 @@
 
 								.main-content__anniversary-birthday {
 
-									span, p {
+									span {
 										color: $blindColorBW;
 									}
 								}
@@ -458,6 +446,8 @@
 					}
 				}
 			}
+
+
 
 			h1,
 			h2,
@@ -588,31 +578,12 @@
 						background-color: lighten($blindColorWB, 60%);
 						border-color: $blindColorWB;
 
-						span {
+						p {
 							color: $blindBackgroundWB;
-						}
-
-						picture {
-
-							img {
-								filter: grayscale(1);
-							}
 						}
 
 						&:hover {
 							background-color: $blindColorWB;
-						}
-					}
-				}
-
-				&>.sidebar__banners {
-
-					a {
-
-						picture {
-							img {
-								filter: grayscale(1);
-							}
 						}
 					}
 				}
@@ -625,10 +596,6 @@
 							fill: $blindColorWB;
 						}
 					}
-
-					img {
-						filter: grayscale(1);
-					}
 				}
 			}
 
@@ -638,142 +605,92 @@
 					filter: grayscale(1) contrast(1.2) brightness(1.1);
 				}
 
-				&>.main-content__inside {
+				&>.main-content__read,
+				&>.main-content__news,
+				&>.main-content__calendar,
+				&>.main-content__partners {
 
-					&>.main-content__hero {
-
-						&>.main-content__anniversary {
-							background-color: $blindBackgroundWB;
-
-							&>.bx-viewport {
-
-								.main-content__anniversary {
-									background-color: lighten($blindBackgroundWB, 20%);
-								}
-							}
-
-							.main-content__anniversary-slide {
-
-								.main-content__anniversary-middle {
-									background-color: $blindBackgroundWB;
-								}
-
-								.main-content__anniversary-data {
-									background-color: $blindBackgroundWB;
-
-
-									span {
-										color: $blindColorWB;
-									}
-								}
-
-								.main-content__anniversary-birthday {
-
-									span, p {
-										color: $blindColorWB;
-									}
-								}
-							}
-						}
-					}
-
-					&>.main-content__calendar {
-
-						&>.main-content__calendar-month {
-
-							ul {
-
-								&>.main-content__calendar-date {
-									border-color: $blindColorWB;
-
-
-									&>.calendar-date__data {
-										border-color: $blindColorWB;
-
-										&>.calendar-date__data-num {
-											border-color: $blindColorWB;
-											background-color: $blindBackgroundWB;
-
-											span {
-												color: $blindColorWB;
-											}
-										}
-									}
-
-									&>.calendar-date__events {
-										border-color: $blindColorWB;
-
-										&>.calendar-date__data-month {
-											border-color: $blindColorWB;
-											background-color: lighten($blindBackgroundWB, 20%);
-
-											span {
-												color: $blindColorWB;
-											}
-										}
-
-										&>.calendar-date__data-week {
-											background-color: $blindBackgroundWB;
-
-											span {
-												color: $blindColorWB;
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-
-					&>.main-content__read,
-					&>.main-content__news,
-					&>.main-content__calendar,
-					&>.main-content__partners {
-
-						&>.main-content__news-block {
-
-							&>.main-content__subheader {
-								border-color: $blindColorWB;
-							}
-
-							ul {
-
-								&>.main-content__news-single {
-
-									&>.news-single__title {
-										background-color: lighten($blindColorWB, 80%);
-									}
-
-									&>.news-single__text {
-										background-color: lighten($blindColorWB, 90%);
-									}
-
-									&>.news-single__footer {
-
-										&>.news-single__date {
-											background-color: lighten($blindColorWB, 80%);
-											color: $blindColorWB;
-										}
-
-										&>.news-single__link {
-											background-color: lighten($blindColorWB, 60%);
-
-											&:before {
-												color: $blindBackgroundWB;
-											}
-										}
-									}
-								}
-							}
-						}
+					&>.main-content__news-block {
 
 						&>.main-content__subheader {
 							border-color: $blindColorWB;
 						}
+
+						ul {
+
+							&>.main-content__news-single {
+
+								&>.news-single__title {
+									background-color: lighten($blindColorWB, 80%);
+								}
+
+								&>.news-single__text {
+									background-color: lighten($blindColorWB, 90%);
+								}
+
+								&>.news-single__footer {
+
+									&>.news-single__date {
+										background-color: lighten($blindColorWB, 80%);
+										color: $blindColorWB;
+									}
+
+									&>.news-single__link {
+										background-color: lighten($blindColorWB, 60%);
+
+										&:before {
+											color: $blindBackgroundWB;
+										}
+									}
+								}
+							}
+						}
+					}
+
+					&>.main-content__subheader {
+						border-color: $blindColorWB;
 					}
 				}
 
+				&>.main-content__calendar {
 
+					&>.main-content__calendar-month {
+
+						ul {
+
+							&>.main-content__calendar-date {
+								border-color: $blindColorWB;
+
+								&>.calendar-date__data {
+									border-color: $blindColorWB;
+
+									&>.calendar-date__data-num {
+										border-color: $blindColorWB;
+
+										span {
+											color: $blindColorWB;
+										}
+									}
+
+									&>.calendar-date__data-month {
+										border-color: $blindColorWB;
+
+										span {
+											color: $blindColorWB;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				&>.main-content__hero {
+
+					&>.main-content__anniversary {
+						background-color: $blindBackgroundWB;
+					}
+				}
 			}
 
 			h1, h2, h3, h4, h5 {

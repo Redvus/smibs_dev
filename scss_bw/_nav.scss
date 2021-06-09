@@ -439,6 +439,7 @@
 		}
 	}
 
+
 	@include grid-media($XXLarge) {
 
 		&-mobile {
@@ -449,7 +450,6 @@
 		&-main {
 
 			li {
-
 
 				a {
 					font-size: $font-size-base;
@@ -479,17 +479,6 @@
 		&-mobile {
 			display: none;
 			visibility: hidden;
-		}
-
-		&-main {
-
-			li {
-				padding: 0.5rem 0.3rem 0;
-
-				a {
-					font-size: $font-size-base - 0.1;
-				}
-			}
 		}
 	}
 

@@ -4,13 +4,22 @@
 			"path": "/Volumes/Vault19/!sites_dev/smibs_dev"
 		},
 		{
-			"path": "/Volumes/Shelter/!Sites/R_SMIBS/assets/components/_elements"
-		},
-		{
-			"path": "/Volumes/Shelter/!Sites/R_SMIBS/assets/"
+			"name": "SSH FS - SMIBS_redvus",
+			"uri": "ssh://smibs/"
 		}
 	],
 	"settings": {
-		"cSpell.enabled": true
+		"cSpell.enabled": true,
+		"sshfs.configs": [
+			{
+				"name": "smibs",
+				"label": "SMIBS_redvus",
+				"host": "176.57.215.214",
+				"root": "/var/www/smibs.redvus.ru/root/assets/components/_elements",
+				"password": "puMP(kin)jui47CE",
+				"username": "redvus",
+				"sftpSudo": true
+			}
+		]
 	}
 }
