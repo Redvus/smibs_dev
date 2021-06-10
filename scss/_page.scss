@@ -1352,6 +1352,18 @@
 							height: auto;
 							object-fit: cover;
 							object-position: center;
+							transition: transform 0.3s opacity 0.3;
+						}
+
+						i {
+							display: block;
+							font-size: $font-size-large + 0.7;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-40%, -50%) scale(0.8);
+							opacity: 0;
+							transition: transform 0.3s opacity 0.3;
 						}
 					}
 				}
@@ -1380,6 +1392,16 @@
 
 						.main-content__link-imagevideo {
 							background-color: $primary;
+
+							img {
+								transform: scale(0.8);
+								opacity: 0;
+							}
+
+							i {
+								transform: translate(-40%, -50%) scale(1);
+								opacity: 1;
+							}
 						}
 					}
 				}
