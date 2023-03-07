@@ -12,7 +12,7 @@
 			height: calc((#{$headerHeightDesktop} / 2) - (#{$marginVert} / 4));
 			// display: inline-block;
 			float: left;
-			padding: ($marginVert / 4) $navLinkPadding 0;
+			padding: calc(#{$marginVert} / 4) $navLinkPadding 0;
 			// transition: all $base-duration;
 
 			a {
@@ -38,7 +38,7 @@
 					display: block;
 					float: left;
 					position: relative;
-					margin-right: $marginVert / 5;
+					margin-right: calc(#{$marginVert} / 5);
 					transform: translateY(100%);
 
 					#navCrossVert {
@@ -62,8 +62,8 @@
 			ul.submenu {
 				min-width: 10rem;
 				position: absolute;
-				top: $headerHeightDesktop / 2;
-				margin-left: -$navLinkPadding;
+				top: calc(#{$headerHeightDesktop} / 2);
+				margin-left: calc((-#{$marginVert}) / 3);
 				background-color: $navBackground;
 				box-shadow: 0 0.1rem 0.1rem rgba($third, 0.2);
 				transition: all $base-duration;
@@ -72,7 +72,7 @@
 
 				li {
 					width: 100%;
-					height: $headerHeightDesktop / 2;
+					height: calc(#{$headerHeightDesktop} / 2);
 					float: none;
 					padding: 0;
 					position: relative;
@@ -84,7 +84,7 @@
 						height: calc(100% - (#{$marginVert} / 2));
 						display: block;
 						position: relative;
-						padding: ($marginVert / 4) $navLinkPadding;
+						padding: calc(#{$marginVert} / 4) $navLinkPadding;
 					}
 
 					&.active {
@@ -212,7 +212,7 @@
 				height: calc((#{$headerHeightDesktop} / 2) - (#{$marginVert} / 4));
 				// display: inline-block;
 				// float: left;
-				padding: ($marginVert / 4) 0 0;
+				padding: calc(#{$marginVert} / 4) 0 0;
 				// transition: all $base-duration;
 
 				a {
@@ -239,7 +239,7 @@
 						display: block;
 						float: left;
 						position: relative;
-						margin-right: $marginVert / 5;
+						margin-right: calc(#{$marginVert} / 5);
 						transform: translateY(100%);
 
 						#navCrossVert {
@@ -263,8 +263,8 @@
 				ul.submenu {
 					min-width: 10rem;
 					position: absolute;
-					top: $headerHeightDesktop / 2;
-					margin-left: -$navLinkPadding;
+					top: calc(#{$headerHeightDesktop} / 2);
+					margin-left: calc((-#{$marginVert}) / 3);
 					background-color: $navBackground;
 					box-shadow: 0 0.1rem 0.1rem rgba($third, 0.2);
 					transition: all $base-duration;
@@ -273,7 +273,7 @@
 
 					li {
 						width: 100%;
-						height: $headerHeightDesktop / 2;
+						height: calc(#{$headerHeightDesktop} / 2);
 						float: none;
 						padding: 0;
 						position: relative;
@@ -285,7 +285,7 @@
 							height: calc(100% - (#{$marginVert} / 2));
 							display: block;
 							position: relative;
-							padding: ($marginVert / 4) 0;
+							padding: calc(#{$marginVert} / 4) 0;
 						}
 
 						&.active {
@@ -499,6 +499,17 @@
 			display: none;
 			visibility: hidden;
 		}
+
+		&-main {
+
+			li {
+
+
+				a {
+					font-size: $font-size-small - 0.1;
+				}
+			}
+		}
 	}
 
 	@include grid-media($Small) {
@@ -507,10 +518,10 @@
 			display: flex;
 			visibility: visible;
 
-			&__mask {
-				display: block;
-				visibility: visible;
-			}
+			// &__mask {
+			// 	display: block;
+			// 	visibility: visible;
+			// }
 		}
 
 		&-button {

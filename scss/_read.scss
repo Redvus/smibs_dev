@@ -3,7 +3,7 @@
 ==================================================*/
 
 .read-content {
-	padding: 0 ($marginVert / 2);
+	padding: 0 calc(#{$marginVert} / 2);
 
 	&__image {
 		width: $frontReadImageWidth;
@@ -12,7 +12,7 @@
 		float: left;
 		position: relative;
 		overflow: hidden;
-		margin-top: ($marginVert / 2);
+		margin-top: calc(#{$marginVert} / 2);
 		// margin-bottom: $marginVert;
 
 		img {
@@ -43,8 +43,8 @@
 		// float: left;
 		position: relative;
 		margin-left: $marginVert;
-		margin-top: ($marginVert / 2);
-		margin-bottom: ($marginVert / 2);
+		margin-top: calc(#{$marginVert} / 2);
+		margin-bottom: calc(#{$marginVert} / 2);
 		animation: fadeDown 0.5s ease-in-out;
 	}
 
@@ -73,27 +73,31 @@
 		width: calc(100% - #{$marginVert});
 		display: block;
 		background-color: $primary;
-		padding: ($marginVert / 3) ($marginVert / 2);
+		padding: calc(#{$marginVert} / 3) calc(#{$marginVert} / 2);
 		font-size: $font-size-small;
-		margin-bottom: $marginVert / 2;
+		margin-bottom: calc(#{$marginVert} / 2);
 	}
 
 	&__link {
 		display: block;
 		position: relative;
 		float: left;
-		padding: ($marginVert / 3) ($marginVert / 2);
+		padding: calc(#{$marginVert} / 3) calc(#{$marginVert} / 2);
 		background-color: $primary;
 		text-align: center;
 		border: $border_thin solid $secondary;
-		border-top-left-radius: $border_normal * 2;
-		border-bottom-left-radius: $border_normal * 2;
-		border-top-right-radius: $border_normal * 2;
-		border-bottom-right-radius: $border_normal * 2;
+		border-top-left-radius: calc(#{$border_normal} * 2);
+		border-bottom-left-radius: calc(#{$border_normal} * 2);
+		border-top-right-radius: calc(#{$border_normal} * 2);
+		border-bottom-right-radius: calc(#{$border_normal} * 2);
 		transition: all $base-duration;
 
+		&--desktop {
+			margin-right: calc(#{$marginVert} / 2);
+		}
+
 		&:hover {
-			background-color: $layoutBackground;
+			// background-color: $layoutBackground;
 			// color: $primary;
 			box-shadow: $border_normal $border_normal $border_normal $secondary;
 		}
@@ -102,27 +106,43 @@
 	@include grid-media($XXLarge) {
 
 		&__image {
-			width: $frontReadImageWidth - 15;
+			width: $frontReadImageWidth;
 		}
 
 		&__content {
-			width: calc(100% - (#{$frontReadImageWidth} - 15%) - #{$marginVert});
+			width: calc(100% - #{$frontReadImageWidth} - #{$marginVert});
 		}
 
 		&__introtext {
 			font-size: $font-size-base;
 		}
+
+		// &__link {
+
+		// 	&--mobile {
+		// 		display: none;
+		// 		visibility: hidden;
+		// 	}
+		// }
 	}
 
 	@include grid-media($XLarge) {
 
 		&__image {
-			width: $frontReadImageWidth - 10;
+			width: $frontReadImageWidth;
 		}
 
 		&__content {
-			width: calc(100% - (#{$frontReadImageWidth} - 10%) - #{$marginVert});
+			width: calc(100% - #{$frontReadImageWidth} - #{$marginVert});
 		}
+
+		// &__link {
+
+		// 	&--mobile {
+		// 		display: none;
+		// 		visibility: hidden;
+		// 	}
+		// }
 	}
 
 	@include grid-media($Large) {
@@ -134,6 +154,14 @@
 		&__content {
 			width: calc(100% - #{$frontReadImageWidth} - #{$marginVert});
 		}
+
+		// &__link {
+
+		// 	&--mobile {
+		// 		display: none;
+		// 		visibility: hidden;
+		// 	}
+		// }
 	}
 
 	@include grid-media($Small) {
@@ -145,6 +173,23 @@
 		&__content {
 			width: 100%;
 			margin-left: 0;
+		}
+
+		&__link {
+
+			&--mobile {
+				width: calc(100% - #{$marginVert} - #{$border_normal});
+
+				&:hover {
+					background-color: $primary !important;
+					box-shadow: none !important;
+				}
+			}
+
+			&--desktop {
+				display: none;
+				visibility: hidden;
+			}
 		}
 	}
 }

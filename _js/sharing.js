@@ -84,62 +84,62 @@ function sharingText() {
 
 	/* Click Facebook
 	-------------------------------------------------- */
-	document.getElementById('shareTextFacebook').addEventListener('click', function(e) {
+	// document.getElementById('shareTextFacebook').addEventListener('click', function(e) {
 
-		let highlight = getHighlight();
+	// 	let highlight = getHighlight();
 
-		if (highlight.text !== '' && highlight.parent.nodeName === 'P') {
-			// FB.ui({
-			// 	method : 'share',
-			// 	mobile_iframe: true,
-			// 	href   : 'https://smibs.ru',
-			// 	quote  : highlight.text // pass the text as Quote
-			// });
-			let docURL = encodeURIComponent( 'https://smibs.ru' );
-			let facebookText = encodeURIComponent( highlight.text );
-			let facebookURL = 'https://www.facebook.com/share.php?u=' + docURL + '&display=popup' + '&caption=' + facebookText;
+	// 	if (highlight.text !== '' && highlight.parent.nodeName === 'P') {
+	// 		// FB.ui({
+	// 		// 	method : 'share',
+	// 		// 	mobile_iframe: true,
+	// 		// 	href   : 'https://smibs.ru',
+	// 		// 	quote  : highlight.text // pass the text as Quote
+	// 		// });
+	// 		let docURL = encodeURIComponent( 'https://smibs.ru' );
+	// 		let facebookText = encodeURIComponent( highlight.text );
+	// 		let facebookURL = 'https://www.facebook.com/share.php?u=' + docURL + '&display=popup' + '&caption=' + facebookText;
 
-			openShareWindow(facebookURL, 600, 420);
-		}
+	// 		openShareWindow(facebookURL, 600, 420);
+	// 	}
 
-		e.preventDefault();
-	});
+	// 	e.preventDefault();
+	// });
 
 	/* Click Twitter
 	-------------------------------------------------- */
-	document.getElementById('shareTextTweet').addEventListener('click', function(e) {
+	// document.getElementById('shareTextTweet').addEventListener('click', function(e) {
 
-		let highlight = getHighlight();
+	// 	let highlight = getHighlight();
 
-		if (highlight.text !== '' && highlight.parent.nodeName === 'P' ) {
+	// 	if (highlight.text !== '' && highlight.parent.nodeName === 'P' ) {
 
-			let docURL = encodeURIComponent( 'https://smibs.ru' );
-			let tweetText = encodeURIComponent( highlight.text );
-			let tweetURL = 'https://twitter.com/intent/tweet?via=wdtuts&url=' + docURL + '&text=' + tweetText;
+	// 		let docURL = encodeURIComponent( 'https://smibs.ru' );
+	// 		let tweetText = encodeURIComponent( highlight.text );
+	// 		let tweetURL = 'https://twitter.com/intent/tweet?via=wdtuts&url=' + docURL + '&text=' + tweetText;
 
-			openShareWindow(tweetURL, 600, 420);
-		}
+	// 		openShareWindow(tweetURL, 600, 420);
+	// 	}
 
-		e.preventDefault();
-	});
+	// 	e.preventDefault();
+	// });
 
 	/* Click Telegram
 	-------------------------------------------------- */
-	document.getElementById('shareTextTelegram').addEventListener('click', function(e) {
+	// document.getElementById('shareTextTelegram').addEventListener('click', function(e) {
 
-		let highlight = getHighlight();
+	// 	let highlight = getHighlight();
 
-		if (highlight.text !== '' && highlight.parent.nodeName === 'P' ) {
+	// 	if (highlight.text !== '' && highlight.parent.nodeName === 'P' ) {
 
-			let docURL = encodeURIComponent( 'https://smibs.ru' );
-			let telegramText = encodeURIComponent( highlight.text );
-			let telegramURL = 'https://www.telegram.me/share/share/?url=' + docURL + '&text=' + telegramText;
+	// 		let docURL = encodeURIComponent( 'https://smibs.ru' );
+	// 		let telegramText = encodeURIComponent( highlight.text );
+	// 		let telegramURL = 'https://www.telegram.me/share/share/?url=' + docURL + '&text=' + telegramText;
 
-			openShareWindow(telegramURL, 600, 420);
-		}
+	// 		openShareWindow(telegramURL, 600, 420);
+	// 	}
 
-		e.preventDefault();
-	});
+	// 	e.preventDefault();
+	// });
 
 	/* Click VK
 	-------------------------------------------------- */

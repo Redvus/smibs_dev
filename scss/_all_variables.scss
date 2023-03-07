@@ -30,7 +30,7 @@ $border_normal: 0.15rem;
 $border_bold: 0.3rem;
 $border_heavy: 0.6rem;
 
-$base-duration: 0.3s;
+$base-duration: 0.2s;
 $base-timing: 0.3s;
 
 /*----------  Header  ----------*/
@@ -55,7 +55,7 @@ $navLinkColor      : $secondary;
 $navLinkColorActive: lighten($secondary, 15%);
 
 $marginVert: 2rem;
-$navLinkPadding: ($marginVert / 3);
+$navLinkPadding: calc(#{$marginVert} / 3);
 
 $navBackgroundMobile : $primary;
 $navLinkColorMobile : $fourth;
@@ -181,6 +181,45 @@ $sidebarButtonsBackground: darken($primary, 10%);
     // }
 }
 
+@mixin rowMachinePadding($numPerRow, $padding) {
+    width: calc((100% - ((#{$numPerRow} - 1) * (#{$padding} / 0.8))) / #{$numPerRow});
+    // width: calc((100% - ((#{$numPerRow} / #{$numPerRow}) * #{$margin})) / #{$numPerRow}); //решение для fenom
+    display: inline-block;
+    padding: 0 $padding $padding 0;
+
+    &:nth-child(n) {
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    // &:first-child {
+    // 	margin-left: 0;
+    // }
+
+    // &:nth-of-type(#{$numPerRow}n) {
+    //     // margin-right: 0;
+    //     // margin-bottom: 0;
+    //     padding-right: 0;
+    // }
+
+    // &:nth-of-type(calc(#{$numPerRow} + 1)n) {
+    //     margin-left: 0;
+    // }
+
+    // @include grid-media($Medium) {
+    // 	&:nth-child(n) {
+    // 		margin-right: 0;
+    // 	}
+    // }
+
+    @include grid-media($Small) {
+    	&:nth-child(n) {
+            width: calc((100% - ((#{$numPerRow} - 1) * (#{$padding} / 0.5))) / #{$numPerRow});
+            padding: calc(#{$padding} / 2);
+    	}
+    }
+}
+
 /*----------  News  ----------*/
 $newsLinkWidth: 30%;
 
@@ -261,13 +300,15 @@ $XPortrait: (media: "(min-width: #{$pad_v}) and (max-width: calc(#{$pad_g} - 1px
 
 @import url('https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic');
 // @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://use.fontawesome.com/releases/v5.10.0/css/all.css');
+// @import url('https://use.fontawesome.com/releases/v5.10.0/css/all.css');
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&subset=cyrillic');
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 $primary-font      : $font-stack-helvetica;
 $heading-font      : 'Oswald', sans-serif;
 $heading-font-light: 'Oswald', sans-serif;
+
+$fa-font-path: 'webfonts/';
 
 $body-font-color: lighten($third, 10%);
 
@@ -291,8 +332,8 @@ $font-size-h1:      calc(1rem + 1.1vmax) !default; // ~3rem 48px modular-scale(6
 $font-size-h2:      calc(1rem + 0.9vmax) !default; // ~2.5rem 40px modular-scale(5)
 $font-size-h3:      calc(1rem + 0.7vmax) !default; // ~2rem 33px
 $font-size-h4:      calc(1rem + 0.15vmax) !default; // ~1.728rem 28px
-$font-size-h5:      modular-scale(0) !default; // ~1.44rem 23px
-$font-size-h6:      modular-scale(-1) !default; // ~1.2rem 19px
+$font-size-h5:      calc(1rem + 0.13vmax) !default; // ~1.44rem 23px
+$font-size-h6:      calc(1rem + 0.1vmax) !default; // ~1.2rem 19px
 
 %px {
     font: {
@@ -351,7 +392,7 @@ $font-size-h6:      modular-scale(-1) !default; // ~1.2rem 19px
     // text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 0;
-    padding-bottom: $marginVert / 4;
+    padding-bottom: calc(#{$marginVert} / 4);
 }
 /*=====  End of Fonts  ======*/
 
@@ -450,8 +491,8 @@ h3 {
     // width: 100%;
     display: inline-block;
     // border-bottom: $border_normal solid $secondary;
-    margin-bottom: $marginVert / 3;
-    margin-top: $marginVert / 2;
+    margin-bottom: calc(#{$marginVert} / 3);
+    margin-top: calc(#{$marginVert} / 2);
 
     // @include grid-media($Small) {
     //     font-size: 6vw;
@@ -546,7 +587,7 @@ svg {
     background-color: transparent;
     color: $secondary;
     transition: all 0.3s;
-    -webkit-appearance: none;
+    // -webkit-appearance: none;
 
     &:focus {
         background-color: $fourth;
@@ -589,6 +630,21 @@ svg {
         /* Internet Explorer 10+ */
         color: $secondary;
     }
+}
+
+select {
+    // A reset of styles, including removing the default dropdown arrow
+    appearance: none;
+    // Additional resets for further consistency
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
 }
 /*=====  End of Layout  ======*/
 

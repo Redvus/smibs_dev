@@ -318,8 +318,10 @@
 
 /* @end  */
 
-/* 08-03-21
--------------------------------------------------- */
+/*=================================================
+=                   Annyversary                   =
+=================================================*/
+
 .anniversary {
 	width: 100%;
 	height: 100vh;
@@ -328,14 +330,14 @@
 	top: 0;
 	left: 0;
 	user-select: none;
+	box-sizing: border-box;
 	opacity: 0;
 	display: none;
-	background-color: #FDF5E7;
 	z-index: -1;
 
 	&--8march {
 		opacity: 0;
-		display: none;
+		display: block;
 		background-color: #FDF5E7;
 		z-index: -1;
 	}
@@ -355,88 +357,108 @@
 		transform-origin: 50% 50%;
 	}
 
-	#marchFlower1 {
-		width: 15%;
-		height: auto;
-		top: 5%;
-		left: 10%;
-		transform: rotate(-90deg);
-		z-index: 3;
-	}
+	/* 08-03-21
+	-------------------------------------------------- */
+	#march {
 
-	#marchFlower2 {
-		width: 15%;
-		height: auto;
-		top: -5%;
-		left: 57%;
-		transform: rotate(-90deg);
-		z-index: 3;
-	}
+		&Flower1 {
+			width: 15%;
+			height: auto;
+			top: 5%;
+			left: 10%;
+			transform: rotate(-90deg);
+			z-index: 3;
+		}
 
-	#marchFlower3 {
-		width: 20%;
-		height: auto;
-		top: -10%;
-		left: 85%;
-		transform: rotate(-90deg);
-		z-index: 3;
-	}
+		&Flower2 {
+			width: 15%;
+			height: auto;
+			top: -5%;
+			left: 57%;
+			transform: rotate(-90deg);
+			z-index: 3;
+		}
 
-	#marchFlower4 {
-		top: 0%;
-		left: 65%;
-		// transform: scale(0);
-		z-index: 4;
-	}
+		&Flower3 {
+			width: 20%;
+			height: auto;
+			top: -10%;
+			left: 85%;
+			transform: rotate(-90deg);
+			z-index: 3;
+		}
 
-	#marchFlower5 {
-		width: 20%;
-		height: auto;
-		top: 25%;
-		left: 82%;
-		transform: rotate(15deg);
-		z-index: 3;
-	}
+		&Flower4 {
+			top: 0%;
+			left: 65%;
+			// transform: scale(0);
+			z-index: 4;
+		}
 
-	#marchFlower6 {
-		width: 15%;
-		height: auto;
-		top: 35%;
-		left: 15%;
-		transform: rotate(25deg);
-		z-index: 4;
-	}
+		&Flower5 {
+			width: 20%;
+			height: auto;
+			top: 25%;
+			left: 82%;
+			transform: rotate(15deg);
+			z-index: 3;
+		}
 
-	#marchFlower7 {
-		top: 50%;
-		left: 2%;
-		transform: rotate(15deg);
-		z-index: 3;
-	}
+		&Flower6 {
+			width: 15%;
+			height: auto;
+			top: 35%;
+			left: 15%;
+			transform: rotate(25deg);
+			z-index: 4;
+		}
 
-	#marchFlower8 {
-		width: 17%;
-		height: auto;
-		top: 70%;
-		left: 20%;
-		transform: rotate(20deg);
-		z-index: 2;
-	}
+		&Flower7 {
+			top: 50%;
+			left: 2%;
+			transform: rotate(15deg);
+			z-index: 3;
+		}
 
-	#marchFlower9 {
-		width: 15%;
-		height: auto;
-		top: 80%;
-		left: -6%;
-		z-index: 4;
-	}
+		&Flower8 {
+			width: 17%;
+			height: auto;
+			top: 70%;
+			left: 20%;
+			transform: rotate(20deg);
+			z-index: 2;
+		}
 
-	#marchFlower10 {
-		width: 15%;
-		height: auto;
-		top: 65%;
-		left: 75%;
-		z-index: 2;
+		&Flower9 {
+			width: 15%;
+			height: auto;
+			top: 80%;
+			left: -6%;
+			z-index: 4;
+		}
+
+		&Flower10 {
+			width: 15%;
+			height: auto;
+			top: 65%;
+			left: 75%;
+			z-index: 2;
+		}
+
+		&Text1 {
+			width: 35rem;
+			top: 35%;
+		}
+
+		&Text2 {
+			width: 35rem;
+			top: 50.15%;
+		}
+
+		&Text3 {
+			width: 40rem;
+			top: 65%;
+		}
 	}
 
 	&--text {
@@ -448,21 +470,303 @@
 		transform: translate(-50%, -50%);
 		// opacity: 0;
 	}
+	/* End of 08-03-21
+	-------------------------------------------------- */
 
-	#marchText1 {
-		width: 35rem;
-		top: 35%;
+	/* 08-03-22 v1
+	-------------------------------------------------- */
+	&__back {
+		width: 100%;
+		height: 100vh;
+		display: block;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: 0;
+
+		> img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-position: center;
+			object-fit: cover;
+		}
 	}
 
-	#marchText2 {
-		width: 35rem;
-		top: 50.15%;
-	}
+	#s080322 {
 
-	#marchText3 {
-		width: 40rem;
-		top: 65%;
+		&_plate {
+			width: 35%;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+		}
+
+		&_redFlower1 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 57%;
+			left: 32%;
+			transform: scale(0.7);
+			z-index: 3;
+		}
+
+		&_redFlower2 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 24%;
+			left: 22%;
+			transform: scale(0.5);
+			z-index: 1;
+		}
+
+		&_redFlower3 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 0%;
+			left: 53%;
+			transform: scale(0.2);
+			z-index: 3;
+		}
+
+		&_redFlower4 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 13%;
+			left: 51%;
+			transform: scale(0.4);
+			z-index: 1;
+		}
+
+		&_redFlower5 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 55%;
+			left: 51%;
+			transform: scale(0.3);
+			z-index: 3;
+		}
+
+		&_redFlower6 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 66%;
+			transform: scale(0.3);
+			z-index: 3;
+		}
+
+		&_pinkFlower1 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 11%;
+			left: 27%;
+			transform: scale(0.7);
+			z-index: 0;
+		}
+
+		&_pinkFlower2 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 8%;
+			left: 45%;
+			transform: scale(0.4);
+			z-index: 3;
+		}
+
+		&_pinkFlower3 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 52%;
+			left: 55%;
+			transform: scale(0.5);
+			z-index: 1;
+		}
+
+		&_pinkFlower4 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 66%;
+			left: 40%;
+			transform: scale(0.6);
+			z-index: 1;
+		}
+
+		&_pinkFlower5 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 35%;
+			left: 57%;
+			transform: scale(0.3);
+			z-index: 3;
+		}
+
+		&_pinkFlower6 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 33%;
+			left: 15%;
+			transform: scale(0.25);
+			z-index: 3;
+		}
+
+		&_cyanFlower1 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 5%;
+			left: 38%;
+			transform: scale(0.7);
+			z-index: 1;
+		}
+
+		&_cyanFlower2 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 29%;
+			left: 58%;
+			transform: scale(0.8);
+			z-index: 1;
+		}
+
+		&_cyanFlower3 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 65%;
+			left: 50%;
+			transform: scale(0.5);
+			z-index: 1;
+		}
+
+		&_cyanFlower4 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 68%;
+			left: 63%;
+			transform: scale(0.3);
+			z-index: 1;
+		}
+
+		&_cyanFlower5 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 52%;
+			left: 23%;
+			transform: scale(0.8);
+			z-index: 1;
+		}
+
+		&_text1 {
+			width: 28vmax;
+			top: 38%;
+		}
+
+		&_text2 {
+			width: 28vmax;
+			top: 48%;
+		}
+
+		&_text3 {
+			width: 30vmax;
+			top: 58%;
+		}
 	}
+	/* End of 08-03-22 v1
+	-------------------------------------------------- */
+
+	/* 08-03-22 v2
+	-------------------------------------------------- */
+	#s080322 {
+
+		&_woman {
+			width: auto;
+			height: 100vh;
+			display: block;
+			top: 3vh;
+			left: -6rem;
+			position: absolute;
+			z-index: 0;
+		}
+
+		&_slogan {
+			width: 70vw;
+			height: auto;
+			display: block;
+			top: -3vh;
+			right: -5vw;
+			position: absolute;
+			z-index: 2;
+		}
+
+		&_eight {
+			width: 25vw;
+			height: auto;
+			display: block;
+			top: 10vw;
+			right: 18vw;
+			position: absolute;
+			z-index: 1;
+		}
+
+		&_flowerTop {
+			width: 50vw;
+			height: auto;
+			display: block;
+			top: 1vw;
+			right: 2vw;
+			position: absolute;
+			z-index: 3;
+		}
+
+		&_flowerBottom {
+			width: 50vw;
+			height: auto;
+			display: block;
+			top: 37vw;
+			right: 5vw;
+			position: absolute;
+			z-index: 3;
+		}
+	}
+	/* End of 08-03-22 v2
+	-------------------------------------------------- */
 
 	/* День библиотек
 	-------------------------------------------------- */
@@ -609,9 +913,76 @@
 		-------------------------------------------------- */
 	}
 }
-/* End of 08-03-21
+/*============  Annyversary  =============*/
+
+/* 12 June 2021
 -------------------------------------------------- */
 
+#anniversary120621 {
+	background: linear-gradient(270deg, #eaeef4 0%, #ccd1db 100%);
+	// display: block;
+	// opacity: 1;
+	// z-index: 9999;
+
+	#a120621_baloon {
+		position: absolute;
+		top: 5vh;
+		left: 5vw;
+		width: 37vw;
+		display: block;
+		z-index: 1;
+	}
+
+	#a120621_confetti {
+		position: absolute;
+		top: 2vh;
+		left: 5vw;
+		height: 96vh;
+		display: block;
+		z-index: 2;
+	}
+
+	#a120621_num {
+		position: absolute;
+		top: 30vh;
+		left: 60vw;
+		width: 18vw;
+		display: block;
+		z-index: 2;
+	}
+
+	#a120621_slogan {
+		position: absolute;
+		top: 57vh;
+		left: 53.5vw;
+		width: 30vw;
+		display: block;
+		z-index: 3;
+	}
+
+	@include grid-media($XSmall) {
+
+		#a120621_baloon {
+			width: 90vw;
+			top: 65vw;
+		}
+
+		#a120621_num {
+			width: 60vw;
+			top: 5vh;
+			left: 20vw;
+		}
+
+		#a120621_slogan {
+			width: 80vw;
+			left: 10vw;
+			top: 33vh;
+		}
+	}
+}
+
+/* End of 12 June 2021
+-------------------------------------------------- */
 
 /*=================================================
 =                   jScrollPane                   =

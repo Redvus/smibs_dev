@@ -65,7 +65,7 @@
 
 			i {
 				float: left;
-				margin-top: $marginVert / 3;
+				margin-top: calc(#{$marginVert} / 3);
 			}
 		}
 
@@ -83,7 +83,7 @@
 			ol {
 				margin-top: 0;
 				margin-bottom: 1rem;
-				padding-inline-start: 1rem;
+				// padding-inline-start: 1rem;
 			}
 
 			ul {
@@ -107,7 +107,7 @@
 			margin-right: $marginVert;
 
 			&--padding {
-				padding-top: $marginVert / 2;
+				padding-top: calc(#{$marginVert} / 2);
 			}
 		}
 
@@ -168,7 +168,7 @@
 			}
 
 			ol {
-				padding-left: $marginVert / 2;
+				padding-left: calc(#{$marginVert} / 2);
 				margin-bottom: $marginVert;
 
 				li {
@@ -312,8 +312,8 @@
 			transition: all 0.3s;
 
 			svg {
-				width: $headerHeightDesktop / 2;
-				height: $headerHeightDesktop / 2;
+				width: calc(#{$headerHeightDesktop} / 2);
+				height: calc(#{$headerHeightDesktop} / 2);
 				display: block;
 				transition: all 0.3s;
 				transform: translateX(10%);
@@ -408,7 +408,7 @@
 				// font-size: $font-size-large;
 				color: $secondary;
 				position: absolute;
-				left: ($marginVert / 2);
+				left: calc(#{$marginVert} / 2);
 				top: 50%;
 				transform: translate(-50%, -50%);
 				transition: all $base-duration;
@@ -683,7 +683,7 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			padding: $marginVert / 2;
+			padding: calc(#{$marginVert} / 2);
 			background-color: $sidebarButtonsBackground;
 
 			h3 {
@@ -709,14 +709,15 @@
 		}
 
 		&-bottom {
-			width: calc(100% - (#{$marginVert} * 2));
+			width: calc(100% - #{$marginVert});
 			height: calc(100% - #{$anniversaryTopHeight} - ((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
-			padding: ($marginVert / 2) $marginVert;
+			justify-content: flex-start;
+			padding: calc(#{$marginVert} / 2);
 			text-align: center;
+			overflow: auto;
 
 			p {
 				margin: 0;
@@ -732,7 +733,7 @@
 			}
 
 			&-date {
-				font-size: $font-size-h1 + 2;
+				font-size: $font-size-h1;
 			}
 
 			&-month {
@@ -740,10 +741,10 @@
 			}
 
 			&-birthday {
-				font-size: $font-size-h1 + 2;
+				font-size: $font-size-h1;
 
 				span {
-					font-size: $font-size-h1 + 2;
+					font-size: $font-size-h1;
 				}
 
 				p {
@@ -755,7 +756,7 @@
 				height: calc(((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
 
 				h3 {
-					font-size: $font-size-h3 + 1;
+					font-size: $font-size-h3;
 				}
 			}
 
@@ -775,7 +776,7 @@
 			}
 
 			&-date {
-				font-size: $font-size-h1 + 2;
+				font-size: $font-size-h1;
 			}
 
 			&-month {
@@ -783,10 +784,10 @@
 			}
 
 			&-birthday {
-				font-size: $font-size-h1 + 2;
+				font-size: $font-size-h1;
 
 				span {
-					font-size: $font-size-h1 + 2;
+					font-size: $font-size-h1;
 				}
 
 				p {
@@ -818,7 +819,7 @@
 			}
 
 			&-date {
-				font-size: $font-size-h1 + 1;
+				font-size: $font-size-h1;
 			}
 
 			&-month {
@@ -826,10 +827,10 @@
 			}
 
 			&-birthday {
-				font-size: $font-size-h1 + 1;
+				font-size: $font-size-h1;
 
 				span {
-					font-size: $font-size-h1 + 1;
+					font-size: $font-size-h1;
 				}
 
 				p {
@@ -880,6 +881,100 @@
 		}
 	}
 
+	/* Pusgkin card mobile
+	-------------------------------------------------- */
+
+	&__puskin {
+		width: 100%;
+		height: auto;
+		position: relative;
+		float: left;
+		margin-top: $marginVert;
+		display: none;
+		visibility: hidden;
+
+		a {
+			width: calc(100% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2));
+			height: $marginVert * 2;
+			display: block;
+			float: left;
+			position: relative;
+			background-color: $primary;
+			text-align: center;
+			font-size: $font-size-small;
+			color: $secondary;
+			margin-bottom: calc(#{$marginVert} / 2);
+			padding: calc(#{$marginVert} / 5) calc(#{$marginVert} / 3);
+			border: $border_thin solid $secondary;
+			border-top-left-radius: calc(#{$border_normal} * 2);
+			border-bottom-left-radius: calc(#{$border_normal} * 2);
+			border-top-right-radius: calc(#{$border_normal} * 2);
+			border-bottom-right-radius: calc(#{$border_normal} * 2);
+			transition: all $base-duration;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			span {
+				width: calc(100% - (#{$marginVert} * 2) - 1rem);
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				text-align: left;
+				// text-transform: uppercase;
+				padding: 0 0 0 1rem;
+				margin: 0;
+				line-height: 1.2;
+			}
+
+			picture {
+				width: calc(#{$marginVert}  * 2);
+				height: calc(#{$marginVert}  * 2);
+				display: block;
+				float: left;
+				position: relative;
+
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				// 	object-fit: cover;
+				// 	object-position: center;
+				}
+			}
+
+			&:hover {
+				background-color: $layoutBackground;
+				// color: $primary;
+				box-shadow: $border_normal $border_normal $border_normal $secondary;
+
+				&.sidebar__buttons--link {
+					background-color: transparent;
+					box-shadow: none;
+
+					&:after {
+						transform: translate(0, -35%);
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		@include grid-media($XSmall) {
+			display: block;
+			visibility: visible;
+		}
+	}
+
+	/* End of Pusgkin card mobile
+	-------------------------------------------------- */
+
 	&__news {
 		width: 100%;
 		// @include grid-container;
@@ -892,7 +987,7 @@
 		}
 
 		&-single {
-			@include rowMachine(4, ($marginVert / 2));
+			@include rowMachine(4, calc(#{$marginVert} / 2));
 			min-height: 10rem;
 			// border: $border_thin solid $secondary;
 			background-color: lighten($primary, 10%);
@@ -928,7 +1023,7 @@
 		@include grid-media($Large) {
 
 			&-single {
-				@include rowMachine(4, ($marginVert / 2));
+				@include rowMachine(4, calc(#{$marginVert} / 2));
 			}
 		}
 
@@ -965,9 +1060,9 @@
 			// margin-block-end: 0;
 			// margin-inline-start: 0;
 			// margin-inline-end: 0;
-			@include rowMachine(6, ($marginVert / 2));
+			@include rowMachine(6, calc(#{$marginVert} / 2));
 			min-height: 10rem;
-			background-color: $primary;
+			background-color: $layoutBackground;
 			transition: all $base-duration;
 
 			picture {
@@ -996,6 +1091,11 @@
 			// 		}
 			// 	}
 			// }
+
+			&--all {
+				@include rowMachinePadding(6, calc(#{$marginVert} / 2));
+				background-color: $layoutBackground;
+			}
 		}
 
 		figcaption {
@@ -1003,6 +1103,11 @@
 		}
 
 		&-all {
+			// width: calc(100% - #{$headerBlindWidth} + (#{$marginVert} / 2));
+
+			// > ul {
+			// 	white-space: nowrap;
+			// }
 
 			&:hover {
 
@@ -1016,34 +1121,54 @@
 
 			&-single {
 				@include rowMachine(5, $marginVert);
+
+				&--all {
+					@include rowMachinePadding(5, $marginVert);
+				}
 			}
 		}
 
 		@include grid-media($XLarge) {
 
 			&-single {
-				@include rowMachine(5, $marginVert);
+				@include rowMachine(5, calc(#{$marginVert} / 2));
+
+				&--all {
+					@include rowMachinePadding(5, calc(#{$marginVert} / 2));
+				}
 			}
 		}
 
 		@include grid-media($Large) {
 
 			&-single {
-				@include rowMachine(5, ($marginVert / 2));
+				@include rowMachine(5, calc(#{$marginVert} / 2));
+
+				&--all {
+					@include rowMachinePadding(5, calc(#{$marginVert} / 2));
+				}
 			}
 		}
 
 		@include grid-media($Medium) {
 
 			&-single {
-				@include rowMachine(5, ($marginVert / 2));
+				@include rowMachine(5, calc(#{$marginVert} / 2));
+
+				&--all {
+					@include rowMachinePadding(3, calc(#{$marginVert} / 2));
+				}
 			}
 		}
 
 		@include grid-media($XSmall) {
 
 			&-single {
-				@include rowMachine(5, ($marginVert / 2));
+				@include rowMachine(2, calc(#{$marginVert} / 2));
+
+				&--all {
+					@include rowMachinePadding(2, calc(#{$marginVert} / 2));
+				}
 			}
 		}
 
@@ -1052,7 +1177,11 @@
 			// visibility: hidden;
 
 			&-single {
-				@include rowMachine(2, ($marginVert / 2));
+				@include rowMachine(2, calc(#{$marginVert} / 2));
+
+				&--all {
+					@include rowMachinePadding(2, calc(#{$marginVert} / 2));
+				}
 			}
 		}
 	}
@@ -1101,7 +1230,7 @@
 						size: $font-size-base;
 					};
 					line-height: 1.2;
-					padding: 0 ($marginVert / 2);
+					padding: 0 calc(#{$marginVert} / 2);
 					position: absolute;
 					top: 50%;
 					left: 50%;
@@ -1144,11 +1273,11 @@
 		}
 
 		ul {
-			margin-bottom: $marginVert / 2;
+			margin-bottom: calc(#{$marginVert} / 2);
 
 			li {
 				list-style: disc;
-				margin-left: $marginVert / 2;
+				margin-left: calc(#{$marginVert} / 2);
 			}
 		}
 
@@ -1157,7 +1286,9 @@
 		// }
 
 		&--single {
-			column-count: 1;
+			// column-count: 1;
+			position: relative;
+			float: left;
 		}
 
 		// @include grid-media($Small) {
@@ -1177,7 +1308,7 @@
 			// width: calc((100% / 4) - (#{$marginVert} / 2));
 			height: 13rem;
 			background-color: lighten($layoutBackground, 5%);
-			padding: ($marginVert / 2) 0;
+			padding: calc(#{$marginVert} / 2) 0;
 			// margin-right: $marginVert / 2;
 			// margin-bottom: $marginVert / 2;
 
@@ -1189,7 +1320,7 @@
 		&-name {
 			width: calc(100% - (#{$marginVert} * 2));
 			display: inline-block;
-			padding: ($marginVert / 5) $marginVert;
+			padding: calc(#{$marginVert} / 5) $marginVert;
 			font: {
 				family: $heading-font;
 				size: $font-size-large;
@@ -1211,7 +1342,7 @@
 		&-adress {
 			width: calc(100% - (#{$marginVert} * 2));
 			display: inline-block;
-			padding: ($marginVert / 5) $marginVert;
+			padding: calc(#{$marginVert} / 5) $marginVert;
 			color: $secondary;
 			// font: {
 			// 	// family: $heading-font;
@@ -1254,10 +1385,10 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			float: left;
+			// float: left;
 			position: relative;
 			background-color: $primary;
-			margin: ($marginVert / 4) 0;
+			margin: calc(#{$marginVert} / 2) 0;
 			font: {
 				family: $heading-font;
 				size: $font-size-h1;
@@ -1294,7 +1425,7 @@
 		}
 
 		&-page {
-			@include rowMachine(4, ($marginVert / 2));
+			@include rowMachine(4, calc(#{$marginVert} / 2));
 			min-height: 10rem;
 			// border: $border_thin solid $secondary;
 			background-color: lighten($primary, 10%);
@@ -1326,10 +1457,10 @@
 		}
 
 		&-video {
-			@include rowMachine(3, ($marginVert / 2));
+			@include rowMachine(3, calc(#{$marginVert} / 2));
 
 			&--var2 {
-				@include rowMachine(3, ($marginVert / 2));
+				@include rowMachine(3, calc(#{$marginVert} / 2));
 				min-height: initial;
 
 				a {
@@ -1406,6 +1537,90 @@
 					}
 				}
 			}
+
+			&--var3 {
+				@include rowMachine(3, calc(#{$marginVert} / 2));
+
+				a {
+
+					.main-content__link-imagevideo {
+
+						img {
+							z-index: 0;
+						}
+
+						&:before {
+							content: "";
+							width: 100%;
+							height: 100%;
+							display: block;
+							top: 0;
+							left: 0;
+							position: absolute;
+							background-color: rgba($secondary, 0.5);
+							transition: opacity 0.3s;
+							transition: background 0.3s;
+							z-index: 1;
+						}
+
+						h4 {
+							width: calc(100% - 4rem);
+							display: block;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							color: $primary;
+							padding: 0 2rem;
+							text-align: center;
+							transition: all 0.3s;
+							z-index: 2;
+						}
+
+						i {
+							font-size: $font-size-large + 1.3;
+							color: $primary;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-40%, -50%) scale(0.8);
+							opacity: 0;
+							transition: all 0.3s;
+							z-index: 2;
+						}
+					}
+
+					.main-content__link-title {
+
+						p {
+							font-size: $font-size-small;
+							line-height: 1.2;
+							color: $secondary;
+							margin: 0;
+						}
+					}
+
+					&:hover {
+
+						.main-content__link-imagevideo {
+
+							h4 {
+								transform: translate(-50%, -50%) scale(0.95);
+								opacity: 0;
+							}
+
+							i {
+								transform: translate(-40%, -50%) scale(1);
+								opacity: 1;
+							}
+
+							&:before {
+								background-color: rgba($secondary, 0.2);
+							}
+						}
+					}
+				}
+			}
 		}
 
 		&-image {
@@ -1440,14 +1655,14 @@
 				height: 100%;
 				display: block;
 				object-fit: cover;
-				object-position: center;
+				object-position: top center;
 				transition: 0.5s $ease-out-expo;
 			}
 		}
 
 		&-title {
 			width: calc(100% - 2rem);
-			height: 5vw;
+			height: 7vw;
 			display: flex;
 			align-items: center;
 			padding: 0 1rem;
@@ -1459,10 +1674,14 @@
 		}
 
 		&-link {
+			width: calc(100% - (#{$marginVert} * 2));
 			display: flex;
-			flex-direction: row;
+			// flex-direction: row;
 			align-items: center;
-			position: absolute;
+			justify-content: center;
+			// position: absolute;
+			text-align: center;
+			padding: 0 $marginVert;
 			z-index: 1;
 		}
 
@@ -1504,10 +1723,14 @@
 			}
 
 			&-video {
-				@include rowMachine(4, ($marginVert / 2));
+				@include rowMachine(4, calc(#{$marginVert} / 2));
 
 				&--var2 {
-					@include rowMachine(3, ($marginVert / 2));
+					@include rowMachine(4, calc(#{$marginVert} / 2));
+				}
+
+				&--var3 {
+					@include rowMachine(4, calc(#{$marginVert} / 2));
 				}
 			}
 		}
@@ -1527,10 +1750,14 @@
 			}
 
 			&-video {
-				@include rowMachine(4, ($marginVert / 2));
+				@include rowMachine(4, calc(#{$marginVert} / 2));
 
 				&--var2 {
-					@include rowMachine(3, ($marginVert / 2));
+					@include rowMachine(4, calc(#{$marginVert} / 2));
+				}
+
+				&--var3 {
+					@include rowMachine(4, calc(#{$marginVert} / 2));
 				}
 			}
 		}
@@ -1538,7 +1765,7 @@
 		@include grid-media($Large) {
 
 			&-page {
-				@include rowMachine(4, ($marginVert / 2));
+				@include rowMachine(4, calc(#{$marginVert} / 2));
 			}
 
 			&-image {
@@ -1550,10 +1777,14 @@
 			}
 
 			&-video {
-				@include rowMachine(3, ($marginVert / 2));
+				@include rowMachine(3, calc(#{$marginVert} / 2));
 
 				&--var2 {
-					@include rowMachine(3, ($marginVert / 2));
+					@include rowMachine(3, calc(#{$marginVert} / 2));
+				}
+
+				&--var3 {
+					@include rowMachine(3, calc(#{$marginVert} / 2));
 				}
 			}
 		}
@@ -1564,7 +1795,18 @@
 
 
 				&--var2 {
-					@include rowMachine(2, ($marginVert / 2));
+					@include rowMachine(2, calc(#{$marginVert} / 2));
+				}
+
+				&--var3 {
+					@include rowMachine(2, calc(#{$marginVert} / 2));
+				}
+			}
+
+			&-image {
+
+				&video {
+					height: 17vw;
 				}
 			}
 		}
@@ -1572,26 +1814,35 @@
 		@include grid-media($Small) {
 
 			&-page {
-				@include rowMachine(1, ($marginVert / 2));
+				@include rowMachine(1, calc(#{$marginVert} / 2));
 				// margin-right: 0;
 			}
 
 			&-image {
 				height: 50vh;
+
+				&video {
+					height: 30vh;
+				}
 			}
 
 			&-video {
-				@include rowMachine(1, ($marginVert / 2));
+				@include rowMachine(1, calc(#{$marginVert} / 2));
+
+				&--var3 {
+					@include rowMachine(1, calc(#{$marginVert} / 2));
+				}
 			}
 
 			&-title {
+				height: 7vh;
 				padding: 1rem;
 			}
 
 			&-block {
 				width: calc(100% - (#{$paddingMobile} * 2));
-				height: 3rem;
-				// min-height: 2rem;
+				height: initial;
+				min-height: 3rem;
 				padding: $paddingMobile;
 
 				span {
@@ -1600,6 +1851,11 @@
 					text-align: center;
 					position: relative;
 				}
+			}
+
+			&-link {
+				width: 100%;
+				padding: 0;
 			}
 		}
 	}
@@ -1626,7 +1882,7 @@
 		// }
 
 		&-date {
-			@include rowMachine(6, ($marginVert / 2));
+			@include rowMachine(6, calc(#{$marginVert} / 2));
 			// width: calc((100% / 7) - (#{$border_normal} * 2) - (((#{$marginVert} / 2) * 6) / 7));
 			height: 4rem;
 			// margin-right: $marginVert / 2;
@@ -1657,7 +1913,7 @@
 		@include grid-media($Large) {
 
 			&-date {
-				@include rowMachine(5, ($marginVert / 2));
+				@include rowMachine(5, calc(#{$marginVert} / 2));
 				height: 4rem;
 			}
 		}
@@ -1667,7 +1923,7 @@
 			margin-left: 0;
 
 			&-date {
-				@include rowMachine(2, ($marginVert / 2));
+				@include rowMachine(2, calc(#{$marginVert} / 2));
 				height: 4rem;
 			}
 		}
@@ -1723,23 +1979,125 @@
 	&__title {
 		width: 100%;
 		display: block;
+		position: relative;
+		float: left;
 		border-bottom: $border_thin solid $secondary;
 		margin-bottom: $marginVert;
 
 		&-section {
-			margin-bottom: $marginVert / 2;
+			margin-bottom: calc(#{$marginVert} / 2);
 		}
 
 		&--margin {
-			@include grid-column(12, $second-grid);
-		}
-
-		@include grid-media($Small) {
-			margin-bottom: $paddingMobile;
+			width: calc(100% - (#{$marginVert} * 2));
+			float: left;
+			margin-left: $marginVert;
 		}
 
 		&--search {
-			margin-bottom: $marginVert / 3;
+			margin-bottom: calc(#{$marginVert} / 3);
+		}
+
+		&-filter {
+			min-width: 20%;
+			height: $marginVert;
+			display: flex;
+			flex-direction: row;
+			align-content: center;
+			justify-content: flex-end;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			background-color: transparent;
+			// border: $border_thin solid $secondary;
+			// border-bottom: none;
+			// padding: 0 $marginVert / 4;
+			// margin-right: $marginVert / 4;
+
+			> label {
+				height: $marginVert;
+				display: flex;
+				align-items: center;
+				position: relative;
+				text-align: right;
+				font-size: $font-size-small;
+				color: $formInputColor;
+			}
+
+			&--select {
+				// width: 20%;
+				height: $marginVert;
+				position: relative;
+				right: 0;
+				bottom: 0;
+				// border-top: $border_thin solid $secondary;
+				// border-bottom: none;
+				padding: 0 0 0 calc(#{$marginVert} / 2);
+				// margin-right: $marginVert / 4;
+				background-color: $layoutBackground;
+				color: $formInputColor;
+				text-align: left;
+
+				> option {
+					background-color: $layoutBackground;
+					text-align: left;
+
+					&:focus + .focus {
+						background-color: $secondary;
+						color: $layoutBackground;
+						position: absolute;
+						top: -1px;
+						left: -1px;
+						right: -1px;
+						bottom: -1px;
+						border-radius: inherit;
+					}
+				}
+
+				&:after {
+					content: "";
+					width: 0.8em;
+					height: 0.5em;
+					background-color: $secondary;
+					clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+				}
+			}
+		}
+
+		@include grid-media($Small) {
+			// height: calc(5rem + (#{$border_thin} * 2));
+			margin-bottom: $paddingMobile;
+
+			&-filter {
+				width: 100%;
+				height: calc(#{$marginVert} + 1);
+				flex-direction: column;
+				position: relative;
+				z-index: 1;
+
+				> label {
+					justify-content: flex-end;
+				}
+
+				&--select {
+					height: calc(#{$marginVert} + 1);
+					text-align: right !important;
+					font-size: $font-size-base;
+					padding-left: 0;
+					appearance: none;
+					direction: rtl;
+
+					> option {
+						text-align: right !important;
+						direction: rtl;
+					}
+				}
+			}
+
+			h1 {
+				position: relative;
+				z-index: 10;
+			}
 		}
 	}
 
@@ -1752,11 +2110,13 @@
 		width: 100%;
 		display: block;
 		border-bottom: $border_thin solid $secondary;
-		margin-bottom: $marginVert / 2;
-		margin-top: $marginVert / 2;
+		margin-bottom: calc(#{$marginVert} / 2);
+		margin-top: calc(#{$marginVert} / 2);
 
 		&--margin {
-			@include grid-column(12, $second-grid);
+			width: calc(100% - (#{$marginVert} * 2));
+			float: left;
+			margin-left: $marginVert;
 		}
 
 		&--link {
@@ -1769,7 +2129,7 @@
 					font-size: $font-size-h2;
 					color: $secondary;
 					position: absolute;
-					margin-left: $marginVert / 3;
+					margin-left: calc(#{$marginVert} / 3);
 					// transform: translateX(-30%);
 					// opacity: 0;
 					transition: all $base-duration;
@@ -1790,11 +2150,13 @@
 		width: 100%;
 		display: block;
 		border-bottom: $border_thin solid $secondary;
-		margin-bottom: $marginVert / 2;
+		margin-bottom: calc(#{$marginVert} / 2);
 		// margin-top: $marginVert / 2;
 
 		&--margin {
-			@include grid-column(12, $second-grid);
+			width: calc(100% - (#{$marginVert} * 2));
+			float: left;
+			margin-left: $marginVert;
 		}
 	}
 
@@ -1806,7 +2168,7 @@
 		width: calc(100% - #{$marginVert});
 		display: block;
 		background-color: $primary;
-		padding: ($marginVert / 3) ($marginVert / 2);
+		padding: calc(#{$marginVert} / 3) calc(#{$marginVert} / 2);
 		font-size: $font-size-small;
 	}
 
@@ -1842,8 +2204,149 @@
 		@include grid-media($Small) {
 
 			a {
-				@include rowMachine(2, ($marginVert / 2));
+				@include rowMachine(2, calc(#{$marginVert} / 2));
 			}
+		}
+	}
+
+	&__column {
+		width: calc(50% - (#{$marginVert} / 2));
+		display: block;
+		position: relative;
+		float: left;
+
+		&-left {
+			margin-right: calc(#{$marginVert} / 2);
+		}
+
+		&-right {
+			margin-left: calc(#{$marginVert} / 2);
+		}
+
+		&-image {
+			width: 100%;
+			display: block;
+			position: relative;
+			float: left;
+			margin-bottom: $marginVert;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-position: center;
+				object-fit: cover;
+				position: relative;
+				float: left;
+			}
+
+			&--half {
+				width: 50%;
+				margin-right: calc(#{$marginVert} / 2);
+				margin-bottom: calc(#{$marginVert} / 2);
+			}
+		}
+
+		&-text {
+			width: 100%;
+			display: block;
+			position: relative;
+			float: left;
+
+			&--image {
+				width: 100%;
+			}
+
+			p {
+
+				b {
+					color: $secondary;
+				}
+			}
+		}
+
+		&-description {
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			padding: calc(#{$marginVert} / 4) calc(#{$marginVert} / 2) 0 0;
+			background-color: $layoutBackground;
+			font-size: $font-size-small;
+		}
+
+		@include grid-media($Medium) {
+
+			// &-image {
+
+			// 	&--half {
+			// 		width: 50%;
+			// 		// display: inline-block;
+			// 		// float: none;
+			// 	}
+			// }
+
+			// &-text {
+			// 	width: 100%;
+			// 	padding-left: 0;
+			// }
+		}
+
+		@include grid-media($XSmall) {
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	&__col {
+		width: 100%;
+		columns: 2;
+		column-gap: $marginVert;
+
+		&-image {
+			width: 100%;
+			display: block;
+			position: relative;
+			float: left;
+			margin-bottom: $marginVert;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-position: center;
+				object-fit: cover;
+				position: relative;
+				float: left;
+			}
+
+			&--half {
+				width: 50%;
+				margin-right: calc(#{$marginVert} / 2);
+				margin-bottom: calc(#{$marginVert} / 2);
+			}
+		}
+
+		&-text {
+			width: 100%;
+			display: block;
+			position: relative;
+			float: left;
+
+			&--image {
+				width: 100%;
+			}
+
+			p {
+
+				b {
+					color: $secondary;
+				}
+			}
+		}
+
+		h3 {
+			margin-top: 0;
 		}
 	}
 
@@ -1879,8 +2382,8 @@
 			// background-color: $forumBackground;
 
 			svg {
-				width: $forumPersonWidth / 1.7;
-				height: $forumPersonWidth / 1.7;
+				width: calc(#{$forumPersonWidth} / 1.7);
+				height: calc(#{$forumPersonWidth} / 1.7);
 				display: block;
 				position: absolute;
 				top: 50%;
@@ -1896,7 +2399,7 @@
 			display: block;
 			float: left;
 			position: relative;
-			margin-top: $marginVert / 4;
+			margin-top: calc(#{$marginVert} / 4);
 			// border-top-left-radius: $marginVert / 4;
 			// border-bottom-left-radius: $marginVert / 4;
 			// border-top-right-radius: $marginVert / 4;
@@ -1922,7 +2425,7 @@
 
 		&-createdon {
 			font-size: $font-size-small;
-			margin-top: $marginVert / 4;
+			margin-top: calc(#{$marginVert} / 4);
 		}
 
 		&-message {
@@ -1943,11 +2446,11 @@
 				content: "";
 				width: 0;
 				height: 0;
-				border-top: ($marginVert / 2) solid transparent;
+				border-top: calc(#{$marginVert} / 2) solid transparent;
 				border-right: $marginVert solid $forumBackground;
-				border-bottom: ($marginVert / 2) solid transparent;
+				border-bottom: calc(#{$marginVert} / 2) solid transparent;
 				position: absolute;
-				top: $forumPersonWidth / 2;
+				top: calc(#{$forumPersonWidth} / 2);
 				left: 0;
 				transform: translate(-80%, -50%);
 				z-index: -1;
@@ -1960,7 +2463,7 @@
 
 		&-reply {
 			width: calc(100% - 2rem);
-			height: $marginVert * 3;
+			height: calc(#{$marginVert} * 3);
 			margin-top: 2rem;
 			padding: 1rem;
 			background-color: $layoutBackground;
@@ -2006,7 +2509,7 @@
 	}
 
 	@include grid-media($XXLarge) {
-		padding-top: ($headerHeightDesktop + 1) + ($marginVert * 2);
+		padding-top: calc((#{$headerHeightDesktop} + 1) + (#{$marginVert} * 2));
 
 		// &__inside {
 		// 	width: 70rem;
@@ -2031,11 +2534,22 @@
 				}
 			}
 		}
+
+		&__col {
+			columns: 1;
+
+			&-image {
+
+				&--half {
+					width: 25%;
+				}
+			}
+		}
 	}
 
 	@include grid-media($Small) {
 		width: calc(100% - (#{$paddingMobile} * 2));
-		padding: ($headerHeightMobile + 5) $paddingMobile $headerHeightMobile;
+		padding: calc(#{$headerHeightMobile} + 5rem) $paddingMobile $headerHeightMobile;
 
 		&__guest {
 			width: 100%;
@@ -2051,8 +2565,8 @@
 
 
 				svg {
-					width: $forumPersonWidthMobile / 1.7;
-					height: $forumPersonWidthMobile / 1.7;
+					width: calc(#{$forumPersonWidthMobile} / 1.7);
+					height: calc(#{$forumPersonWidthMobile} / 1.7);
 				}
 			}
 
@@ -2067,10 +2581,10 @@
 				padding: $paddingMobile;
 
 				&:before {
-					border-top: ($paddingMobile / 2) solid transparent;
+					border-top: calc(#{$paddingMobile} / 2) solid transparent;
 					border-right: $paddingMobile solid $forumBackground;
-					border-bottom: ($paddingMobile / 2) solid transparent;
-					top: $forumPersonWidthMobile / 2;
+					border-bottom: calc(#{$paddingMobile} / 2) solid transparent;
+					top: calc(#{$forumPersonWidthMobile} / 2);
 				}
 			}
 		}
@@ -2086,6 +2600,7 @@
 
 		&__inside {
 			width: 100%;
+			min-height: 2rem;
 			margin-left: 0;
 			overflow: hidden;
 
@@ -2154,6 +2669,16 @@
 					margin-left: 0;
 				}
 			}
+
+			&-map {
+				display: none;
+				visibility: hidden;
+			}
+
+			i {
+				display: none;
+				visibility: hidden;
+			}
 		}
 
 		&__breadcrumbs {
@@ -2185,9 +2710,9 @@
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
 .bx-prev {
-	left: 0;
+	right: 0;
 	// background: url('images/controls.png') no-repeat 0 -32px;
-	background: url('images/bx_prev.svg') no-repeat 50% 50%;
+	background: url('images/bx_next.svg') no-repeat 50% 50%;
 	background-size: 60% 60%;
 	background-color: $secondary;
 	opacity: 0;
@@ -2195,12 +2720,12 @@
 }
 .bx-prev:hover,
 .bx-prev:focus {
-	background-position: 20% 50%;
+	background-position: 80% 50%;
 }
 .bx-next {
-	right: 0;
+	left: 0;
 	// background: url('images/controls.png') no-repeat -43px -32px;
-	background: url('images/bx_next.svg') no-repeat 50% 50%;
+	background: url('images/bx_prev.svg') no-repeat 50% 50%;
 	background-size: 60% 60%;
 	background-color: $secondary;
 	opacity: 0;
@@ -2208,13 +2733,13 @@
 }
 .bx-next:hover,
 .bx-next:focus {
-	background-position: 80% 50%;
+	background-position: 20% 50%;
 }
 .bx-controls-direction a {
 	position: absolute;
 	// top: 50%;
 	bottom: 0;
-	margin-top: -($marginVert / 2);
+	margin-top: calc((-#{$marginVert}) / 2);
 	outline: 0;
 	width: $marginVert;
 	height: $marginVert;

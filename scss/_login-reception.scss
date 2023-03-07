@@ -6,7 +6,7 @@
 
 	&-block {
 		width: 50%;
-		height: $marginVert * 2;
+		height: calc(#{$marginVert} * 2);
 		display: block;
 		float: left;
 		position: absolute;
@@ -37,7 +37,7 @@
 				align-items: center;
 				justify-content: flex-end;
 				text-align: right;
-				margin-right: $marginVert / 2;
+				margin-right: calc(#{$marginVert} / 2);
 
 				a {
 					font-size: $font-size-small;
@@ -46,7 +46,7 @@
 
 				i {
 					color: $sidebarButtonsBackground;
-					margin-right: $marginVert / 4;
+					margin-right: calc(#{$marginVert} / 4);
 				}
 
 				&:last-child {
@@ -76,7 +76,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
-			padding-right: $marginVert / 2;
+			padding-right: calc(#{$marginVert} / 2);
 
 			& > span {
 				font-size: $font-size-large;
@@ -98,8 +98,8 @@
 				display: inline-block;
 				border: $border_thin solid $secondary;
 				border-bottom: none;
-				padding: 0 $marginVert / 4;
-				margin-right: $marginVert / 4;
+				padding: 0 calc(#{$marginVert} / 4);
+				margin-right: calc(#{$marginVert} / 4);
 				background-color: transparent;
 				color: $formInputColor;
 				transition: all 0.3s;
@@ -151,7 +151,7 @@
 		}
 
 		&__button {
-			width: $marginVert * 3;
+			width: calc(#{$marginVert} * 3);
 			height: $marginVert;
 			display: flex;
 			align-items: center;
@@ -180,13 +180,19 @@
 					color: $fourth;
 				}
 			}
+
+			&--single {
+				width: initial;
+				padding: 0 1rem;
+			}
 		}
 
 		@include grid-media($Small) {
 			width: 100%;
 			height: inherit;
-			min-height: $marginVert * 2;
+			min-height: $marginVert;
 			position: relative;
+			margin-top: calc(#{$marginVert} / 2);
 			transform: translateY(0);
 
 			&__top {
@@ -204,12 +210,17 @@
 					width: calc(100% - ((#{$marginVert} / 4) * 2) - (#{$border_thin} * 2));
 					border-bottom: $border_thin solid $secondary;
 					margin-right: 0;
-					margin-bottom: $marginVert / 4;
+					margin-bottom: calc(#{$marginVert} / 4);
 				}
 			}
 
 			&__button {
-				margin-bottom: $marginVert / 4;
+				width: 100%;
+				// margin-top: $marginVert / 4;
+
+				// &--single {
+				// 	width: 100%;
+				// }
 			}
 		}
 	}
@@ -221,15 +232,29 @@
 		flex-direction: row;
 		position: relative;
 		padding: $marginVert;
+		margin-bottom: $marginVert;
 		background-color: lighten($layoutBackground, 5%);
 
+		&--half {
+			width: calc(50% - (#{$marginVert} * 2));
+			min-height: 10vh;
+			display: block;
+			float: left;
+		}
+
 		&__part {
-			width: calc(50% - #{$marginVert});
+			width: 50%;
 			height: 100%;
 			display: block;
 			float: left;
 			position: relative;
-			padding-right: $marginVert;
+			// padding-right: $marginVert;
+			margin-bottom: 0 !important;
+
+			&--full {
+				width: 100%;
+				// padding-right: 0;
+			}
 
 			li {
 				list-style: none;

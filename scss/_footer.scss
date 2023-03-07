@@ -20,7 +20,7 @@ $footer-grid: (columns: 1, gutter: 5rem);
         display: flex;
         flex-direction: row;
         font-size: $font-size-small;
-        padding: ($marginVert / 2) 0;
+        padding: calc(#{$marginVert} / 2) 0;
     }
 
     &__part {
@@ -108,12 +108,30 @@ $footer-grid: (columns: 1, gutter: 5rem);
             justify-content: center;
 
             li {
-                width: 15%;
+                min-width: 15%;
                 display: flex;
                 justify-content: center;
 
                 i {
                     font-size: $font-size-large + 0.2;
+                }
+
+                svg {
+                    height: $font-size-base;
+
+                    path {
+                        fill: $primary;
+                    }
+                }
+
+                &:hover {
+
+                    svg {
+
+                        path {
+                            fill: $fourth;
+                        }
+                    }
                 }
             }
         }
@@ -155,7 +173,7 @@ $footer-grid: (columns: 1, gutter: 5rem);
             height: 31px;
             display: inline-block;
             background-color: $primary;
-            margin-right: $marginVert / 2;
+            margin-right: calc(#{$marginVert} / 2);
 
             &:last-child {
                 margin-right: 0;

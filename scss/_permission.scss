@@ -11,7 +11,7 @@
 		display: flex;
 		flex-direction: column;
 		position: fixed;
-		padding: 1rem ($headerBlindWidth * 2) 1rem ($headerBlindWidth / 2);
+		padding: 1rem calc(#{$headerBlindWidth} * 2) 1rem calc(#{$headerBlindWidth} / 2);
 		right: 0;
 		bottom: 0;
 		background-color: $fourth;
@@ -41,7 +41,7 @@
 			justify-content: center;
 			position: absolute;
 			top: 2rem;
-			right: $headerBlindWidth / 2;
+			right: calc(#{$headerBlindWidth} / 2);
 			background-color: $secondary;
 			color: $fourth;
 			cursor: pointer;

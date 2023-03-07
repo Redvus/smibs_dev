@@ -22,7 +22,7 @@
 	// }
 
 	&__bottom {
-		margin-top: $marginVert / 2;
+		margin-top: calc(#{$marginVert} / 2);
 	}
 
 	&__date {
@@ -30,7 +30,7 @@
 		background-color: $secondary;
 		color: $fourth;
 		font-size: $font-size-small;
-		padding: ($marginVert / 5) ($marginVert / 2);
+		padding: calc(#{$marginVert} / 5) calc(#{$marginVert} / 2);
 		// margin-right: $marginVert / 2;
 	}
 
@@ -40,7 +40,7 @@
 		background-color: $primary;
 		// color: $fourth;
 		font-size: $font-size-small;
-		padding: ($marginVert / 5) ($marginVert / 2);
+		padding: calc(#{$marginVert} / 5) calc(#{$marginVert} / 2);
 		// margin-right: $marginVert / 2;
 
 		&:hover {

@@ -4,14 +4,13 @@
     =            Blind Menu            =
     ==================================*/
 
-	const blindMenu = $('.blind-menu'),
-		blindMask = $('.blind-mask'),
-		blindButton = $('#blindButton');
+	const blindMenu = document.querySelector('.blind-menu'),
+		blindMask = document.querySelector('.blind-mask'),
+		blindButton = document.getElementById('blindButton');
 
 	function blindMenuActive() {
 
-		let tl = new TimelineMax({
-			paused: true,
+		let tl = new gsap.timeline({
 			reversed: true
 		});
 
@@ -23,17 +22,19 @@
 			//     visibility: 'visible',
 			//     ease: Power1.easeInOut
 			// }, "-=0.6")
-			.to(blindMenu, 0.4, {
-				yPercent: '100',
+			.to(blindMenu, {
+				duration: 0.4,
+				delay: -0.8,
+				y: 0,
 				display: 'block',
-				zIndex: '9991',
-				visibility: 'visible',
-				ease: Power2.easeInOut
-			}, "-=0.6");
+				zIndex: 9991,
+				autoAlpha: 1,
+				ease: 'sine'
+			});
 
 		/*jshint -W030 */
-		blindButton.on('click', function () {
-			tl.reversed() ? tl.restart() : tl.reverse(-0.2);
+		blindButton.addEventListener('click', function () {
+			tl.reversed() ? tl.restart() : tl.reverse(0.25);
 		});
 
 		// blindMask.on('click', function () {
@@ -207,34 +208,38 @@
     ==================================*/
 
 	/*---------  Nav Mobile  ---------*/
-	const navButtonMobile = $('#navButtonMobile'),
-		navMainMobile = $('#navMainMobile'),
-		navMainListMobile = $('.nav-mobile__menu li'),
-		navBack = $('.nav-mobile__mask'),
-		navButtonLineTop = $('.nav-button-line__top'),
-		navButtonLineMiddle = $('.nav-button-line__middle'),
-		navButtonLineBottom = $('.nav-button-line__bottom'),
-		navWrapper = $('.wrapper'),
-		navHeaderTop = $('.header-top')
+	const navButtonMobile = document.getElementById('navButtonMobile'),
+		navMainMobile = document.getElementById('navMainMobile'),
+		navMainListMobile = document.querySelectorAll('#navMainMobile ul > li'),
+		navBack = document.querySelector('.nav-mobile__mask'),
+		navButtonLineTop = document.querySelector('.nav-button-line__top'),
+		navButtonLineMiddle = document.querySelector('.nav-button-line__middle'),
+		navButtonLineBottom = document.querySelector('.nav-button-line__bottom'),
+		navWrapper = document.querySelector('.wrapper'),
+		navHeaderTop = document.querySelector('.header-top')
 	;
 
 	function navMenuOpenMobile() {
 
-		let tl = new TimelineMax({
-			paused: true,
+		let tl = new gsap.timeline({
 			reversed: true
 		});
 
 		tl
-			.from(navBack, 0.4, {
-				autoAlpha: 0,
-				ease: Power1.easeInOut
-			}, "-=1")
-			.to(navMainMobile, 0.4, {
-				xPercent: '-100%',
+			.to(navBack, {
+				duration: 0.4,
+				delay: -1,
+				autoAlpha: 1,
+				display: 'block',
+				ease: 'power1'
+			})
+			.to(navMainMobile, {
+				duration: 0.4,
+				delay: -1.2,
+				x: '0%',
 				// zIndex: '9999',
-				ease: Power2.easeInOut
-			}, "-=1.2")
+				ease: 'power2'
+			})
 			// .to(navWrapper, 0.6, {
 			// 	xPercent: '50%',
 			// 	autoAlpha: 0,
@@ -244,38 +249,47 @@
 			// 	yPercent: '-100%',
 			// 	ease: Power2.easeInOut
 			// }, "-=0.6")
-			.to(navButtonLineMiddle, 0.3, {
+			.to(navButtonLineMiddle, {
+				duration: 0.3,
+				delay: -0.6,
 				rotation: '180deg',
-				ease: Power2.easeInOut
-			}, "-=0.6")
-			.to(navButtonLineTop, 0.3, {
+				ease: 'power2'
+			})
+			.to(navButtonLineTop, {
+				duration: 0.3,
+				delay: -0.6,
 				rotation: '135deg',
-				xPercent: 30,
-				yPercent: 450,
+				x: '27%',
+				y: '200%',
 				scaleX: 0.6,
-				ease: Power2.easeInOut
-			}, "-=0.6")
-			.to(navButtonLineBottom, 0.3, {
+				ease: 'power2'
+			})
+			.to(navButtonLineBottom, {
+				duration: 0.3,
+				delay: -0.6,
 				rotation: '-135deg',
-				xPercent: 30,
-				yPercent: -450,
+				x: '27%',
+				y: '-200%',
 				scaleX: 0.6,
-				ease: Power2.easeInOut
-			}, "-=0.6")
-			.staggerFrom(navMainListMobile, 0.6, {
-				yPercent: '30%',
+				ease: 'power2'
+			})
+			.from(navMainListMobile, {
+				duration: 0.3,
+				delay: -0.5,
+				stagger: 0.07,
+				x: '20%',
 				autoAlpha: 0,
-				ease: Back.easeInOut
-			}, "0.07", "-=0.6")
+				ease: 'back'
+			})
 		;
 
 		/*jshint -W030 */
-		navButtonMobile.on('click', function () {
-			tl.reversed() ? tl.restart() : tl.reverse(-0.2);
+		navButtonMobile.addEventListener('click', function () {
+			tl.reversed() ? tl.restart() : tl.reverse();
 		});
 
-		navBack.on('click', function () {
-			tl.reverse(-0.2);
+		navBack.addEventListener('click', function () {
+			tl.reverse();
 		});
 
 	}
@@ -289,8 +303,51 @@
 
 	/*=====  End of Navigation  ======*/
 
+	/* Search Wide
+	-------------------------------------------------- */
+
+	const searchForm = document.querySelector('.header__search'),
+		searchInput = document.querySelector('.header__search-input'),
+		headerTopSocial = document.querySelector('.header__social'),
+		clickWrapper = document.querySelector('.main-content');
+
+	function searchWide() {
+		let tl = new gsap.timeline({
+			reversed: true
+		});
+
+		tl
+			.to(headerTopSocial, {
+				duration: 0.4,
+				delay: -1,
+				autoAlpha: 0,
+				// position: 'absolute',
+				// left: 0,
+				ease: 'circ'
+			})
+			.to(searchForm, {
+				duration: 0.4,
+				delay: -0.8,
+				width: '50%',
+				// position: 'absolute',
+				ease: 'circ'
+			})
+		;
+
+		searchInput.addEventListener('click', function () {
+			tl.reversed() ? tl.restart() : tl.reverse();
+		});
+		clickWrapper.addEventListener('click', function () {
+			tl.reverse();
+		});
+	}
+
+	/* End of Search Wide
+	-------------------------------------------------- */
+
     function initPage() {
 		blindMenuActive();
+		// searchWide();
 		// blindStyle();
     }
 

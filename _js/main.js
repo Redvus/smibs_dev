@@ -1,67 +1,5 @@
 ;(function() {
 
-    // $('.wrapper').jScrollPane();
-
-    /*==================================
-    =            Cookie 18+            =
-    ==================================*/
-
-    const permissionBlock = $('#permissionBlock'),
-        permissionText = $('.permission-cookie__text'),
-        permissionButton = $('#permissionButton')
-    ;
-
-    function cookieFront() {
-
-        if (!$.cookie('was')) {
-            permissionBlock.removeClass('permission-hidden');
-        }
-
-        $.cookie('was', true, {
-            expires: 7, //Cookie удаляется после закрытия браузера
-            path: '/'
-        });
-    }
-
-    function permissionFront() {
-
-        permissionButton.on('click', function () {
-
-            function permissioEnter() {
-
-                var tl = new TimelineMax();
-
-                tl
-                    .to(permissionButton, 0.6, {
-                        autoAlpha: 0,
-                        ease: Power2.easeInOut
-                    }, "-=0.4")
-                    .to(permissionText, 0.6, {
-                        autoAlpha: 0,
-                        ease: Power2.easeInOut
-                    }, "-=0.4")
-                    .to(permissionBlock, 0.8, {
-                        y: '50%',
-                        autoAlpha: 0,
-                        ease: Power2.easeInOut
-                    }, "-=0.2")
-                    .set(permissionBlock, {
-                        className: "+=permission-hidden"
-                    })
-                ;
-
-            }
-
-            permissioEnter();
-
-        });
-
-    }
-    permissionFront();
-    cookieFront();
-
-    /*=====  End of Cookie 18+  ======*/
-
     function scrollSmooth() {
         const Scrollbar = window.Scrollbar;
         Scrollbar.init(document.getElementById('main-scrollbar'), {
@@ -91,124 +29,6 @@
     //     // mouse: false,
     //     // overPause: false
     // });
-
-    /*========================================================
-    =                   Gridder News Front                   =
-    ========================================================*/
-
-    function anounceGridder() {
-        $('#anounceGridder').gridderExpander({
-            scroll: true,
-            scrollOffset: 80,
-            scrollTo: "panel", // panel or listitem
-            animationSpeed: 900,
-            animationEasing: "easeInOutExpo",
-            showNav: true, // Show Navigation
-            nextText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_next</title><polyline points=\"0 0 100 100 0 200\"/></svg>",
-            prevText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_prev</title><polyline points=\"100 200 0 100 100 0\"/></svg>",
-            closeText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200.71 200.71\"><title>bm_close</title><line x1=\"200\" y1=\"200\" x2=\"0\" y2=\"0\"/><line x1=\"200\" y1=\"0\" x2=\"0\" y2=\"200\"/></svg>"
-        });
-    }
-
-    function anounceGridderMobile() {
-        $('#anounceGridder').gridderExpander({
-            scroll: true,
-            scrollOffset: 96,
-            scrollTo: "panel", // panel or listitem
-            animationSpeed: 900,
-            animationEasing: "easeInOutExpo",
-            showNav: true, // Show Navigation
-            nextText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_next</title><polyline points=\"0 0 100 100 0 200\"/></svg>",
-            prevText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_prev</title><polyline points=\"100 200 0 100 100 0\"/></svg>",
-            closeText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200.71 200.71\"><title>bm_close</title><line x1=\"200\" y1=\"200\" x2=\"0\" y2=\"0\"/><line x1=\"200\" y1=\"0\" x2=\"0\" y2=\"200\"/></svg>"
-        });
-    }
-
-    function newsGridder() {
-        $('#newsGridder').gridderExpander({
-            scroll: true,
-            scrollOffset: 80,
-            scrollTo: "panel", // panel or listitem
-            animationSpeed: 900,
-            animationEasing: "easeInOutExpo",
-            showNav: true, // Show Navigation
-            nextText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_next</title><polyline points=\"0 0 100 100 0 200\"/></svg>",
-            prevText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_prev</title><polyline points=\"100 200 0 100 100 0\"/></svg>",
-            closeText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200.71 200.71\"><title>bm_close</title><line x1=\"200\" y1=\"200\" x2=\"0\" y2=\"0\"/><line x1=\"200\" y1=\"0\" x2=\"0\" y2=\"200\"/></svg>"
-        });
-    }
-
-    function newsGridderMobile() {
-        $('#newsGridder').gridderExpander({
-            scroll: true,
-            scrollOffset: 96,
-            scrollTo: "panel", // panel or listitem
-            animationSpeed: 900,
-            animationEasing: "easeInOutExpo",
-            showNav: true, // Show Navigation
-            nextText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_next</title><polyline points=\"0 0 100 100 0 200\"/></svg>",
-            prevText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_prev</title><polyline points=\"100 200 0 100 100 0\"/></svg>",
-            closeText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200.71 200.71\"><title>bm_close</title><line x1=\"200\" y1=\"200\" x2=\"0\" y2=\"0\"/><line x1=\"200\" y1=\"0\" x2=\"0\" y2=\"200\"/></svg>"
-        });
-    }
-
-    function calendarGridder() {
-        $('#calendarGridder').gridderExpander({
-            scroll: true,
-            scrollOffset: 75,
-            scrollTo: "panel", // panel or listitem
-            animationSpeed: 900,
-            animationEasing: "easeInOutExpo",
-            showNav: true, // Show Navigation
-            nextText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_next</title><polyline points=\"0 0 100 100 0 200\"/></svg>",
-            prevText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_prev</title><polyline points=\"100 200 0 100 100 0\"/></svg>",
-            closeText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200.71 200.71\"><title>bm_close</title><line x1=\"200\" y1=\"200\" x2=\"0\" y2=\"0\"/><line x1=\"200\" y1=\"0\" x2=\"0\" y2=\"200\"/></svg>"
-        });
-    }
-
-    function calendarGridderMobile() {
-        $('#calendarGridder').gridderExpander({
-            scroll: true,
-            scrollOffset: 96,
-            scrollTo: "panel", // panel or listitem
-            animationSpeed: 900,
-            animationEasing: "easeInOutExpo",
-            showNav: true, // Show Navigation
-            nextText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_next</title><polyline points=\"0 0 100 100 0 200\"/></svg>",
-            prevText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_prev</title><polyline points=\"100 200 0 100 100 0\"/></svg>",
-            closeText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200.71 200.71\"><title>bm_close</title><line x1=\"200\" y1=\"200\" x2=\"0\" y2=\"0\"/><line x1=\"200\" y1=\"0\" x2=\"0\" y2=\"200\"/></svg>"
-        });
-    }
-
-    function readGridder() {
-        $('#readGridder').gridderExpander({
-            scroll: true,
-            scrollOffset: 75,
-            scrollTo: "panel", // panel or listitem
-            animationSpeed: 900,
-            animationEasing: "easeInOutExpo",
-            showNav: true, // Show Navigation
-            nextText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_next</title><polyline points=\"0 0 100 100 0 200\"/></svg>",
-            prevText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_prev</title><polyline points=\"100 200 0 100 100 0\"/></svg>",
-            closeText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200.71 200.71\"><title>bm_close</title><line x1=\"200\" y1=\"200\" x2=\"0\" y2=\"0\"/><line x1=\"200\" y1=\"0\" x2=\"0\" y2=\"200\"/></svg>"
-        });
-    }
-
-    function readGridderMobile() {
-        $('#readGridder').gridderExpander({
-            scroll: true,
-            scrollOffset: 96,
-            scrollTo: "panel", // panel or listitem
-            animationSpeed: 900,
-            animationEasing: "easeInOutExpo",
-            showNav: true, // Show Navigation
-            nextText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_next</title><polyline points=\"0 0 100 100 0 200\"/></svg>",
-            prevText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 200\"><title>bm_prev</title><polyline points=\"100 200 0 100 100 0\"/></svg>",
-            closeText: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200.71 200.71\"><title>bm_close</title><line x1=\"200\" y1=\"200\" x2=\"0\" y2=\"0\"/><line x1=\"200\" y1=\"0\" x2=\"0\" y2=\"200\"/></svg>"
-        });
-    }
-
-    /*============  End of Gridder News  =============*/
 
     /*=================================================
     =                   News Slider                   =
@@ -285,18 +105,18 @@
         }
     }
 
-    function introBXSlider() {
-        $("#sliderIntro").bxSlider({
-            'wrapperClass': 'main-content__intro',
-            'mode': 'horizontal',
-            'auto': true,
-            'pause': 8000,
-            'slideMargin': 32,
-            'pager': false,
-            'touchEnabled': false,
-            'autoHover': true
-        });
-    }
+    // function introBXSlider() {
+    //     $("#sliderIntro").bxSlider({
+    //         'wrapperClass': 'main-content__intro',
+    //         'mode': 'horizontal',
+    //         'auto': true,
+    //         'pause': 8000,
+    //         'slideMargin': 32,
+    //         'pager': false,
+    //         'touchEnabled': false,
+    //         'autoHover': true
+    //     });
+    // }
 
     function galleryAnniversary() {
         $("#galleryAnniversary").bxSlider({
@@ -354,10 +174,6 @@
     function initPage() {
         // scrollSmooth();
         // initPhotoSwipeFromDOM('.main-content__read-all');
-        newsGridder();
-        anounceGridder();
-        calendarGridder();
-        readGridder();
         // introSlider();
         // introBXSlider();
         galleryAnniversary();
@@ -366,10 +182,6 @@
     }
 
     function initPageMobile() {
-        newsGridderMobile();
-        anounceGridderMobile();
-        readGridderMobile();
-        calendarGridderMobile();
         introTNSMobile();
     }
 
