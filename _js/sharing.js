@@ -166,7 +166,10 @@ function sharingText() {
 		let highlight = getHighlight();
 
 		if ( highlight.text !== '' && highlight.parent.nodeName === 'P' ) {
-			document.execCommand('copy');
+			// document.execCommand('copy');
+			navigator.clipboard
+				.readText()
+				.then((clipText) => (document.getElementById("outbox").innerText = clipText));
 		}
 
 		let sharingButtons = document.querySelector('.sharing__buttons');
