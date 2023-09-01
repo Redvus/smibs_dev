@@ -83,18 +83,12 @@
 		position: relative;
 		float: left;
 		padding: calc(#{$marginVert} / 3) calc(#{$marginVert} / 2);
+		margin-right: calc(#{$marginVert} / 2);
 		background-color: $primary;
 		text-align: center;
 		border: $border_thin solid $secondary;
-		border-top-left-radius: calc(#{$border_normal} * 2);
-		border-bottom-left-radius: calc(#{$border_normal} * 2);
-		border-top-right-radius: calc(#{$border_normal} * 2);
-		border-bottom-right-radius: calc(#{$border_normal} * 2);
+		border-radius: calc(#{$border_normal} * 2);
 		transition: all $base-duration;
-
-		&--desktop {
-			margin-right: calc(#{$marginVert} / 2);
-		}
 
 		&:hover {
 			// background-color: $layoutBackground;

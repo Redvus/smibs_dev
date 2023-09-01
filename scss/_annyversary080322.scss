@@ -1,0 +1,366 @@
+/*=================================================
+=                   Annyversary                   =
+=================================================*/
+.anniversary {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	user-select: none;
+	box-sizing: border-box;
+	opacity: 0;
+	display: none;
+	z-index: -1;
+
+	&--8march {
+		opacity: 0;
+		display: block;
+		background-color: #FDF5E7;
+		z-index: -1;
+	}
+
+	&--8num {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(1.8);
+		z-index: 1;
+	}
+
+	&--flower {
+		display: block;
+		position: fixed;
+		transform-origin: 50% 50%;
+	}
+
+	/* 08-03-22 v1
+	-------------------------------------------------- */
+	&__back {
+		width: 100%;
+		height: 100vh;
+		display: block;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: 0;
+
+		> img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-position: center;
+			object-fit: cover;
+		}
+	}
+
+	#s080322 {
+
+		&_plate {
+			width: 35%;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+		}
+
+		&_redFlower1 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 57%;
+			left: 32%;
+			transform: scale(0.7);
+			z-index: 3;
+		}
+
+		&_redFlower2 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 24%;
+			left: 22%;
+			transform: scale(0.5);
+			z-index: 1;
+		}
+
+		&_redFlower3 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 0%;
+			left: 53%;
+			transform: scale(0.2);
+			z-index: 3;
+		}
+
+		&_redFlower4 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 13%;
+			left: 51%;
+			transform: scale(0.4);
+			z-index: 1;
+		}
+
+		&_redFlower5 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 55%;
+			left: 51%;
+			transform: scale(0.3);
+			z-index: 3;
+		}
+
+		&_redFlower6 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 66%;
+			transform: scale(0.3);
+			z-index: 3;
+		}
+
+		&_pinkFlower1 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 11%;
+			left: 27%;
+			transform: scale(0.7);
+			z-index: 0;
+		}
+
+		&_pinkFlower2 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 8%;
+			left: 45%;
+			transform: scale(0.4);
+			z-index: 3;
+		}
+
+		&_pinkFlower3 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 52%;
+			left: 55%;
+			transform: scale(0.5);
+			z-index: 1;
+		}
+
+		&_pinkFlower4 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 66%;
+			left: 40%;
+			transform: scale(0.6);
+			z-index: 1;
+		}
+
+		&_pinkFlower5 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 35%;
+			left: 57%;
+			transform: scale(0.3);
+			z-index: 3;
+		}
+
+		&_pinkFlower6 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 33%;
+			left: 15%;
+			transform: scale(0.25);
+			z-index: 3;
+		}
+
+		&_cyanFlower1 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 5%;
+			left: 38%;
+			transform: scale(0.7);
+			z-index: 1;
+		}
+
+		&_cyanFlower2 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 29%;
+			left: 58%;
+			transform: scale(0.8);
+			z-index: 1;
+		}
+
+		&_cyanFlower3 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 65%;
+			left: 50%;
+			transform: scale(0.5);
+			z-index: 1;
+		}
+
+		&_cyanFlower4 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 68%;
+			left: 63%;
+			transform: scale(0.3);
+			z-index: 1;
+		}
+
+		&_cyanFlower5 {
+			width: auto;
+			height: auto;
+			display: block;
+			position: absolute;
+			top: 52%;
+			left: 23%;
+			transform: scale(0.8);
+			z-index: 1;
+		}
+
+		&_text1 {
+			width: 28vmax;
+			top: 38%;
+		}
+
+		&_text2 {
+			width: 28vmax;
+			top: 48%;
+		}
+
+		&_text3 {
+			width: 30vmax;
+			top: 58%;
+		}
+	}
+	/* End of 08-03-22 v1
+	-------------------------------------------------- */
+
+	/* 08-03-22 v2
+	-------------------------------------------------- */
+	#s080322 {
+
+		&_woman {
+			width: auto;
+			height: 100vh;
+			display: block;
+			top: 3vh;
+			left: -6rem;
+			position: absolute;
+			z-index: 0;
+		}
+
+		&_slogan {
+			width: 70vw;
+			height: auto;
+			display: block;
+			top: -3vh;
+			right: -5vw;
+			position: absolute;
+			z-index: 2;
+		}
+
+		&_eight {
+			width: 25vw;
+			height: auto;
+			display: block;
+			top: 10vw;
+			right: 18vw;
+			position: absolute;
+			z-index: 1;
+		}
+
+		&_flowerTop {
+			width: 50vw;
+			height: auto;
+			display: block;
+			top: 1vw;
+			right: 2vw;
+			position: absolute;
+			z-index: 3;
+		}
+
+		&_flowerBottom {
+			width: 50vw;
+			height: auto;
+			display: block;
+			top: 32vw;
+			right: 5vw;
+			position: absolute;
+			z-index: 3;
+		}
+	}
+	/* End of 08-03-22 v2
+	-------------------------------------------------- */
+
+	@include grid-media($XSmall) {
+
+		#s080322 {
+
+			&_woman {
+				height: 70vh;
+				top: initial;
+				bottom: -3rem;
+				z-index: 5;
+			}
+
+			&_slogan {
+				width: 110vw;
+			}
+
+			&_eight {
+				width: 40vw;
+				right: 25vw;
+			}
+
+			&_flowerTop {
+				width: 70vw;
+				right: 5vw;
+			}
+
+			&_flowerBottom {
+				width: 70vw;
+				top: 50vw;
+				right: 15vw;
+			}
+		}
+	}
+}

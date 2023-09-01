@@ -1,0 +1,212 @@
+/*=================================================
+=                   Annyversary                   =
+=================================================*/
+.anniversary {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	user-select: none;
+	box-sizing: border-box;
+	opacity: 0;
+	display: none;
+	z-index: -1;
+
+	&--100year {
+		opacity: 0;
+		display: block;
+		background-color: $fourth;
+		z-index: -1;
+	}
+
+	/* 100 Year
+	-------------------------------------------------- */
+	#s100year {
+
+		&__back {
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			display: block;
+			position: fixed;
+			overflow: hidden;
+			z-index: 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+				object-position: center;
+			}
+
+			&Red {
+				width: auto;
+				height: 60vh;
+				display: block;
+				position: absolute;
+				top: 12vh;
+				left: 0;
+				z-index: 1;
+			}
+		}
+
+		&__logo {
+			width: auto;
+			height: 30vh;
+			display: block;
+			position: absolute;
+			top: 19vh;
+			left: 5.5vw;
+			z-index: 3;
+
+			&Back {
+				width: auto;
+				height: 32vh;
+				display: block;
+				position: absolute;
+				top: 18vh;
+				left: 5vw;
+				z-index: 2;
+			}
+		}
+
+		&__name {
+			width: auto;
+			height: 13.5vh;
+			display: block;
+			position: absolute;
+			left: 5vw;
+			top: 53vh;
+			z-index: 3;
+		}
+
+		&__slogan {
+			width: auto;
+			height: 30vh;
+			display: block;
+			position: absolute;
+			top: 27vh;
+			left: 60vh;
+			z-index: 3;
+
+			&Line {
+				width: auto;
+				height: 50vh;
+				display: block;
+				position: absolute;
+				top: 18vh;
+				left: 50vh;
+				z-index: 3;
+			}
+		}
+
+		&__100 {
+
+			&White {
+				width: 33vw;
+				height: auto;
+				display: block;
+				position: absolute;
+				bottom: 17vh;
+				right: 7vw;
+				z-index: 4;
+			}
+
+			&Red {
+				width: 33vw;
+				height: auto;
+				display: block;
+				position: absolute;
+				bottom: 15vh;
+				right: 5.5vw;
+				z-index: 5;
+			}
+
+			&digit {
+				width: 23vw;
+				height: auto;
+				display: block;
+				position: absolute;
+				bottom: 17.5vh;
+				right: 11vw;
+				z-index: 6;
+			}
+		}
+	}
+	/* End of 08-03-22 v2
+	-------------------------------------------------- */
+
+	@include grid-media($XSmall) {
+
+		// &--100year {
+		// 	opacity: 1;
+		// 	z-index: 9999;
+		// }
+
+		#s100year {
+
+			&__back {
+
+				&Red {
+					height: 77vh;
+					top: 5vh;
+				}
+			}
+
+			&__logo {
+				height: 23vh;
+				top: 9vh;
+				left: 16.5vw;
+
+				&Back {
+					height: 25vh;
+					top: 8vh;
+					left: 15vw;
+				}
+			}
+
+			&__name {
+				height: 10.5vh;
+				left: 15vw;
+				top: 35vh;
+			}
+
+			&__slogan {
+				height: 23vh;
+				top: 52vh;
+				left: 25vw;
+
+				&Line {
+					width: auto;
+					height: 45vh;
+					top: 27vh;
+					left: 47vw;
+					transform: rotate(90deg);
+				}
+			}
+
+			&__100 {
+
+				&White {
+					width: 70vw;
+					bottom: 10vh;
+				}
+
+				&Red {
+					width: 70vw;
+					bottom: 9vh;
+				}
+
+				&digit {
+					width: 47vw;
+					bottom: 11vh;
+					right: 17vw;
+				}
+			}
+		}
+	}
+}

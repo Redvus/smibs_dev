@@ -1,0 +1,277 @@
+/*=================================================
+=                   Annyversary                   =
+=================================================*/
+.anniversary {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	user-select: none;
+	box-sizing: border-box;
+	opacity: 0;
+	display: none;
+	z-index: -1;
+
+	&--8march {
+		opacity: 0;
+		display: block;
+		background-color: #FDF5E7;
+		z-index: -1;
+	}
+
+	&--8num {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(1.8);
+		z-index: 1;
+	}
+
+	&--flower {
+		display: block;
+		position: fixed;
+		transform-origin: 50% 50%;
+	}
+
+	/* 08-03-21
+	-------------------------------------------------- */
+	#march {
+
+		&Flower1 {
+			width: 15%;
+			height: auto;
+			top: 5%;
+			left: 10%;
+			transform: rotate(-90deg);
+			z-index: 3;
+		}
+
+		&Flower2 {
+			width: 15%;
+			height: auto;
+			top: -5%;
+			left: 57%;
+			transform: rotate(-90deg);
+			z-index: 3;
+		}
+
+		&Flower3 {
+			width: 20%;
+			height: auto;
+			top: -10%;
+			left: 85%;
+			transform: rotate(-90deg);
+			z-index: 3;
+		}
+
+		&Flower4 {
+			top: 0%;
+			left: 65%;
+			// transform: scale(0);
+			z-index: 4;
+		}
+
+		&Flower5 {
+			width: 20%;
+			height: auto;
+			top: 25%;
+			left: 82%;
+			transform: rotate(15deg);
+			z-index: 3;
+		}
+
+		&Flower6 {
+			width: 15%;
+			height: auto;
+			top: 35%;
+			left: 15%;
+			transform: rotate(25deg);
+			z-index: 4;
+		}
+
+		&Flower7 {
+			top: 50%;
+			left: 2%;
+			transform: rotate(15deg);
+			z-index: 3;
+		}
+
+		&Flower8 {
+			width: 17%;
+			height: auto;
+			top: 70%;
+			left: 20%;
+			transform: rotate(20deg);
+			z-index: 2;
+		}
+
+		&Flower9 {
+			width: 15%;
+			height: auto;
+			top: 80%;
+			left: -6%;
+			z-index: 4;
+		}
+
+		&Flower10 {
+			width: 15%;
+			height: auto;
+			top: 65%;
+			left: 75%;
+			z-index: 2;
+		}
+
+		&Text1 {
+			width: 35rem;
+			top: 35%;
+		}
+
+		&Text2 {
+			width: 35rem;
+			top: 50.15%;
+		}
+
+		&Text3 {
+			width: 40rem;
+			top: 65%;
+		}
+	}
+
+	&--text {
+		height: auto;
+		display: block;
+		position: fixed;
+		left: 50%;
+		z-index: 2;
+		transform: translate(-50%, -50%);
+		// opacity: 0;
+	}
+	/* End of 08-03-21
+	-------------------------------------------------- */
+
+	@include grid-media($XSmall) {
+
+		&--8num {
+			transform: translate(-50%, -50%) scale(1);
+		}
+
+		#marchFlower1 {
+			width: 30%;
+			height: auto;
+			top: 2%;
+			left: 2%;
+			transform: rotate(-90deg);
+			z-index: 3;
+		}
+
+		#marchFlower2 {
+			width: 35%;
+			height: auto;
+			top: -3%;
+			left: 52%;
+			transform: rotate(-90deg);
+			z-index: 3;
+		}
+
+		#marchFlower3 {
+			width: 35%;
+			height: auto;
+			top: -7%;
+			left: 80%;
+			transform: rotate(-90deg);
+			z-index: 3;
+		}
+
+		#marchFlower4 {
+			width: 45%;
+			height: auto;
+			top: 7%;
+			left: 70%;
+			z-index: 4;
+		}
+
+		#marchFlower5 {
+			top: 20%;
+			left: 79%;
+			transform: rotate(15deg);
+			z-index: 3;
+		}
+
+		#marchFlower6 {
+			width: 25%;
+			height: auto;
+			top: 65%;
+			left: -10%;
+			transform: rotate(25deg);
+			z-index: 4;
+		}
+
+		#marchFlower7 {
+			width: 50%;
+			height: auto;
+			top: 70%;
+			left: 2%;
+			transform: rotate(15deg);
+			z-index: 3;
+		}
+
+		#marchFlower8 {
+			width: 30%;
+			height: auto;
+			top: 88%;
+			left: 35%;
+			transform: rotate(20deg);
+			z-index: 2;
+		}
+
+		#marchFlower9 {
+			width: 25%;
+			height: auto;
+			top: 90%;
+			left: -6%;
+			z-index: 4;
+		}
+
+		#marchFlower10 {
+			width: 20%;
+			height: auto;
+			top: 82%;
+			left: 70%;
+			z-index: 2;
+		}
+
+		#marchText1 {
+			width: 80%;
+			top: 40%;
+		}
+
+		#marchText2 {
+			width: 75%;
+			top: 50%;
+		}
+
+		#marchText3 {
+			width: 90%;
+			top: 60%;
+		}
+
+		/* День библиотек
+		-------------------------------------------------- */
+		#bookFlower {
+			width: 100%;
+			height: initial;
+			top: initial;
+			bottom: 0;
+		}
+
+		#libraryText {
+			width: 86%;
+		}
+		/* End of День библиотек
+		-------------------------------------------------- */
+	}
+}
+/*============  Annyversary  =============*/
