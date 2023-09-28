@@ -158,7 +158,7 @@
 		// }
 	}
 
-	@include grid-media($Small) {
+	@include grid-media($XSmall) {
 
 		&__image {
 			width: 100%;
@@ -173,6 +173,7 @@
 
 			&--mobile {
 				width: calc(100% - #{$marginVert} - #{$border_normal});
+				margin-bottom: calc(#{$marginVert} / 2);
 
 				&:hover {
 					background-color: $primary !important;
