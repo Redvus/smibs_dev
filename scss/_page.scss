@@ -906,10 +906,7 @@
 			margin-bottom: calc(#{$marginVert} / 2);
 			padding: calc(#{$marginVert} / 5) calc(#{$marginVert} / 3);
 			border: $border_thin solid $secondary;
-			border-top-left-radius: calc(#{$border_normal} * 2);
-			border-bottom-left-radius: calc(#{$border_normal} * 2);
-			border-top-right-radius: calc(#{$border_normal} * 2);
-			border-bottom-right-radius: calc(#{$border_normal} * 2);
+			border-radius: calc(#{$border_normal} * 2);
 			transition: all $base-duration;
 
 			&:last-child {
