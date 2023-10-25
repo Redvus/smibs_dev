@@ -881,6 +881,22 @@
 		}
 	}
 
+	&__image {
+		width: 100%;
+		height: auto;
+		display: block;
+		position: relative;
+		padding-bottom: calc(#{$marginVert} / 2);
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-position: center;
+			object-fit: cover;
+		}
+	}
+
 	/* Pusgkin card mobile
 	-------------------------------------------------- */
 
