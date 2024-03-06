@@ -20,7 +20,151 @@
 		background-color: #F0B6C3;
 		//z-index: -1;
 	}
+}
 
+#s080324 {
+
+	&_border {
+		width: 70vmin;
+		height: 70vmin;
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 0.6rem solid $fourth;
+		z-index: 2;
+	}
+
+	&_leafBack {
+		width: auto;
+		height: 90vh;
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: 5rem;
+		margin-bottom: -3rem;
+		transform: translateX(-50%);
+		z-index: 1;
+	}
+
+	&_leafFront {
+		width: auto;
+		height: 33.75vh;
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: -1.2rem;
+		margin-bottom: -3.1rem;
+		transform: translateX(-50%);
+		z-index: 10;
+	}
+
+	&_flower1 {
+		width: auto;
+		height: 80vh;
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: -13rem;
+		margin-bottom: -6rem;
+		transform: translateX(-50%);
+		z-index: 2;
+	}
+
+	&_flower2 {
+		width: auto;
+		height: 90vh;
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: -10rem;
+		margin-bottom: 3rem;
+		transform: translateX(-50%) rotate(-5deg);
+		z-index: 2;
+	}
+
+	&_flower3 {
+		width: auto;
+		height: 100vh;
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: 8rem;
+		margin-bottom: -1rem;
+		transform: translateX(-50%);
+		z-index: 2;
+	}
+
+	&_flower4 {
+		width: auto;
+		height: 70vh;
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: 13rem;
+		margin-bottom: 6rem;
+		transform: translateX(-50%);
+		z-index: 2;
+	}
+
+	&_flower5 {
+		width: auto;
+		height: 30vh;
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: 15rem;
+		margin-bottom: 10rem;
+		transform: translateX(-50%);
+		z-index: 2;
+	}
+
+	&_happy {
+		width: auto;
+		height: 20vh;
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -6.5rem;
+		transform: translate(-50%, -50%);
+		z-index: 5;
+	}
+
+	&_love {
+		width: auto;
+		height: 23vh;
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -0.3rem;
+		transform: translate(-50%, -50%);
+		z-index: 5;
+	}
+
+	&_goodness {
+		width: auto;
+		height: 23vh;
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: 8.2rem;
+		transform: translate(-50%, -50%);
+		z-index: 5;
+	}
+}
+
+@include grid-media($XSmall) {
 	#s080324 {
 
 		&_border {
@@ -36,201 +180,56 @@
 		}
 
 		&_leafBack {
-			width: auto;
 			height: 90vh;
-			display: block;
-			position: fixed;
-			bottom: 0;
-			left: 50%;
-			margin-left: 5rem;
-			margin-bottom: -3rem;
-			transform: translateX(-50%);
-			z-index: 1;
+			margin-left: 2rem;
 		}
 
 		&_leafFront {
-			width: auto;
 			height: 33.75vh;
-			display: block;
-			position: fixed;
-			bottom: 0;
-			left: 50%;
-			margin-left: -1.2rem;
+			margin-left: -3.2rem;
 			margin-bottom: -3.1rem;
-			transform: translateX(-50%);
-			z-index: 10;
 		}
 
 		&_flower1 {
-			width: auto;
-			height: 80vh;
-			display: block;
-			position: fixed;
-			bottom: 0;
-			left: 50%;
-			margin-left: -13rem;
-			margin-bottom: -6rem;
-			transform: translateX(-50%);
-			z-index: 2;
+			margin-left: -6rem;
+			transform: translateX(-50%) rotate(15deg);
 		}
 
 		&_flower2 {
-			width: auto;
 			height: 90vh;
-			display: block;
-			position: fixed;
-			bottom: 0;
-			left: 50%;
-			margin-left: -10rem;
-			margin-bottom: 3rem;
-			transform: translateX(-50%) rotate(-5deg);
-			z-index: 2;
+			margin-left: -7rem;
 		}
 
 		&_flower3 {
-			width: auto;
 			height: 100vh;
-			display: block;
-			position: fixed;
-			bottom: 0;
-			left: 50%;
-			margin-left: 8rem;
-			margin-bottom: -1rem;
-			transform: translateX(-50%);
-			z-index: 2;
+			margin-left: 6rem;
 		}
 
 		&_flower4 {
-			width: auto;
 			height: 70vh;
-			display: block;
-			position: fixed;
-			bottom: 0;
-			left: 50%;
-			margin-left: 13rem;
-			margin-bottom: 6rem;
-			transform: translateX(-50%);
-			z-index: 2;
+			margin-left: 7rem;
 		}
 
 		&_flower5 {
-			width: auto;
-			height: 30vh;
-			display: block;
-			position: fixed;
-			bottom: 0;
-			left: 50%;
-			margin-left: 15rem;
-			margin-bottom: 10rem;
-			transform: translateX(-50%);
-			z-index: 2;
+			margin-left: 5rem;
 		}
 
 		&_happy {
 			width: auto;
-			height: 20vh;
-			display: block;
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			margin-top: -6.5rem;
-			transform: translate(-50%, -50%);
-			z-index: 5;
+			height: 10vh;
+			margin-top: -4rem;
 		}
 
 		&_love {
 			width: auto;
-			height: 23vh;
-			display: block;
-			position: fixed;
-			top: 50%;
-			left: 50%;
+			height: 13vh;
 			margin-top: -0.3rem;
-			transform: translate(-50%, -50%);
-			z-index: 5;
 		}
 
 		&_goodness {
 			width: auto;
-			height: 23vh;
-			display: block;
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			margin-top: 8.2rem;
-			transform: translate(-50%, -50%);
-			z-index: 5;
-		}
-	}
-
-	@include grid-media($XSmall) {
-
-		#s080324 {
-
-			&_border {
-				width: 70vmin;
-				height: 70vmin;
-				display: block;
-				position: fixed;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				border: 0.6rem solid $fourth;
-				z-index: 2;
-			}
-
-			&_leafBack {
-				height: 90vh;
-				margin-left: 2rem;
-			}
-
-			&_leafFront {
-				height: 33.75vh;
-				margin-left: -3.2rem;
-				margin-bottom: -3.1rem;
-			}
-
-			&_flower1 {
-				margin-left: -6rem;
-				transform: translateX(-50%) rotate(15deg);
-			}
-
-			&_flower2 {
-				height: 90vh;
-				margin-left: -7rem;
-			}
-
-			&_flower3 {
-				height: 100vh;
-				margin-left: 6rem;
-			}
-
-			&_flower4 {
-				height: 70vh;
-				margin-left: 7rem;
-			}
-
-			&_flower5 {
-				margin-left: 5rem;
-			}
-
-			&_happy {
-				width: auto;
-				height: 10vh;
-				margin-top: -4rem;
-			}
-
-			&_love {
-				width: auto;
-				height: 13vh;
-				margin-top: -0.3rem;
-			}
-
-			&_goodness {
-				width: auto;
-				height: 13vh;
-				margin-top: 4rem;
-			}
+			height: 13vh;
+			margin-top: 4rem;
 		}
 	}
 }
