@@ -125,13 +125,112 @@
 			transform: translateX(-50%);
 			z-index: 2;
 		}
+
+		&_happy {
+			width: auto;
+			height: 20vh;
+			display: block;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin-top: -6.5rem;
+			transform: translate(-50%, -50%);
+			z-index: 5;
+		}
+
+		&_love {
+			width: auto;
+			height: 23vh;
+			display: block;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin-top: -0.3rem;
+			transform: translate(-50%, -50%);
+			z-index: 5;
+		}
+
+		&_goodness {
+			width: auto;
+			height: 23vh;
+			display: block;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin-top: 8.2rem;
+			transform: translate(-50%, -50%);
+			z-index: 5;
+		}
 	}
 
 	@include grid-media($XSmall) {
 
-		//#s080322 {
-		//
-		//
-		//}
+		#s080324 {
+
+			&_border {
+				width: 70vmin;
+				height: 70vmin;
+				display: block;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border: 0.6rem solid $fourth;
+				z-index: 2;
+			}
+
+			&_leafBack {
+				height: 90vh;
+				margin-left: 2rem;
+			}
+
+			&_leafFront {
+				height: 33.75vh;
+				margin-left: -3.2rem;
+				margin-bottom: -3.1rem;
+			}
+
+			&_flower1 {
+				margin-left: -6rem;
+				transform: translateX(-50%) rotate(15deg);
+			}
+
+			&_flower2 {
+				height: 90vh;
+				margin-left: -7rem;
+			}
+
+			&_flower3 {
+				height: 100vh;
+				margin-left: 6rem;
+			}
+
+			&_flower4 {
+				height: 70vh;
+				margin-left: 7rem;
+			}
+
+			&_flower5 {
+				margin-left: 5rem;
+			}
+
+			&_happy {
+				width: auto;
+				height: 10vh;
+				margin-top: -4rem;
+			}
+
+			&_love {
+				width: auto;
+				height: 13vh;
+				margin-top: -0.3rem;
+			}
+
+			&_goodness {
+				width: auto;
+				height: 13vh;
+				margin-top: 4rem;
+			}
+		}
 	}
 }
