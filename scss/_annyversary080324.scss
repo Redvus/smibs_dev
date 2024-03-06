@@ -1,0 +1,137 @@
+/*=================================================
+=                   Annyversary                   =
+=================================================*/
+.anniversary {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	//user-select: none;
+	box-sizing: border-box;
+	//opacity: 0;
+	//display: none;
+	z-index: 10;
+
+	&--8march {
+		//opacity: 0;
+		display: block;
+		background-color: #F0B6C3;
+		//z-index: -1;
+	}
+
+	#s080324 {
+
+		&_border {
+			width: 70vmin;
+			height: 70vmin;
+			display: block;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border: 0.6rem solid $fourth;
+			z-index: 2;
+		}
+
+		&_leafBack {
+			width: auto;
+			height: 90vh;
+			display: block;
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			margin-left: 5rem;
+			margin-bottom: -3rem;
+			transform: translateX(-50%);
+			z-index: 1;
+		}
+
+		&_leafFront {
+			width: auto;
+			height: 33.75vh;
+			display: block;
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			margin-left: -1.2rem;
+			margin-bottom: -3.1rem;
+			transform: translateX(-50%);
+			z-index: 10;
+		}
+
+		&_flower1 {
+			width: auto;
+			height: 80vh;
+			display: block;
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			margin-left: -13rem;
+			margin-bottom: -6rem;
+			transform: translateX(-50%);
+			z-index: 2;
+		}
+
+		&_flower2 {
+			width: auto;
+			height: 90vh;
+			display: block;
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			margin-left: -10rem;
+			margin-bottom: 3rem;
+			transform: translateX(-50%) rotate(-5deg);
+			z-index: 2;
+		}
+
+		&_flower3 {
+			width: auto;
+			height: 100vh;
+			display: block;
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			margin-left: 8rem;
+			margin-bottom: -1rem;
+			transform: translateX(-50%);
+			z-index: 2;
+		}
+
+		&_flower4 {
+			width: auto;
+			height: 70vh;
+			display: block;
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			margin-left: 13rem;
+			margin-bottom: 6rem;
+			transform: translateX(-50%);
+			z-index: 2;
+		}
+
+		&_flower5 {
+			width: auto;
+			height: 30vh;
+			display: block;
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			margin-left: 15rem;
+			margin-bottom: 10rem;
+			transform: translateX(-50%);
+			z-index: 2;
+		}
+	}
+
+	@include grid-media($XSmall) {
+
+		//#s080322 {
+		//
+		//
+		//}
+	}
+}

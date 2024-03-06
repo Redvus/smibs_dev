@@ -83,6 +83,10 @@
 			border-top: $border_thin solid $formInputColor;
 			border-bottom: $border_thin solid $formInputColor;
 		}
+
+		//&_select {
+		//	color: rgba($formInputColor, 0.7);
+		//}
 	}
 
 	&__file {
@@ -175,11 +179,19 @@
 		height: $inputHeight + ($border_thin *2);
 		padding: 0 1rem 0 ($inputHeight + 1.5rem);
 		@extend %input;
-		// color: rgba($formInputColor, 0.7);
+		//color: rgba($formInputColor, 0.7);
 
-		// option {
-		// 	color: $formInputColor;
-		// }
+		option {
+			//color: $formInputColor;
+
+			//&:first-child {
+			//	color: rgba($formInputColor, 0.7);
+			//}
+		}
+
+		&:focus {
+			color: $formInputColor;
+		}
 	}
 
 	textarea {
