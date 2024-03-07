@@ -137,14 +137,14 @@
 			.from([leafBack, leafFront], {
 				duration: 0.8,
 				delay: '-0.3',
-				y: '3vh',
+				// y: '3vh',
 				autoAlpha: 0,
 				easy: 'elastic'
 			})
 			.from([flower_1, flower_2, flower_3, flower_4, flower_5], {
 				duration: 0.5,
 				delay: '-0.6',
-				y: '-3vh',
+				// y: '-3vh',
 				stagger: '0.05',
 				autoAlpha: 0,
 				easy: 'elastic'
@@ -159,7 +159,7 @@
 				duration: 0.8,
 				delay: '-0.6',
 				// y: '-2vh',
-				scale: '0.97',
+				// scale: '0.97',
 				stagger: '0.05',
 				autoAlpha: 0,
 				easy: 'elastic'
