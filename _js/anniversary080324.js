@@ -3,8 +3,12 @@
 	'use strict';
 
 	const
-		anniversaryDay = document.querySelector('.anniversary--8march')
+		bodyBlock = document.body,
+		anniversaryDay = document.createElement('div')
 	;
+
+	anniversaryDay.className = 'anniversary anniversary--8march';
+	bodyBlock.appendChild(anniversaryDay);
 
 	anniversaryDay.innerHTML = `
 		<div id="s080324_border"></div>
@@ -99,6 +103,7 @@
 				anniversaryDay.removeChild(sloganGoodness);
 				anniversaryDay.removeChild(sloganHappy);
 				anniversaryDay.removeChild(sloganLove);
+				bodyBlock.removeChild(anniversaryDay);
 			}
 		});
 
