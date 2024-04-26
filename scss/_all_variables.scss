@@ -81,6 +81,9 @@ $gridderSVGColor: $primary;
 $gridderSVGColorHover: $fourth;
 $gridderSVGWidth: 1.5rem;
 
+$modalWidth: calc((#{$paddingMobile} * 50) - (#{$paddingMobile} * 6));
+$modalWidthMobile: calc(90vw - (#{$paddingMobile} * 2));
+
 /*----------  Front  ----------*/
 $frontAnniversaryBorder: 0;
 $frontReadImageWidth: 40%;
