@@ -1948,7 +1948,7 @@
 			visibility: hidden;
 
 			&-date {
-				@include rowMachine(2, calc(#{$marginVert} / 2));
+				@include rowMachine(1, calc(#{$marginVert} / 2));
 				height: 4rem;
 			}
 
