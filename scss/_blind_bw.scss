@@ -381,6 +381,25 @@
                             }
                         }
                     }
+
+                    &>.main-content__text {
+
+                        &>.read-content__link {
+                            color: $blindColorBW;
+                            background-color: lighten($blindBackgroundBW, 20%);
+                            border-color: $blindColorBW;
+                        }
+                    }
+                }
+
+                &>.main-content__breadcrumbs {
+
+                    li {
+
+                        a {
+                            color: lighten($blindBackgroundBW, 50%);
+                        }
+                    }
                 }
             }
 
@@ -394,7 +413,7 @@
             }
         }
 
-        p {
+        p, strong {
             color: $fourth;
         }
 

@@ -393,6 +393,25 @@
                             }
                         }
                     }
+
+                    &>.main-content__text {
+
+                        &>.read-content__link {
+                            color: $blindColorYB;
+                            background-color: lighten($blindBackgroundYB, 30%);
+                            border-color: $blindColorYB;
+                        }
+                    }
+                }
+
+                &>.main-content__breadcrumbs {
+
+                    li {
+
+                        a {
+                            color: $blindColorYB;
+                        }
+                    }
                 }
             }
 
@@ -406,7 +425,7 @@
             }
         }
 
-        p {
+        p, strong {
             color: $blindColorYB;
         }
 
