@@ -1085,7 +1085,7 @@
 			// margin-inline-end: 0;
 			@include rowMachine(6, calc(#{$marginVert} / 2));
 			min-height: 10rem;
-			background-color: $layoutBackground;
+			//background-color: $layoutBackground;
 			transition: all $base-duration;
 
 			picture {
