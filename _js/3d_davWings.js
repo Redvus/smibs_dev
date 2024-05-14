@@ -63,7 +63,7 @@ function init() {
 	const loader = new THREE.GLTFLoader();
 	loader.load('assets/images/3dlibrary/DaV_wings/DaV_wings.glb',
 		function (gltf) {
-			car = gltf.scene.children[0];
+			// const car = gltf.scene.children[0];
 			// car.scale.set(0.5,0.5,0.5);
 			scene.add(gltf.scene);
 			animate();

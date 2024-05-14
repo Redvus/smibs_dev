@@ -175,7 +175,7 @@ $footer-grid: (columns: 1, gutter: 5rem);
             width: 88px;
             height: 31px;
             display: inline-block;
-            background-color: $primary;
+            //background-color: $primary;
             margin-right: calc(#{$marginVert} / 2);
 
             &:last-child {
