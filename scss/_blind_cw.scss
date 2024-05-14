@@ -402,6 +402,124 @@
                             border-color: $blindColorCW;
                         }
                     }
+
+                    &>.main-content__inside-content {
+
+                        &>.main-content__guest {
+
+                            &>.main-content__guest-message {
+                                color: $blindColorCW;
+                                background-color: lighten($blindBackgroundCW, 20%);
+
+                                &:before {
+                                    border-right-color: lighten($blindBackgroundCW, 20%);
+                                }
+                            }
+
+                            &>.main-content__guest-person {
+
+                                &>.main-content__guest-date {
+
+                                    span {
+                                        color: $blindColorCW;
+                                    }
+                                }
+                            }
+                        }
+
+                        &>.main-content__inside-form {
+
+                            &>.form-ajax {
+
+                                input[type='text'],
+                                input[type='email'],
+                                input[type='number'],
+                                input[type='password'],
+                                textarea {
+                                    color: $blindColorCW;
+                                    border-color: $blindColorCW !important;
+
+                                    &:focus,
+                                    &:visited {
+                                        color: $blindColorCW;
+                                        background-color: lighten($blindBackgroundCW, 20%);
+                                        border-color: $blindColorCW;
+                                    }
+
+                                    &:focus::-webkit-input-placeholder {
+                                        opacity: 0;
+                                        transition: all 0.3s;
+                                    }
+
+                                    &:focus::-moz-placeholder {
+                                        opacity: 0;
+                                        transition: all 0.3s;
+                                    }
+
+                                    &:focus::-ms-input-placeholder {
+                                        opacity: 0;
+                                        transition: all 0.3s;
+                                    }
+
+                                    &::-webkit-input-placeholder {
+                                        /* WebKit browsers */
+                                        color: $blindColorCW;
+                                    }
+
+                                    &::-moz-placeholder {
+                                        /* Mozilla Firefox 4 to 18 */
+                                        color: $blindColorCW;
+                                        opacity: 1;
+                                    }
+
+                                    &::-moz-placeholder {
+                                        /* Mozilla Firefox 19+ */
+                                        color: $blindColorCW;
+                                        opacity: 1;
+                                    }
+
+                                    &::-ms-input-placeholder {
+                                        /* Internet Explorer 10+ */
+                                        color: $blindColorCW;
+                                    }
+                                }
+
+                                &>.form-ajax__input {
+
+                                    &>.form-ajax__input-rating {
+
+                                        &>.form-ajax__input-description {
+                                            color: $blindColorCW !important;
+                                        }
+                                    }
+                                }
+
+                                &>.form-ajax__agreement {
+
+                                    a {
+                                        color: $blindColorCW !important;
+                                    }
+                                }
+
+                                &>.form-ajax__button {
+
+                                    &>.submit-form {
+                                        color: $blindColorCW;
+                                        background-color: lighten($blindBackgroundCW, 20%);
+                                        border-color: $blindColorCW;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &>.main-content__link {
+
+                        &>.main-content__link-block {
+                            color: $blindColorCW;
+                            background-color: lighten($blindBackgroundCW, 20%);
+                        }
+                    }
                 }
 
                 &>.main-content__breadcrumbs {
