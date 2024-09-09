@@ -116,6 +116,7 @@ function blindMenuActive() {
         // blindImageTurnOff.removeClass('is-active');
     });
 
+    // /*----------  Blind Images Color B/W  ----------*/
     blindColorBW.addEventListener('click', function () {
         if (_body.classList.contains('blind-bw')) {
             _body.classList.remove('blind-bw');
