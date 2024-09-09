@@ -496,19 +496,18 @@
 	@include grid-media($XSmall) {
 
 		&-mobile {
-			display: none;
-			visibility: hidden;
+			display: flex;
+			visibility: visible;
+
+			// &__mask {
+			// 	display: block;
+			// 	visibility: visible;
+			// }
 		}
 
-		&-main {
-
-			li {
-
-
-				a {
-					font-size: $font-size-small - 0.1;
-				}
-			}
+		&-button {
+			display: flex;
+			visibility: visible;
 		}
 	}
 

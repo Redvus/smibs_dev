@@ -371,6 +371,11 @@
 			}
 		}
 
+		@include grid-media($XSmall) {
+			width: 100%;
+			height: auto;
+		}
+
 		@include grid-media($Small) {
 			width: 100%;
 			height: auto;
@@ -540,6 +545,11 @@
 					object-position: center;
 				}
 			}
+		}
+
+		@include grid-media($XSmall) {
+			width: 100%;
+			height: auto;
 		}
 
 		@include grid-media($Small) {
@@ -875,6 +885,11 @@
 			}
 		}
 
+		@include grid-media($XSmall) {
+			display: none;
+			visibility: hidden;
+		}
+
 		@include grid-media($Small) {
 			display: none;
 			visibility: hidden;
@@ -992,6 +1007,36 @@
 		@include grid-media($XSmall) {
 			display: block;
 			visibility: visible;
+
+			a {
+				&:first-child {
+					width: calc(50% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2) - (#{$marginVert} / 2));
+					margin-right: calc(#{$marginVert} / 2);
+				}
+
+				&:last-child {
+					width: calc(50% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2) - (#{$marginVert} / 2));
+					margin-left: calc(#{$marginVert} / 2);
+				}
+			}
+
+		}
+
+		@include grid-media($Small) {
+			display: block;
+			visibility: visible;
+
+			a {
+				&:first-child {
+					width: calc(100% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2));
+					margin-right: 0;
+				}
+
+				&:last-child {
+					width: calc(100% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2));
+					margin-left: 0;
+				}
+			}
 		}
 	}
 
@@ -1187,10 +1232,10 @@
 		@include grid-media($XSmall) {
 
 			&-single {
-				@include rowMachine(2, calc(#{$marginVert} / 2));
+				@include rowMachine(3, calc(#{$marginVert} / 2));
 
 				&--all {
-					@include rowMachinePadding(2, calc(#{$marginVert} / 2));
+					@include rowMachinePadding(3, calc(#{$marginVert} / 2));
 				}
 			}
 		}
@@ -1941,6 +1986,23 @@
 			}
 		}
 
+		@include grid-media($XSmall) {
+			//width: 100%;
+			//margin-left: 0;
+			display: none;
+			visibility: hidden;
+
+			&-date {
+				@include rowMachine(2, calc(#{$marginVert} / 2));
+				height: 4rem;
+			}
+
+			&--modal {
+				display: block;
+				visibility: visible;
+			}
+		}
+
 		@include grid-media($Small) {
 			//width: 100%;
 			//margin-left: 0;
@@ -2573,6 +2635,156 @@
 				&--half {
 					width: 25%;
 				}
+			}
+		}
+	}
+
+	@include grid-media($XSmall) {
+		width: calc(100% - (#{$paddingMobile} * 4));
+		padding: calc(#{$headerHeightMobile} + 5rem) calc(#{$paddingMobile} * 2) $headerHeightMobile;
+
+		&__guest {
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+
+			&-person {
+				width: $forumPersonWidthMobile;
+				height: $forumPersonWidthMobile;
+			}
+
+			&-icon {
+
+
+				svg {
+					width: calc(#{$forumPersonWidthMobile} / 1.7);
+					height: calc(#{$forumPersonWidthMobile} / 1.7);
+				}
+			}
+
+			&-date {
+				display: none;
+				visibility: hidden;
+			}
+
+			&-message {
+				width: calc(100% - #{$forumPersonWidthMobile} - (#{$paddingMobile} * 3));
+				margin-left: $paddingMobile;
+				padding: $paddingMobile;
+
+				&:before {
+					border-top: calc(#{$paddingMobile} / 2) solid transparent;
+					border-right: $paddingMobile solid $forumBackground;
+					border-bottom: calc(#{$paddingMobile} / 2) solid transparent;
+					top: calc(#{$forumPersonWidthMobile} / 2);
+				}
+			}
+		}
+
+		&__news {
+
+
+			&-single {
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+
+		&__inside {
+			width: 100%;
+			min-height: 2rem;
+			margin-left: 0;
+			overflow: hidden;
+
+			&-photo,
+			&-description {
+				width: 100%;
+				margin: 0 0 $paddingMobile 0;
+
+				&:nth-child(n) {
+					margin: 0 0 $paddingMobile 0;
+				}
+
+				&--video {
+					width: 100%;
+				}
+			}
+
+			&-video {
+				width: 100%;
+				height: inherit;
+				min-height: 3rem;
+				margin-right: 0;
+				margin-bottom: $paddingMobile;
+
+				iframe {
+					height: calc(100vw/1.78);
+				}
+			}
+
+			&-video--single {
+				width: 100%;
+				height: inherit;
+				min-height: 3rem;
+				margin-right: 0;
+				margin-bottom: $paddingMobile;
+
+				iframe {
+					width: 100%;
+					// min-height: 30vh;
+					display: block;
+				}
+			}
+
+			&-hero {
+				height: 8rem;
+
+				a {
+					// font-size: $font-size-h1 * 4;
+					display: inline-table;
+				}
+
+				img {
+					width: auto;
+					height: 100%;
+				}
+			}
+
+			&-form {
+				width: 100%;
+				margin-left: 0;
+			}
+
+			&-text {
+
+				img {
+					margin-left: 0;
+				}
+			}
+
+			&-map {
+				display: none;
+				visibility: hidden;
+			}
+
+			i {
+				display: none;
+				visibility: hidden;
+			}
+		}
+
+		&__breadcrumbs {
+			width: 100%;
+			min-height: 3rem;
+			// height: initial;
+			position: relative;
+			// margin-bottom: $paddingMobile;
+			right: inherit;
+			transform: translateY(0);
+			margin-bottom: 2rem;
+
+			ul {
+				line-height: 1;
 			}
 		}
 	}

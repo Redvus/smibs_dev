@@ -73,6 +73,11 @@
     position: relative;
     overflow: hidden;
 
+    @include grid-media($XSmall) {
+        width: 100%;
+        height: auto;
+    }
+
     @include grid-media($Small) {
         width: 100%;
         height: auto;
