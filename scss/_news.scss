@@ -113,6 +113,10 @@
 
 	@include grid-media($Medium) {
 
+		&__title {
+			padding: 1rem;
+		}
+
 		&__text {
 			height: calc(9vw - 2rem);
 			font-size: $font-size-small;
