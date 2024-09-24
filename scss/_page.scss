@@ -1128,6 +1128,13 @@
 			}
 		}
 
+		@include grid-media($Medium) {
+
+			&-single {
+				// @include rowMachine(3, calc(#{$marginVert} / 2));
+			}
+		}
+
 		@include grid-media($XSmall) {
 
 			&_list {
@@ -2082,6 +2089,13 @@
 			&-date {
 				@include rowMachine(5, calc(#{$marginVert} / 2));
 				height: 4rem;
+			}
+		}
+
+		@include grid-media($Medium) {
+
+			&-date {
+				@include rowMachine(4, calc(#{$marginVert} / 2));
 			}
 		}
 
