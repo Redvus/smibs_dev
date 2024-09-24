@@ -1130,9 +1130,9 @@
 
 		@include grid-media($Medium) {
 
-			&-single {
-				// @include rowMachine(3, calc(#{$marginVert} / 2));
-			}
+			// &-single {
+			// 	// @include rowMachine(3, calc(#{$marginVert} / 2));
+			// }
 		}
 
 		@include grid-media($XSmall) {
