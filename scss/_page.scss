@@ -373,12 +373,12 @@
 
 		@include grid-media($XSmall) {
 			width: 100%;
-			height: auto;
+			height: inherit;
 		}
 
 		@include grid-media($Small) {
 			width: 100%;
-			height: auto;
+			height: inherit;
 		}
 	}
 
@@ -919,8 +919,7 @@
 		width: 100%;
 		height: auto;
 		position: relative;
-		float: left;
-		margin-top: $marginVert;
+		// float: left;
 		display: none;
 		visibility: hidden;
 
@@ -1004,19 +1003,52 @@
 			}
 		}
 
+		// @include grid-media($Medium) {
+		// 	display: flex;
+		// 	flex-direction: row;
+		// 	flex-wrap: wrap;
+		// 	visibility: visible;
+
+		// 	a {
+
+		// 		&:nth-child(1n) {
+		// 			width: calc((100% / 3) - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2) - (#{$marginVert} / 4));
+		// 			margin-right: calc(#{$marginVert} / 4);
+		// 			margin-left: 0;
+		// 		}
+
+		// 		&:nth-child(2n) {
+		// 			width: calc((100% / 3) - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2) - (#{$marginVert} / 4));
+		// 			margin-left: calc(#{$marginVert} / 4);
+		// 			margin-right: calc(#{$marginVert} / 4);
+		// 		}
+
+		// 		&:nth-child(3n) {
+		// 			width: calc((100% / 3) - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2) - (#{$marginVert} / 4));
+		// 			margin-left: calc(#{$marginVert} / 4);
+		// 			margin-right: 0;
+		// 		}
+		// 	}
+		// }
+
 		@include grid-media($XSmall) {
-			display: block;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
 			visibility: visible;
 
 			a {
-				&:first-child {
-					width: calc(50% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2) - (#{$marginVert} / 2));
-					margin-right: calc(#{$marginVert} / 2);
+
+				&:nth-child(1n) {
+					width: calc(50% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2) - (#{$marginVert} / 4));
+					margin-right: calc(#{$marginVert} / 4);
+					margin-left: 0;
 				}
 
-				&:last-child {
-					width: calc(50% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2) - (#{$marginVert} / 2));
-					margin-left: calc(#{$marginVert} / 2);
+				&:nth-child(2n) {
+					width: calc(50% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2) - (#{$marginVert} / 4));
+					margin-left: calc(#{$marginVert} / 4);
+					margin-right: 0;
 				}
 			}
 
@@ -1024,15 +1056,16 @@
 
 		@include grid-media($Small) {
 			display: block;
+			float: left;
 			visibility: visible;
 
 			a {
-				&:first-child {
+				&:nth-child(1n) {
 					width: calc(100% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2));
 					margin-right: 0;
 				}
 
-				&:last-child {
+				&:nth-child(1n) {
 					width: calc(100% - (#{$border_thin} * 2) - ((#{$marginVert} / 3) * 2));
 					margin-left: 0;
 				}
@@ -1095,6 +1128,19 @@
 			}
 		}
 
+		@include grid-media($XSmall) {
+
+			&_list {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+
+			&-single {
+				@include rowMachine(2, calc(#{$marginVert} / 2));
+			}
+		}
+
 		@include grid-media($Small) {
 			width: 100%;
 
@@ -1105,7 +1151,7 @@
 
 			&-single {
 				width: 100%;
-				margin-left: 0;
+				margin-right: 0;
 			}
 		}
 	}
@@ -1314,6 +1360,13 @@
 						}
 					}
 				}
+			}
+		}
+
+		@include grid-media($XSmall) {
+
+			li {
+				@include rowMachine(3, $marginVert);
 			}
 		}
 
@@ -1875,6 +1928,52 @@
 
 				&video {
 					height: 17vw;
+				}
+			}
+		}
+
+		@include grid-media($XSmall) {
+
+			&-page {
+				@include rowMachine(2, calc(#{$marginVert} / 2));
+				// margin-right: 0;
+			}
+
+			&-title {
+				height: 16vw;
+				padding: 1rem;
+				align-items: flex-start;
+
+				p {
+					font-size: $font-size-base;
+				}
+			}
+
+			&-image {
+
+
+				&video {
+					height: 30vw;
+				}
+
+				img {
+					object-position: center;
+				}
+			}
+
+			&-video {
+
+				&--var3 {
+
+					a {
+
+						.main-content__link-title {
+
+							p {
+								font-size: $font-size-base;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -2681,15 +2780,6 @@
 			}
 		}
 
-		&__news {
-
-
-			&-single {
-				width: 100%;
-				margin-right: 0;
-			}
-		}
-
 		&__inside {
 			width: 100%;
 			min-height: 2rem;
@@ -2828,15 +2918,6 @@
 					border-bottom: calc(#{$paddingMobile} / 2) solid transparent;
 					top: calc(#{$forumPersonWidthMobile} / 2);
 				}
-			}
-		}
-
-		&__news {
-
-
-			&-single {
-				width: 100%;
-				margin-right: 0;
 			}
 		}
 
