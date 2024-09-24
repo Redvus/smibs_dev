@@ -119,6 +119,23 @@
 		}
 	}
 
+	@include grid-media($XSmall) {
+
+		&__image {
+			height: inherit;
+		}
+
+		&__title {
+			padding: 1rem;
+		}
+
+		&__text {
+			min-height: 3rem;
+			height: initial;
+			padding: 1rem;
+		}
+	}
+
 	@include grid-media($Small) {
 
 		&__image {
@@ -398,7 +415,7 @@
 		}
 	}
 
-	@include grid-media($Small) {
+	@include grid-media($XSmall) {
 
 		&__text {
 
@@ -406,9 +423,20 @@
 				width: 100%;
 
 				iframe {
-					height: auto;
+					min-height: calc((100vw - 2rem)/1.78);
+				}
+
+				&--single {
+					width: 100%;
+					margin-right: 0;
 				}
 			}
+		}
+	}
+
+	@include grid-media($Small) {
+
+		&__text {
 
 			&-photo {
 

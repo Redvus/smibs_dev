@@ -153,7 +153,7 @@
 		// navMenuChildrenMobile();
     }
 
-    if (document.body.clientWidth > 768 || screen.width > 768) {
+    if (document.body.clientWidth > 570 || screen.width > 570) {
 
         initPage();
 

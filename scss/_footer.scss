@@ -289,6 +289,87 @@ $footer-grid: (columns: 1, gutter: 5rem);
         }
     }
 
+    @include grid-media($XSmall) {
+        height: inherit;
+        z-index: 1;
+
+        &__part {
+            width: calc(100% - (#{$paddingMobile} * 2));
+            border-bottom: 1px solid $footerLineColor;
+            padding: $paddingMobile;
+
+            &:last-child {
+                border: none;
+            }
+        }
+
+        &__top-block {
+            height: inherit;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        &__logo,
+        &__phone,
+        &__mail {
+            display: none;
+            visibility: hidden;
+        }
+
+        &__line {
+            display: none;
+            visibility: hidden;
+
+            >span {
+                width: $headerPartWidthMobile;
+            }
+        }
+
+        &__adress {
+
+            &--desktop {
+                display: none;
+                visibility: hidden;
+            }
+
+            &--mobile {
+                display: block;
+                visibility: visible;
+            }
+        }
+
+        &__info {
+            text-align: center;
+
+            a {
+                font-size: $font-size-small;
+            }
+        }
+
+        &__down-block {
+            height: inherit;
+            display: block;
+        }
+
+        &__copyright,
+        &__author {
+            width: calc(100% - (#{$paddingMobile} * 2));
+            padding: $paddingMobile;
+            text-align: center;
+            justify-content: center;
+        }
+
+        &__counters {
+            display: none;
+            visibility: hidden;
+        }
+
+        &--mobile {
+            display: flex;
+            visibility: visible;
+        }
+    }
+
     @include grid-media($Small) {
         height: inherit;
         z-index: 1;

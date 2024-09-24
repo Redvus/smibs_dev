@@ -2,29 +2,6 @@
 =            Variable            =
 ================================*/
 
-$primary  : #feba8b;  // Оранжевый
-$secondary: #830800;  // Бордовый
-$third    : #000;     // Темный var1: #1E252B
-$fourth   : #fff;
-$five     : #7a97ab;
-
-
-/*----------  Blind Color  ----------*/
-$blindBackgroundBW: $third;
-$blindColorBW: $fourth;
-
-$blindBackgroundWB: $fourth;
-$blindColorWB: $third;
-
-$blindBackgroundCW: #0099CC;
-$blindColorCW: $third;
-
-$blindBackgroundYB: #FFCC33;
-$blindColorYB: $third;
-
-$error : $third;
-$success : $fourth;
-
 $border_thin: 0.07rem;
 $border_normal: 0.15rem;
 $border_bold: 0.3rem;
@@ -231,112 +208,54 @@ $inputHeight: 2rem;
 
 /*=====  End of Variable  ======*/
 
-/*=============================
-=            Media            =
-=============================*/
+/*==============================
+=            Layout            =
+==============================*/
 
-$main-grid: (
-    columns: 12,
-    gutter: 0
-);
+// %scrollbar_body {
+//     &::-webkit-scrollbar-track {
+//         background-color: transparent;
+//     }
 
-$second-grid: (
-    columns: 12,
-    gutter: 2rem
-);
+//     &::-webkit-scrollbar {
+//         width: 6px;
+//         background: transparent;
 
-$third-grid: (
-    columns: 12,
-    gutter: 1rem
-);
+//         // &::window-inactive {
 
-$imac27 : 2559px;
-$imac21 : 1920px;
-$cinema : 1680px;
-$laptop : 1440px;
-$pad_g : 1024px;
-$pad_v : 768px;
-$mobile : 570px;
+//         // }
 
-$XXLarge: (media: "(min-width: #{$imac27})");
-$XLarge: (media: "(min-width: #{$cinema}) and (max-width: #{$imac27})");
-$Large: (media: "(min-width: #{$laptop}) and (max-width: #{$cinema})");
-$Medium: (media: "(min-width: #{$pad_g}) and (max-width: #{$laptop})");
-$XSmall: (media: "(max-width: #{$pad_g})");
-$Small: (media: "(max-width: #{$mobile})");
-$HSmall: (media: "(max-height: 420px)");
-$Landscape: (media: "(max-width: #{$pad_v}) and (orientation: landscape)");
-$XPortrait: (media: "(min-width: #{$pad_v}) and (max-width: calc(#{$pad_g} - 1px))");
+//     }
 
-/*=====  End of Media  ======*/
+//     &::-webkit-scrollbar-thumb {
+//         background-color: lighten($secondary, 60%);
 
-/*=============================
-=            Fonts            =
-=============================*/
-
-// @include font-face (
-//     "fontawesome-webfont",
-//     "fonts/fontawesome-webfont/fontawesome-webfont",
-//     ("eot", "woff", "ttf", "svg")
-//     ) {
-//     font-style: normal;
-//     font-weight: 400;
+//         &:window-inactive {
+//             background-color: #fff;
+//         }
+//     }
 // }
 
-// @font-face {
-//     font-family: 'icomoon';
-//     src: url('fonts/icomoon/icomoon.eot?jqd5bq');
-//     src: url('fonts/icomoon/icomoon.eot?jqd5bq#iefix') format('embedded-opentype'),
-//         url('fonts/icomoon/icomoon.ttf?jqd5bq') format('truetype'),
-//         url('fonts/icomoon/icomoon.woff?jqd5bq') format('woff'),
-//         url('fonts/icomoon/icomoon.svg?jqd5bq#icomoon') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
+// %scrollbar_sidebar {
+//     &::-webkit-scrollbar-track {
+//         background-color: transparent;
+//     }
+
+//     &::-webkit-scrollbar {
+//         width: 4px;
+//         background: transparent;
+
+//     }
+
+//     &::-webkit-scrollbar-thumb {
+//         background-color: lighten($secondary, 70%);
+//         //border: 2px solid #555555;
+
+//         &:window-inactive {
+//             opacity: 0;
+//         }
+//     }
 // }
-
-// @font-face {
-//     font-family: 'icomoon-free';
-//     src: url('fonts/icomoon/IcoMoon-Free.ttf?jqd5bq') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-// }
-
-@import url('https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic');
-// @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-// @import url('https://use.fontawesome.com/releases/v5.10.0/css/all.css');
-@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&subset=cyrillic');
-@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
-$primary-font      : $font-stack-helvetica;
-$heading-font      : 'Oswald', sans-serif;
-$heading-font-light: 'Oswald', sans-serif;
-
-$fa-font-path: 'webfonts/';
-
-$body-font-color: lighten($third, 10%);
-
-$body-font-size     : 1rem !default;
-$body-font-weight   : normal !default;
-$body-line-height   : 1.4 !default;
-$heading-line-height: 1 !default;
-
-$heading-font-modular : 1rem !default;
-
-$bourbon: (
-    "modular-scale-base": $heading-font-modular,
-    "modular-scale-ratio": $major-second //$major-second
-);
-
-$font-size-base:    $body-font-size !default;
-$font-size-large:   $font-size-base + 0.2 !default; // ~18px
-$font-size-small:   $font-size-base - 0.2 !default; // ~14px
-
-$font-size-h1:      calc(1rem + 1.1vmax) !default; // ~3rem 48px modular-scale(6)
-$font-size-h2:      calc(1rem + 0.9vmax) !default; // ~2.5rem 40px modular-scale(5)
-$font-size-h3:      calc(1rem + 0.7vmax) !default; // ~2rem 33px
-$font-size-h4:      calc(1rem + 0.15vmax) !default; // ~1.728rem 28px
-$font-size-h5:      calc(1rem + 0.13vmax) !default; // ~1.44rem 23px
-$font-size-h6:      calc(1rem + 0.1vmax) !default; // ~1.2rem 19px
 
 %px {
     font: {
@@ -397,57 +316,6 @@ $font-size-h6:      calc(1rem + 0.1vmax) !default; // ~1.2rem 19px
     margin-bottom: 0;
     padding-bottom: calc(#{$marginVert} / 4);
 }
-/*=====  End of Fonts  ======*/
-
-
-/*==============================
-=            Layout            =
-==============================*/
-
-// %scrollbar_body {
-//     &::-webkit-scrollbar-track {
-//         background-color: transparent;
-//     }
-
-//     &::-webkit-scrollbar {
-//         width: 6px;
-//         background: transparent;
-
-//         // &::window-inactive {
-
-//         // }
-
-//     }
-
-//     &::-webkit-scrollbar-thumb {
-//         background-color: lighten($secondary, 60%);
-
-//         &:window-inactive {
-//             background-color: #fff;
-//         }
-//     }
-// }
-
-// %scrollbar_sidebar {
-//     &::-webkit-scrollbar-track {
-//         background-color: transparent;
-//     }
-
-//     &::-webkit-scrollbar {
-//         width: 4px;
-//         background: transparent;
-
-//     }
-
-//     &::-webkit-scrollbar-thumb {
-//         background-color: lighten($secondary, 70%);
-//         //border: 2px solid #555555;
-
-//         &:window-inactive {
-//             opacity: 0;
-//         }
-//     }
-// }
 
 body {
     @extend %px;

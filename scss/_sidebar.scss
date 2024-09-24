@@ -577,6 +577,16 @@
 		}
 	}
 
+	@include grid-media($XSmall) {
+		display: none;
+		visibility: hidden;
+
+		&-static {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
 	@include grid-media($Small) {
 		display: none;
 		visibility: hidden;

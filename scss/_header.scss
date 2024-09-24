@@ -399,26 +399,14 @@
 	@include grid-media($XSmall) {
 
 
-		&__part {
-			width: $headerPartWidthMobile;
-		}
-
-		&__logo {
-
-			a {
-				width: calc(100% - 1.6rem);
-				height: 100%;
-				padding: 0 0.8rem;
-
-				svg {
-					height: 70%;
-				}
-			}
+		&--desktop {
+			display: none;
+			visibility: hidden;
 		}
 
 		&--mobile {
-			display: none;
-			visibility: hidden;
+			display: block;
+			visibility: visible;
 		}
 	}
 
