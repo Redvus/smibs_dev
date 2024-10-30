@@ -656,7 +656,7 @@
 
 			span {
 				width: 100%;
-				height: 60%;
+				height: 50%;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -671,7 +671,7 @@
 
 			p {
 				width: 100%;
-				height: 40%;
+				height: 50%;
 				display: flex;
 				align-items: flex-start;
 				justify-content: center;
@@ -687,13 +687,13 @@
 		}
 
 		&-middle {
-			width: calc(100% - #{$marginVert});
-			height: calc(((#{$anniversaryTopHeight} / 4) * 3) - #{$marginVert});
+			width: calc(100% - (#{$marginVert} / 2));
+			height: calc(((#{$anniversaryTopHeight} / 4) * 3) - (#{$marginVert} / 2));
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			padding: calc(#{$marginVert} / 2);
+			padding: calc(#{$marginVert} / 4);
 			background-color: $sidebarButtonsBackground;
 
 			h3 {
@@ -702,7 +702,7 @@
 					size: $font-size-h3;
 				};
 				margin-bottom: 0;
-				padding-bottom: 0.5rem;
+				padding-bottom: 0.3rem;
 				margin-top: 0;
 			}
 
@@ -871,7 +871,7 @@
 			&-middle {
 
 				h3 {
-					font-size: $font-size-h3;
+					font-size: calc(1rem + 0.3vmax);
 					// padding-bottom: 0;
 				}
 

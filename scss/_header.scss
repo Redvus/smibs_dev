@@ -394,6 +394,18 @@
 			display: none;
 			visibility: hidden;
 		}
+
+		&__blind {
+			width: $headerHeightDesktop;
+
+			p {
+				text-transform: lowercase;
+			}
+		}
+
+		&__nav {
+			width: calc(100% - #{$headerHeightDesktop});
+		}
 	}
 
 	@include grid-media($XSmall) {
