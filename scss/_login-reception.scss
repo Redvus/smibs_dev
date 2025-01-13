@@ -197,8 +197,20 @@
 
 			&__top {
 				height: inherit;
+				flex-direction: column;
 				min-height: $marginVert;
 				// flex-direction: column;
+			}
+
+			&__bottom {
+				height: calc(#{$marginVert} * 1.5);
+			}
+
+			&__name {
+				width: calc(100% - (#{$marginVert} / 2));
+				height: calc(#{$marginVert} * 2);
+				justify-content: flex-start;
+				padding-right: calc(#{$marginVert} / 2);
 			}
 
 			&__form {
@@ -216,7 +228,7 @@
 
 			&__button {
 				width: 100%;
-				// margin-top: $marginVert / 4;
+				height: calc(#{$marginVert} * 2);
 
 				// &--single {
 				// 	width: 100%;
@@ -273,6 +285,16 @@
 				a {
 					color: $sidebarButtonsBackground;
 				}
+			}
+		}
+
+		@include grid-media($Small) {
+			width: calc(100% - (#{$marginVert} * 1));
+			padding: calc(#{$marginVert} / 2);
+			flex-direction: column;
+
+			&__part {
+				width: 100%;
 			}
 		}
 	}
