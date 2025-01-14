@@ -2855,7 +2855,7 @@
 
 		&-createdon {
 			font-size: $font-size-small;
-			margin-top: calc(#{$marginVert} / 4);
+			// margin-top: calc(#{$marginVert} / 4);
 		}
 
 		&-message {
@@ -2936,7 +2936,12 @@
 				visibility: hidden;
 			}
 		}
+
+		&-subject {
+			margin-top: calc(#{$marginVert} / 4);
+		}
 	}
+	/*----------  Гостевая книга  ----------*/
 
 	@include grid-media($XXLarge) {
 		padding-top: calc((#{$headerHeightDesktop} + 1) + (#{$marginVert} * 2));
