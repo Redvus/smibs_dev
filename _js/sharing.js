@@ -35,11 +35,9 @@ function sharingText() {
 
 		// 2.
 		if (highlight.text === '') {
-
 			sharing.setAttribute('class', 'sharing');
 			sharing.style.left = 0;
 			sharing.style.top  = 0;
-
 			return;
 		}
 
@@ -186,4 +184,4 @@ function sharingText() {
 	} );
 }
 
-sharingText();
+// sharingText();
