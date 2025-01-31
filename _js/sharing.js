@@ -29,7 +29,6 @@ function sharingText() {
 	let sharing = document.querySelector('.sharing');
 
 	function showMenu() {
-
 		// 1.
 		let highlight = getHighlight();
 
