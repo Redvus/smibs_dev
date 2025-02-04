@@ -176,8 +176,8 @@
         // initPhotoSwipeFromDOM('.main-content__read-all');
         // introSlider();
         // introBXSlider();
-        galleryAnniversary();
-        introTNS();
+        // galleryAnniversary();
+        // introTNS();
         // galleryAnniversaryTNS();
     }
 

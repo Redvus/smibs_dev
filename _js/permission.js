@@ -68,4 +68,4 @@ function permissionEnter() {
 
 }
 
-permissionEnter();
+// permissionEnter();
