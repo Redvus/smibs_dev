@@ -158,11 +158,13 @@ function sharingText() {
 
 	/* Copy Selection Link
 	-------------------------------------------------- */
-	document.getElementById( 'shareTextLink' ).addEventListener( 'click', function(e) {
+	// TODO https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/
+
+	document.getElementById( 'shareTextLink' ).addEventListener( 'click', function (e) {
 
 		let highlight = getHighlight();
 
-		if ( highlight.text !== '' && highlight.parent.nodeName === 'P' ) {
+		if (highlight.text !== '' && highlight.parent.nodeName === 'P') {
 			// document.execCommand('copy');
 			navigator.clipboard
 				.readText()
@@ -174,9 +176,11 @@ function sharingText() {
 		shareCopyLink.className = 'sharing__copy';
 		shareCopyLink.appendChild(document.createTextNode('Скопировано'));
 		sharingButtons.appendChild(shareCopyLink);
+
 		function removeSpan() {
 			sharingButtons.removeChild(shareCopyLink);
 		}
+
 		setTimeout(removeSpan, 1000);
 
 		e.preventDefault();

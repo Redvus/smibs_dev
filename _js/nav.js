@@ -5,7 +5,8 @@
     ==================================*/
 
 	/*---------  Nav Mobile  ---------*/
-	const navButtonMobile = document.getElementById('navButtonMobile'),
+	const
+		navButtonMobile = document.getElementById('navButtonMobile'),
 		navMainMobile = document.getElementById('navMainMobile'),
 		navMainListMobile = document.querySelectorAll('#navMainMobile ul > li'),
 		navBack = document.querySelector('.nav-mobile__mask'),
@@ -102,8 +103,8 @@
 
 	/* Search Wide
 	-------------------------------------------------- */
-
-	const searchForm = document.querySelector('.header__search'),
+	const
+		searchForm = document.querySelector('.header__search'),
 		searchInput = document.querySelector('.header__search-input'),
 		headerTopSocial = document.querySelector('.header__social'),
 		clickWrapper = document.querySelector('.main-content');
@@ -144,8 +145,6 @@
 
     function initPage() {
 		blindMenuActive();
-		// searchWide();
-		// blindStyle();
     }
 
     function initPageMobile() {
@@ -154,12 +153,9 @@
     }
 
     if (document.body.clientWidth > 1024 || screen.width > 1024) {
-
-        initPage();
-
+		initPage();
     } else {
-
-        initPageMobile();
+		initPageMobile();
     }
 
 }(jQuery));

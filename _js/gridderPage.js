@@ -63,7 +63,7 @@
     function calendarGridder() {
         $('#calendarGridder').gridderExpander({
             scroll: true,
-            scrollOffset: 75,
+            scrollOffset: 100,
             scrollTo: "panel", // panel or listitem
             animationSpeed: 900,
             animationEasing: "easeInOutExpo",
