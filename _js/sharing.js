@@ -29,17 +29,14 @@ function sharingText() {
 	let sharing = document.querySelector('.sharing');
 
 	function showMenu() {
-
 		// 1.
 		let highlight = getHighlight();
 
 		// 2.
 		if (highlight.text === '') {
-
 			sharing.setAttribute('class', 'sharing');
 			sharing.style.left = 0;
 			sharing.style.top  = 0;
-
 			return;
 		}
 
@@ -161,11 +158,13 @@ function sharingText() {
 
 	/* Copy Selection Link
 	-------------------------------------------------- */
-	document.getElementById( 'shareTextLink' ).addEventListener( 'click', function(e) {
+	// TODO https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/
+
+	document.getElementById( 'shareTextLink' ).addEventListener( 'click', function (e) {
 
 		let highlight = getHighlight();
 
-		if ( highlight.text !== '' && highlight.parent.nodeName === 'P' ) {
+		if (highlight.text !== '' && highlight.parent.nodeName === 'P') {
 			// document.execCommand('copy');
 			navigator.clipboard
 				.readText()
@@ -177,13 +176,15 @@ function sharingText() {
 		shareCopyLink.className = 'sharing__copy';
 		shareCopyLink.appendChild(document.createTextNode('Скопировано'));
 		sharingButtons.appendChild(shareCopyLink);
+
 		function removeSpan() {
 			sharingButtons.removeChild(shareCopyLink);
 		}
+
 		setTimeout(removeSpan, 1000);
 
 		e.preventDefault();
 	} );
 }
 
-sharingText();
+// sharingText();
